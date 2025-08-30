@@ -16,7 +16,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="font-bold text-2xl text-primary">
-            PuddleFlange Pro
+            JAZEX
           </div>
 
           {/* Desktop Navigation */}

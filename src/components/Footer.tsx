@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-2xl mb-4">PuddleFlange Pro</h3>
+            <h3 className="font-bold text-2xl mb-4">JAZEX</h3>
             <p className="text-primary-foreground/80 mb-4 leading-relaxed">
-              Revolutionary dual-stage puddle flange systems for professional waterproofing solutions.
+              Revolutionary dual-stage under over puddle flange systems for professional waterproofing solutions.
             </p>
             <p className="text-primary-foreground/80 text-sm">
               Trusted by tradesmen and DIY enthusiasts across Australia.
@@ -77,7 +77,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-primary-foreground/60 text-sm">
             <div>
-              © 2024 PuddleFlange Pro. All rights reserved.
+              © 2024 JAZEX. All rights reserved.
             </div>
             <div className="flex gap-6">
               <a href="#" className="hover:text-accent transition-colors">Privacy Policy</a>
