@@ -8,36 +8,36 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Industrial Construction Color Palette */
+    /* JAZEX Brand Color Palette - Dark Navy, Grey, Teal */
     --background: 0 0% 100%;
-    --foreground: 210 15% 15%;
+    --foreground: 220 20% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 15% 15%;
+    --card-foreground: 220 20% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 15%;
+    --popover-foreground: 220 20% 15%;
 
-    /* Construction Blue - Primary Brand */
-    --primary: 210 85% 45%;
+    /* Dark Navy - Primary Brand */
+    --primary: 220 45% 25%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 210 85% 55%;
-    --primary-dark: 210 85% 35%;
+    --primary-light: 220 45% 35%;
+    --primary-dark: 220 45% 15%;
 
-    /* Steel Gray - Secondary */
-    --secondary: 210 10% 90%;
-    --secondary-foreground: 210 15% 25%;
-    --secondary-dark: 210 15% 75%;
+    /* Grey - Secondary */
+    --secondary: 220 10% 85%;
+    --secondary-foreground: 220 20% 25%;
+    --secondary-dark: 220 10% 75%;
 
-    /* Safety Orange - Accent */
-    --accent: 25 95% 55%;
+    /* Teal - Accent */
+    --accent: 180 60% 45%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 25 95% 65%;
+    --accent-light: 180 60% 55%;
 
-    /* Construction Grays */
-    --muted: 210 10% 95%;
-    --muted-foreground: 210 10% 45%;
-    --muted-dark: 210 15% 85%;
+    /* Greys */
+    --muted: 220 10% 95%;
+    --muted-foreground: 220 10% 45%;
+    --muted-dark: 220 10% 85%;
 
     /* Status Colors */
     --destructive: 0 84% 60%;
@@ -46,19 +46,21 @@ All colors MUST be HSL.
     --success-foreground: 0 0% 100%;
 
     /* UI Elements */
-    --border: 210 15% 85%;
-    --input: 210 15% 92%;
-    --ring: 210 85% 45%;
+    --border: 220 15% 85%;
+    --input: 220 15% 92%;
+    --ring: 220 45% 25%;
 
-    /* Construction Gradients */
+    /* JAZEX Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-steel: linear-gradient(135deg, hsl(210, 15%, 85%), hsl(210, 15%, 75%));
+    --gradient-steel: linear-gradient(135deg, hsl(220, 10%, 85%), hsl(220, 10%, 75%));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
+    --gradient-teal: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
     
     /* Shadows */
     --shadow-construction: 0 4px 20px -4px hsl(var(--primary) / 0.25);
-    --shadow-steel: 0 2px 10px -2px hsl(210, 15%, 50% / 0.15);
-    --shadow-product: 0 8px 30px -8px hsl(210, 15%, 25% / 0.2);
+    --shadow-steel: 0 2px 10px -2px hsl(220, 10%, 50% / 0.15);
+    --shadow-product: 0 8px 30px -8px hsl(220, 20%, 25% / 0.2);
+    --shadow-teal: 0 4px 20px -4px hsl(var(--accent) / 0.25);
 
     --radius: 0.5rem;
 
@@ -80,49 +82,51 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark Mode Construction Theme */
-    --background: 210 20% 12%;
-    --foreground: 210 15% 90%;
+    /* Dark Mode JAZEX Theme */
+    --background: 220 45% 12%;
+    --foreground: 220 15% 90%;
 
-    --card: 210 20% 15%;
-    --card-foreground: 210 15% 90%;
+    --card: 220 45% 15%;
+    --card-foreground: 220 15% 90%;
 
-    --popover: 210 20% 15%;
-    --popover-foreground: 210 15% 90%;
+    --popover: 220 45% 15%;
+    --popover-foreground: 220 15% 90%;
 
-    --primary: 210 85% 55%;
-    --primary-foreground: 210 20% 12%;
-    --primary-light: 210 85% 65%;
-    --primary-dark: 210 85% 45%;
+    --primary: 220 45% 35%;
+    --primary-foreground: 220 45% 12%;
+    --primary-light: 220 45% 45%;
+    --primary-dark: 220 45% 25%;
 
-    --secondary: 210 15% 25%;
-    --secondary-foreground: 210 15% 85%;
-    --secondary-dark: 210 15% 35%;
+    --secondary: 220 10% 25%;
+    --secondary-foreground: 220 10% 85%;
+    --secondary-dark: 220 10% 35%;
 
-    --accent: 25 95% 60%;
-    --accent-foreground: 210 20% 12%;
-    --accent-light: 25 95% 70%;
+    --accent: 180 60% 55%;
+    --accent-foreground: 220 45% 12%;
+    --accent-light: 180 60% 65%;
 
-    --muted: 210 15% 20%;
-    --muted-foreground: 210 10% 65%;
-    --muted-dark: 210 15% 30%;
+    --muted: 220 10% 20%;
+    --muted-foreground: 220 10% 65%;
+    --muted-dark: 220 10% 30%;
 
     --destructive: 0 84% 65%;
-    --destructive-foreground: 210 20% 12%;
+    --destructive-foreground: 220 45% 12%;
     --success: 120 50% 55%;
-    --success-foreground: 210 20% 12%;
+    --success-foreground: 220 45% 12%;
 
-    --border: 210 15% 25%;
-    --input: 210 15% 20%;
-    --ring: 210 85% 55%;
+    --border: 220 10% 25%;
+    --input: 220 10% 20%;
+    --ring: 220 45% 35%;
 
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-steel: linear-gradient(135deg, hsl(210, 15%, 25%), hsl(210, 15%, 35%));
+    --gradient-steel: linear-gradient(135deg, hsl(220, 10%, 25%), hsl(220, 10%, 35%));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)));
+    --gradient-teal: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-light)));
     
     --shadow-construction: 0 4px 20px -4px hsl(var(--primary) / 0.3);
-    --shadow-steel: 0 2px 10px -2px hsl(210, 15%, 10% / 0.3);
-    --shadow-product: 0 8px 30px -8px hsl(210, 15%, 5% / 0.4);
+    --shadow-steel: 0 2px 10px -2px hsl(220, 10%, 10% / 0.3);
+    --shadow-product: 0 8px 30px -8px hsl(220, 10%, 5% / 0.4);
+    --shadow-teal: 0 4px 20px -4px hsl(var(--accent) / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

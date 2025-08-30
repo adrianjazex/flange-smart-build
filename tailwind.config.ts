@@ -80,12 +80,14 @@ export default {
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-steel': 'var(--gradient-steel)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-teal': 'var(--gradient-teal)'
 			},
 			boxShadow: {
 				'construction': 'var(--shadow-construction)',
 				'steel': 'var(--shadow-steel)',
-				'product': 'var(--shadow-product)'
+				'product': 'var(--shadow-product)',
+				'teal': 'var(--shadow-teal)'
 			},
 			keyframes: {
 				'accordion-down': {
