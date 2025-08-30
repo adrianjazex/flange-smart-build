@@ -51,6 +51,25 @@ const ProductSelector = () => {
     }));
   };
 
+  const isStainlessSteel = (color: string) => {
+    return color === "Polished Stainless Steel" || color === "Matte Stainless Steel";
+  };
+
+  const getUnitPrice = (color: string, quantity: number) => {
+    const isStainless = isStainlessSteel(color);
+    const isBoxQuantity = quantity >= 18;
+    
+    if (isStainless) {
+      return isBoxQuantity ? 80 : 110;
+    } else {
+      return isBoxQuantity ? 100 : 130;
+    }
+  };
+
+  const getTotalPrice = (color: string, quantity: number) => {
+    return getUnitPrice(color, quantity) * quantity;
+  };
+
   const addToCart = () => {
     if (selection.type && selection.size && selection.color && selection.postcode) {
       setCart(prev => [...prev, { ...selection }]);
@@ -59,7 +78,8 @@ const ProductSelector = () => {
   };
 
   const isSelectionComplete = selection.type && selection.size && selection.color && selection.postcode;
-  const cartTotal = cart.length;
+  const cartTotal = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity), 0);
 
   return (
     <section className="py-16 bg-gradient-steel">
@@ -123,6 +143,11 @@ const ProductSelector = () => {
                     <Plus className="h-4 w-4" />
                   </Button>
                 </div>
+                {selection.quantity >= 18 && (
+                  <p className="text-sm text-accent font-medium mt-2">
+                    Box pricing applies! (18+ units)
+                  </p>
+                )}
               </div>
 
               {/* Size */}
@@ -177,6 +202,31 @@ const ProductSelector = () => {
                 />
               </div>
 
+              {/* Pricing Display */}
+              {selection.color && (
+                <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-semibold text-foreground">Unit Price:</span>
+                    <span className="text-lg font-bold text-primary">
+                      ${getUnitPrice(selection.color, selection.quantity)}
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold text-foreground">Total:</span>
+                    <span className="text-xl font-bold text-accent">
+                      ${getTotalPrice(selection.color, selection.quantity)}
+                    </span>
+                  </div>
+                  {selection.quantity < 18 && (
+                    <p className="text-sm text-muted-foreground mt-2">
+                      {isStainlessSteel(selection.color) 
+                        ? "Box price: $80/unit (18+ units)" 
+                        : "Box price: $100/unit (18+ units)"}
+                    </p>
+                  )}
+                </div>
+              )}
+
               <Button
                 onClick={addToCart}
                 disabled={!isSelectionComplete}
@@ -193,7 +243,7 @@ const ProductSelector = () => {
             <CardHeader>
               <CardTitle className="text-2xl text-primary flex items-center">
                 <ShoppingCart className="mr-2 h-6 w-6" />
-                Shopping Cart ({cartTotal})
+                Shopping Cart ({cartTotal} items)
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -212,10 +262,22 @@ const ProductSelector = () => {
                         <div>Finish: {item.color}</div>
                         <div>Postcode: {item.postcode}</div>
                       </div>
+                      <div className="flex justify-between items-center mt-3 pt-2 border-t border-border">
+                        <span className="text-sm text-muted-foreground">
+                          ${getUnitPrice(item.color, item.quantity)}/unit
+                        </span>
+                        <span className="font-bold text-accent">
+                          ${getTotalPrice(item.color, item.quantity)}
+                        </span>
+                      </div>
                     </div>
                   ))}
                   
                   <div className="border-t border-border pt-4">
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="text-lg font-semibold text-foreground">Total:</span>
+                      <span className="text-2xl font-bold text-primary">${cartValue}</span>
+                    </div>
                     <Button 
                       className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold py-4 text-lg"
                     >
