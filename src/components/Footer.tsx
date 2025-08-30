@@ -34,11 +34,15 @@ const Footer = () => {
             <div className="space-y-3 text-primary-foreground/80">
               <div className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent" />
-                <span>1800-FLANGE (1800-352-643)</span>
+                <div className="flex flex-col">
+                  <span>Zach: 0411 430 652</span>
+                  <span>Adrian: 0413 428 228</span>
+                  <span>John: 0419 750 066</span>
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent" />
-                <span>info@puddleflangepro.com</span>
+                <span>sales@jazex.com.au</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-accent" />
