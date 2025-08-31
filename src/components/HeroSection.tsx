@@ -17,7 +17,7 @@ const HeroSection = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl lg:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
               <span className="block text-accent">Under Over™</span>
-              ensures no trapped water and no spigot restriction — the smarter way to waterproof.
+              puddle flange with tile insert waste top — the smarter way to waterproof.
             </h1>
             
             <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
