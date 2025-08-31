@@ -28,6 +28,12 @@ const Header = () => {
               Products
             </button>
             <button 
+              onClick={() => scrollToSection('stockists')}
+              className="text-foreground hover:text-primary font-medium transition-colors"
+            >
+              Stockists
+            </button>
+            <button 
               onClick={() => scrollToSection('installation')}
               className="text-foreground hover:text-primary font-medium transition-colors"
             >
@@ -75,6 +81,12 @@ const Header = () => {
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
                 Products
+              </button>
+              <button 
+                onClick={() => scrollToSection('stockists')}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Stockists
               </button>
               <button 
                 onClick={() => scrollToSection('installation')}
