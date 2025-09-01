@@ -15,10 +15,14 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl lg:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-              <span className="block text-accent">Under Over™</span>
-              puddle flange with tile insert waste top — the smarter way to waterproof.
-            </h1>
+            <div className="mb-6">
+              <h1 className="text-6xl lg:text-8xl font-bold text-accent mb-4 leading-tight">
+                Under Over™ puddle flange
+              </h1>
+              <p className="text-2xl lg:text-3xl font-serif italic text-primary-foreground/90 leading-relaxed">
+                the smarter way to waterproof
+              </p>
+            </div>
             
             <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
               The only dual-stage puddle flange system that installs in your primary waterproofing membrane 
