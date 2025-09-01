@@ -25,8 +25,7 @@ const HeroSection = () => {
             </div>
             
             <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
-              The only dual-stage puddle flange system that installs in your primary waterproofing membrane 
-              and locks with a secondary flange over the screed.
+              no ponding no restriction.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
