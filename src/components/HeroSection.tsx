@@ -8,10 +8,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-hero flex items-center">
+    <section className="relative min-h-screen bg-gradient-hero flex items-center pt-24">
       <div className="absolute inset-0 bg-black/20"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 mt-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
