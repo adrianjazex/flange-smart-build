@@ -16,7 +16,7 @@ const HeroSection = () => {
           {/* Content */}
           <div className="text-center lg:text-left">
             <div className="mb-6">
-              <h1 className="text-6xl lg:text-8xl font-orbitron font-black mb-4 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4 leading-tight">
                 <span className="text-accent">UNDER OVER</span>™<br />
                 <span className="text-white">PUDDLE FLANGE</span>
               </h1>
