@@ -8,16 +8,16 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-hero flex items-center pt-24">
+    <section className="relative min-h-[80vh] bg-gradient-hero flex items-center pt-16">
       <div className="absolute inset-0 bg-black/20"></div>
       
-      <div className="container mx-auto px-4 relative z-10 mt-16">
+      <div className="container mx-auto px-4 relative z-10 mt-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
             <div className="mb-6">
               <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4 leading-tight">
-                <span className="text-accent">UNDER OVER</span>™<br />
+                <span className="text-accent">UNDER OVER</span><sup className="text-accent text-2xl lg:text-3xl font-bold ml-1 animate-pulse">™</sup><br />
                 <span className="text-white">PUDDLE FLANGE</span>
               </h1>
               <p className="text-2xl lg:text-3xl font-serif italic text-primary-foreground/90 leading-relaxed">
