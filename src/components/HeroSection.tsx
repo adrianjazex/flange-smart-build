@@ -49,25 +49,6 @@ const HeroSection = () => {
                 Installation Guide
               </Button>
             </div>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/20">
-              <div className="text-center">
-                <Wrench className="h-8 w-8 text-accent mx-auto mb-2" />
-                <div className="text-sm text-primary-foreground/80 font-semibold">Trade</div>
-                <div className="text-sm text-primary-foreground/80">Professional</div>
-              </div>
-              <div className="text-center">
-                <Shield className="h-8 w-8 text-accent mx-auto mb-2" />
-                <div className="text-sm text-primary-foreground/80 font-semibold">Waterproof</div>
-                <div className="text-sm text-primary-foreground/80">Guaranteed</div>
-              </div>
-              <div className="text-center">
-                <Users className="h-8 w-8 text-accent mx-auto mb-2" />
-                <div className="text-sm text-primary-foreground/80 font-semibold">DIY</div>
-                <div className="text-sm text-primary-foreground/80">Friendly</div>
-              </div>
-            </div>
           </div>
 
           {/* Image */}
