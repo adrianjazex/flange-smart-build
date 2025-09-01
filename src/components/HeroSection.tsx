@@ -16,8 +16,9 @@ const HeroSection = () => {
           {/* Content */}
           <div className="text-center lg:text-left">
             <div className="mb-6">
-              <h1 className="text-6xl lg:text-8xl font-bold text-accent mb-4 leading-tight">
-                Under Over™ puddle flange
+              <h1 className="text-6xl lg:text-8xl font-orbitron font-black mb-4 leading-tight">
+                <span className="text-accent">UNDER OVER</span>™<br />
+                <span className="text-white">PUDDLE FLANGE</span>
               </h1>
               <p className="text-2xl lg:text-3xl font-serif italic text-primary-foreground/90 leading-relaxed">
                 the smarter way to waterproof
