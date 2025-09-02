@@ -4,6 +4,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShoppingCart, Plus, Minus, X } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
+import puddleFlangeHero from "@/assets/puddle-flange-hero.jpg";
+import productRange from "@/assets/product-range.jpg";
+import installationGuide from "@/assets/installation-guide.jpg";
 
 interface ProductSelection {
   type: string;
@@ -28,6 +31,12 @@ const COLORS = [
   "Antique Brass Stainless Steel",
   "Gun Metal Stainless Steel"
 ];
+
+const PRODUCT_IMAGES = {
+  "Tile Insert Kit with Push In Rubber Ring Seal": puddleFlangeHero,
+  "Under Over Flange Kit with Rubber Ring Seal": productRange,
+  "Adjustable Solvent Welded Sleeve": installationGuide
+};
 
 const ProductSelector = () => {
   const { cart, addToCart, removeFromCart, cartTotal, cartValue } = useCart();
@@ -124,7 +133,14 @@ const ProductSelector = () => {
                   <SelectContent className="bg-background border-2 border-border z-50">
                     {PRODUCT_TYPES.map((type) => (
                       <SelectItem key={type} value={type} className="hover:bg-muted">
-                        {type}
+                        <div className="flex items-center space-x-3 py-1">
+                          <img 
+                            src={PRODUCT_IMAGES[type as keyof typeof PRODUCT_IMAGES]} 
+                            alt={type}
+                            className="w-12 h-12 object-cover rounded border border-border flex-shrink-0"
+                          />
+                          <span className="text-sm leading-tight">{type}</span>
+                        </div>
                       </SelectItem>
                     ))}
                   </SelectContent>
