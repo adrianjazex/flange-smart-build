@@ -9,7 +9,6 @@ interface ProductSelection {
   quantity: number;
   size: string;
   color: string;
-  postcode: string;
 }
 
 const PRODUCT_TYPES = [
@@ -34,8 +33,7 @@ const ProductSelector = () => {
     type: "",
     quantity: 1,
     size: "",
-    color: "",
-    postcode: ""
+    color: ""
   });
 
   const [cart, setCart] = useState<ProductSelection[]>([]);
@@ -71,13 +69,13 @@ const ProductSelector = () => {
   };
 
   const addToCart = () => {
-    if (selection.type && selection.size && selection.color && selection.postcode) {
+    if (selection.type && selection.size && selection.color) {
       setCart(prev => [...prev, { ...selection }]);
       setSelection(prev => ({ ...prev, quantity: 1 }));
     }
   };
 
-  const isSelectionComplete = selection.type && selection.size && selection.color && selection.postcode;
+  const isSelectionComplete = selection.type && selection.size && selection.color;
   const cartTotal = cart.reduce((total, item) => total + item.quantity, 0);
   const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity), 0);
 
@@ -87,7 +85,7 @@ const ProductSelector = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-foreground mb-4">Configure Your Order</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Select your tile insert kit specifications and we'll calculate shipping to your location
+            Select your tile insert kit specifications and get instant pricing
           </p>
         </div>
 
@@ -188,20 +186,6 @@ const ProductSelector = () => {
                 </Select>
               </div>
 
-              {/* Postcode */}
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">
-                  Postcode (for shipping calculation)
-                </label>
-                <input
-                  type="text"
-                  value={selection.postcode}
-                  onChange={(e) => updateSelection('postcode', e.target.value)}
-                  placeholder="Enter your postcode"
-                  className="w-full px-4 py-3 border-2 border-border hover:border-primary focus:border-primary focus:ring-0 rounded-md bg-background text-foreground transition-colors"
-                />
-              </div>
-
               {/* Pricing Display */}
               {selection.color && (
                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
@@ -260,7 +244,6 @@ const ProductSelector = () => {
                         <div>Quantity: {item.quantity}</div>
                         <div>Size: {item.size}</div>
                         <div>Finish: {item.color}</div>
-                        <div>Postcode: {item.postcode}</div>
                       </div>
                       <div className="flex justify-between items-center mt-3 pt-2 border-t border-border">
                         <span className="text-sm text-muted-foreground">
@@ -281,7 +264,7 @@ const ProductSelector = () => {
                     <Button 
                       className="w-full bg-accent hover:bg-accent-light text-accent-foreground font-semibold py-4 text-lg"
                     >
-                      Calculate Shipping & Checkout
+                      Checkout
                     </Button>
                   </div>
                 </div>
