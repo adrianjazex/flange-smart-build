@@ -30,12 +30,6 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <button 
-              onClick={() => scrollToSection('installation')}
-              className="text-foreground hover:text-primary font-medium transition-colors"
-            >
-              Installation
-            </button>
-            <button 
               onClick={() => scrollToSection('order')}
               className="text-foreground hover:text-primary font-medium transition-colors"
             >
@@ -72,12 +66,6 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border bg-background">
             <nav className="flex flex-col space-y-4">
-              <button 
-                onClick={() => scrollToSection('installation')}
-                className="text-left text-foreground hover:text-primary font-medium transition-colors"
-              >
-                Installation Guide
-              </button>
               <button 
                 onClick={() => scrollToSection('order')}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"

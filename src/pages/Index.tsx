@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import InstallationGuide from "@/components/InstallationGuide";
 import ProductSelector from "@/components/ProductSelector";
 import Footer from "@/components/Footer";
 
@@ -12,7 +11,6 @@ const Index = () => {
       <div id="order">
         <ProductSelector />
       </div>
-      <InstallationGuide />
       <Footer />
     </div>
   );

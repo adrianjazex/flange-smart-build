@@ -30,7 +30,7 @@ const HeroSection = () => {
               no ponding no restriction.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
               <Button 
                 onClick={scrollToProducts}
                 size="lg"
@@ -38,16 +38,6 @@ const HeroSection = () => {
               >
                 <Wrench className="mr-2 h-6 w-6" />
                 Order Now
-              </Button>
-              
-              <Button 
-                onClick={() => document.getElementById('installation')?.scrollIntoView({ behavior: 'smooth' })}
-                variant="outline"
-                size="lg"
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold px-8 py-4 text-lg"
-              >
-                <Shield className="mr-2 h-6 w-6" />
-                Installation Guide
               </Button>
             </div>
 
