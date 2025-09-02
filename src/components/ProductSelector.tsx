@@ -172,7 +172,7 @@ const ProductSelector = () => {
               {/* Color */}
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Finish
+                  Stainless Steel Tile Insert Colour Selection
                 </label>
                 <Select onValueChange={(value) => updateSelection('color', value)} value={selection.color}>
                   <SelectTrigger className="w-full bg-background border-2 border-border hover:border-primary transition-colors">
