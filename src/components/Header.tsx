@@ -52,9 +52,14 @@ const Header = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4" />
-              <span>0411 430 652</span>
+            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4" />
+                <span>0411 430 652</span>
+              </div>
+              <div className="text-xs">
+                <div>Mon-Fri: 7AM-5PM</div>
+              </div>
             </div>
             <Button 
               onClick={() => scrollToSection('order')}
@@ -98,6 +103,9 @@ const Header = () => {
                 Order Now
               </button>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
+                <div className="text-sm text-muted-foreground">
+                  <div className="font-medium mb-2">Opening Hours: Mon-Fri 7AM-5PM</div>
+                </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <Phone className="h-4 w-4" />
                   <div className="flex flex-col">
