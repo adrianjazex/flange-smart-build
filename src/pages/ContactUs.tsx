@@ -38,11 +38,11 @@ const ContactUs = () => {
               </div>
             </div>
 
-            {/* Technical Contact */}
+            {/* Technical Support */}
             <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
               <div className="flex items-center mb-4">
                 <Phone className="h-6 w-6 text-primary mr-3" />
-                <h3 className="text-xl font-semibold">Technical Contact</h3>
+                <h3 className="text-xl font-semibold">Technical Support</h3>
               </div>
               <div className="space-y-2">
                 <p className="font-medium">Adrian</p>
