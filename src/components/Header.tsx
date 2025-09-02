@@ -110,6 +110,15 @@ const Header = () => {
               </button>
               <button 
                 onClick={() => {
+                  navigate('/stockists');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Stockists
+              </button>
+              <button 
+                onClick={() => {
                   navigate('/contact-us');
                   setIsMenuOpen(false);
                 }}
