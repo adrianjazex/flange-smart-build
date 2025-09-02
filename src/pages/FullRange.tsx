@@ -61,7 +61,7 @@ const FullRange = () => {
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover our complete collection of professional wastewater solutions, 
-              I've doubled the chances of keeping water out for some pocket change.
+              Minimise The chance of leaks for pocket change.
             </p>
           </div>
 

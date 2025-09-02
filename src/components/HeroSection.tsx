@@ -27,7 +27,7 @@ const HeroSection = () => {
             </div>
             
             <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
-              I've doubled the chances of keeping water out for some pocket change.
+              Minimise The chance of leaks for pocket change.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
