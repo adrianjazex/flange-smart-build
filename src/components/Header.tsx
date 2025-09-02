@@ -58,7 +58,8 @@ const Header = () => {
                 <span>0411 430 652</span>
               </div>
               <div className="text-xs">
-                <div>Mon-Fri: 7AM-5PM</div>
+                <div>Mon-Fri: 7AM-4PM</div>
+                <div>Sat-Sun: Closed</div>
               </div>
             </div>
             <Button 
@@ -104,7 +105,9 @@ const Header = () => {
               </button>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <div className="text-sm text-muted-foreground">
-                  <div className="font-medium mb-2">Opening Hours: Mon-Fri 7AM-5PM</div>
+                  <div className="font-medium mb-2">Opening Hours:</div>
+                  <div>Mon-Fri: 7AM-4PM</div>
+                  <div>Sat-Sun: Closed</div>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <Phone className="h-4 w-4" />
