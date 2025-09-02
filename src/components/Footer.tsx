@@ -44,7 +44,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-accent" />
-                <span>Sydney, Australia</span>
+                <span>Kunda Park QLD 4556, Australia</span>
               </div>
             </div>
           </div>
