@@ -32,19 +32,19 @@ const isStainlessSteel = (color: string) => {
   return color === "Polished Stainless Steel" || color === "Matte Stainless Steel";
 };
 
-const getUnitPrice = (color: string, quantity: number) => {
+const getUnitPrice = (color: string, totalCartQuantity: number) => {
   const isStainless = isStainlessSteel(color);
-  const isBoxQuantity = quantity >= 18;
+  const isBoxPricing = totalCartQuantity >= 18;
   
   if (isStainless) {
-    return isBoxQuantity ? 80 : 110;
+    return isBoxPricing ? 80 : 110; // AUD including GST
   } else {
-    return isBoxQuantity ? 100 : 130;
+    return isBoxPricing ? 100 : 130; // AUD including GST
   }
 };
 
-const getTotalPrice = (color: string, quantity: number) => {
-  return getUnitPrice(color, quantity) * quantity;
+const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number) => {
+  return getUnitPrice(color, totalCartQuantity) * quantity;
 };
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -66,7 +66,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const cartTotal = cart.reduce((total, item) => total + item.quantity, 0);
-  const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity), 0);
+  const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity, cartTotal), 0);
 
   const value: CartContextType = {
     cart,
