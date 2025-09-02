@@ -14,8 +14,8 @@ interface ProductSelection {
 
 const PRODUCT_TYPES = [
   "Tile Insert Kit with Push In Rubber Ring Seal",
-  "Tile Insert Kit with Tail/Suit Kit with O-ring", 
-  "Tile Insert Kit with Solvent Weld Adapter"
+  "Under Over Flange Kit",
+  "Adjustable Solvent Weld Sleeve"
 ];
 
 const SIZES = ["50mm", "80mm", "100mm"];
