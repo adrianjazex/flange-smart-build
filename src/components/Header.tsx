@@ -107,6 +107,33 @@ const Header = () => {
               </button>
               <button 
                 onClick={() => {
+                  navigate('/full-range');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                View Full Range
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/installation-instructions');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Installation Instructions
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/warranties-limitations');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Warranties & Limitations
+              </button>
+              <button 
+                onClick={() => {
                   navigate('/stockists');
                   setIsMenuOpen(false);
                 }}

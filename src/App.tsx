@@ -9,6 +9,9 @@ import NotFound from "./pages/NotFound";
 import BecomeStockist from "./pages/BecomeStockist";
 import ContactUs from "./pages/ContactUs";
 import Stockists from "./pages/Stockists";
+import FullRange from "./pages/FullRange";
+import InstallationInstructions from "./pages/InstallationInstructions";
+import WarrantiesLimitations from "./pages/WarrantiesLimitations";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +27,9 @@ const App = () => (
             <Route path="/become-stockist" element={<BecomeStockist />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/stockists" element={<Stockists />} />
+            <Route path="/full-range" element={<FullRange />} />
+            <Route path="/installation-instructions" element={<InstallationInstructions />} />
+            <Route path="/warranties-limitations" element={<WarrantiesLimitations />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
