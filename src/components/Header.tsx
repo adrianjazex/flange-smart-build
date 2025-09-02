@@ -31,30 +31,8 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('order')}
-              className="text-foreground hover:text-primary font-medium transition-colors"
-            >
-              Order
-            </button>
-          </nav>
-
-          {/* Contact Info & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <Phone className="h-4 w-4" />
-              <span>0411 430 652</span>
-            </div>
-            <Button 
-              onClick={() => scrollToSection('order')}
-              className="bg-gradient-primary hover:shadow-construction"
-            >
-              Get Quote
-            </Button>
-            
-            {/* Shopping Cart */}
+          {/* Desktop Shopping Cart */}
+          <div className="hidden md:flex items-center">
             <Button
               variant="ghost"
               size="sm"
@@ -67,6 +45,16 @@ const Header = () => {
                   {cartTotal}
                 </span>
               )}
+            </Button>
+            
+            {/* Desktop Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="ml-2"
+            >
+              <Menu className="h-6 w-6" />
             </Button>
           </div>
 
@@ -98,9 +86,9 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border bg-background">
+          <div className="py-4 border-t border-border bg-background">
             <nav className="flex flex-col space-y-4">
               <button 
                 onClick={() => {
