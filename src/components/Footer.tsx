@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-2xl mb-4">JAZEX</h3>
             <p className="text-primary-foreground/80 mb-4 leading-relaxed">
-              Revolutionary dual-stage under over tile insert kit systems with push in rubber ring seal for professional waterproofing solutions.
+              Reduce potential leaks with double independent waterproofing membrane systems only with Under Over puddle flanges. No trapping water in screeds.
             </p>
             <p className="text-primary-foreground/80 text-sm">
               Trusted by tradesmen and DIY enthusiasts across Australia.
