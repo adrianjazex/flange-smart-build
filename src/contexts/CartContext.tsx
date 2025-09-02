@@ -40,6 +40,12 @@ const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantit
     return sleeveBoxPricing ? 5.00 : 5.50; // AUD including GST
   }
   
+  // Special pricing for Under Over Flange Kit
+  if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
+    const flangeBoxPricing = stainlessQuantity >= 20;
+    return flangeBoxPricing ? 20.00 : 25.00; // AUD including GST
+  }
+  
   // Stainless steel parts only get box pricing if stainless quantity >= 20
   const stainlessBoxPricing = stainlessQuantity >= 20;
   const isStainless = isStainlessSteel(color);
