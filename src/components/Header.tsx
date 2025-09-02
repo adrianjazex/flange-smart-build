@@ -143,6 +143,15 @@ const Header = () => {
               </button>
               <button 
                 onClick={() => {
+                  navigate('/waterproof-screed');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Can I waterproof under and over screed?
+              </button>
+              <button 
+                onClick={() => {
                   navigate('/contact-us');
                   setIsMenuOpen(false);
                 }}

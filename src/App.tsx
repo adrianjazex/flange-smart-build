@@ -12,6 +12,7 @@ import Stockists from "./pages/Stockists";
 import FullRange from "./pages/FullRange";
 import InstallationInstructions from "./pages/InstallationInstructions";
 import WarrantiesLimitations from "./pages/WarrantiesLimitations";
+import WaterproofScreed from "./pages/WaterproofScreed";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/full-range" element={<FullRange />} />
             <Route path="/installation-instructions" element={<InstallationInstructions />} />
             <Route path="/warranties-limitations" element={<WarrantiesLimitations />} />
+            <Route path="/waterproof-screed" element={<WaterproofScreed />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
