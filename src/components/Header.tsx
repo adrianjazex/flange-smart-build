@@ -103,6 +103,15 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border bg-background">
             <nav className="flex flex-col space-y-4">
               <button 
+                onClick={() => {
+                  navigate('/');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Home
+              </button>
+              <button 
                 onClick={() => scrollToSection('order')}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
