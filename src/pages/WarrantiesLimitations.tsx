@@ -87,7 +87,7 @@ const WarrantiesLimitations = () => {
               Warranties & Limitations
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive warranty information and coverage details for all JAZEX wastewater solution products. 
+              Comprehensive warranty information and coverage details for all JAZEX waste water solution products. 
               Understanding your warranty rights and product limitations.
             </p>
           </div>

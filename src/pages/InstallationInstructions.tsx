@@ -103,7 +103,7 @@ const InstallationInstructions = () => {
               Installation Instructions
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional installation guides for all JAZEX wastewater solution products. 
+              Professional installation guides for all JAZEX waste water solution products. 
               Follow these detailed instructions to ensure optimal performance and warranty compliance.
             </p>
           </div>
