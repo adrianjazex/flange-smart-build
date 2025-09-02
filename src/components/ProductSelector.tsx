@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShoppingCart, Plus, Minus } from "lucide-react";
+import { ShoppingCart, Plus, Minus, X } from "lucide-react";
 import { useCart } from "@/contexts/CartContext";
 
 interface ProductSelection {
@@ -30,7 +30,7 @@ const COLORS = [
 ];
 
 const ProductSelector = () => {
-  const { cart, addToCart, cartTotal, cartValue } = useCart();
+  const { cart, addToCart, removeFromCart, cartTotal, cartValue } = useCart();
   
   const [selection, setSelection] = useState<ProductSelection>({
     type: "",
@@ -230,8 +230,16 @@ const ProductSelector = () => {
               ) : (
                 <div className="space-y-4">
                   {cart.map((item, index) => (
-                    <div key={index} className="p-4 border border-border rounded-lg bg-muted/50">
-                      <div className="font-semibold text-foreground mb-2">{item.type}</div>
+                    <div key={index} className="p-4 border border-border rounded-lg bg-muted/50 relative">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => removeFromCart(index)}
+                        className="absolute top-2 right-2 h-6 w-6 p-0 hover:bg-destructive hover:text-destructive-foreground"
+                      >
+                        <X className="h-4 w-4" />
+                      </Button>
+                      <div className="font-semibold text-foreground mb-2 pr-8">{item.type}</div>
                       <div className="text-sm text-muted-foreground space-y-1">
                         <div>Quantity: {item.quantity}</div>
                         <div>Size: {item.size}</div>
