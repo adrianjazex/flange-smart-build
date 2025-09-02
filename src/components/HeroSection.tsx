@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Shield, Wrench } from "lucide-react";
 import { useEffect, useState } from "react";
 import { removeBackground, loadImage } from "@/lib/backgroundRemoval";
-const heroImageUrl = "/lovable-uploads/c0ef7774-04c6-470c-9ae2-b777f2e5d707.png";
+const heroImageUrl = "/lovable-uploads/565d8e6e-809d-4fef-ace8-934317f1cd0d.png";
 
 const HeroSection = () => {
   const [processedImageUrl, setProcessedImageUrl] = useState<string>(heroImageUrl);
@@ -82,7 +82,7 @@ const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-product">
               <img 
                 src={processedImageUrl} 
-                alt="JAZEX Under Over dual-stage puddle flange system showing the innovative two-piece design"
+                alt="JAZEX Under Over puddle flange showing the two-piece design with ribbed top plate and cylindrical base"
                 className="w-full h-auto object-cover"
                 style={{ background: 'transparent' }}
               />
