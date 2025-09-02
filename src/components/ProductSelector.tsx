@@ -147,7 +147,7 @@ const ProductSelector = () => {
                 </div>
                 {cartTotal + selection.quantity >= 20 ? (
                   <p className="text-sm text-accent font-medium mt-2">
-                    Box pricing will apply! (20+ total units - mixed colours allowed)
+                    Box pricing will apply! (20+ total units{selection.type === "Adjustable Solvent Welded Sleeve" ? "" : " - mixed colours allowed"})
                   </p>
                 ) : (
                   <p className="text-sm text-muted-foreground mt-2">
@@ -213,16 +213,14 @@ const ProductSelector = () => {
                   </div>
                   {cartTotal + selection.quantity >= 20 ? (
                     <p className="text-sm text-accent font-medium mt-2">
-                      Box pricing applied! (20+ total units - mixed colours allowed)
+                      Box pricing applied! (20+ total units{selection.type === "Adjustable Solvent Welded Sleeve" ? "" : " - mixed colours allowed"})
                     </p>
                   ) : (
                     <p className="text-sm text-muted-foreground mt-2">
-                      Box pricing available at 20+ total units (mixed colours allowed)<br/>
+                      Box pricing available at 20+ total units{selection.type === "Adjustable Solvent Welded Sleeve" ? "" : " (mixed colours allowed)"}<br/>
                       {selection.type === "Adjustable Solvent Welded Sleeve" 
-                        ? "Sleeve: $AUD 5.00/unit | Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit"
-                        : isStainlessSteel(selection.color || "") 
-                          ? "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit" 
-                          : "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit"}
+                        ? "ABS Sleeve: $AUD 5.00/unit at 20+ units"
+                        : "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit"}
                     </p>
                   )}
                   <p className="text-xs text-muted-foreground mt-1">
@@ -271,7 +269,9 @@ const ProductSelector = () => {
                       <div className="text-sm text-muted-foreground space-y-1">
                         <div>Quantity: {item.quantity}</div>
                         <div>Size: {item.size}</div>
-                        <div>Finish: {item.color}</div>
+                        {item.type !== "Adjustable Solvent Welded Sleeve" && (
+                          <div>Finish: {item.color}</div>
+                        )}
                       </div>
                       <div className="flex justify-between items-center mt-3 pt-2 border-t border-border">
                         <span className="text-sm text-muted-foreground">
@@ -291,7 +291,7 @@ const ProductSelector = () => {
                     </div>
                     {cartTotal >= 20 && (
                       <div className="text-sm text-accent font-medium mb-2">
-                        ✓ Box pricing applied (mixed colours allowed)
+                        ✓ Box pricing applied{cart.some(item => item.type !== "Adjustable Solvent Welded Sleeve") ? " (mixed colours allowed)" : ""}
                       </div>
                     )}
                     <div className="flex justify-between items-center mb-4">
