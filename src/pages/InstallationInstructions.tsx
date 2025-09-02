@@ -17,102 +17,89 @@ const InstallationInstructions = () => {
     "Tile cutting tools (if required)"
   ];
 
-  const tileInsertSteps = [
+  const puddleFlangeSteps = [
     {
       step: 1,
-      title: "Preparation",
-      details: "Ensure the surface is clean, level, and properly waterproofed according to Australian Standards AS 3740."
+      title: "Prepare the DWV (Waste Pipe)",
+      details: "Ensure the DWV (waste pipe) is clean and free from any contaminants, including old membrane or adhesives, glue residues, burrs, debris, or sharp edges."
     },
     {
       step: 2,
-      title: "Marking and Cutting",
-      details: "Mark the tile insert position and cut the opening to the exact dimensions specified for your chosen size (50mm, 80mm, or 100mm)."
+      title: "Rebate the Floor",
+      details: "Rebate the floor so that the top surface of the primary puddle flange sits slightly below the finished floor level. Once the rebate is complete, fit the rubber ring seal to the primary puddle flange."
     },
     {
       step: 3,
-      title: "Test Fit",
-      details: "Perform a dry fit to ensure proper alignment and fit before final installation."
+      title: "Install the Primary Puddle Flange",
+      details: "Apply EPDM-compatible lubricant to the rubber ring seal. Apply a generous bead of joint sealant to the underside of the primary puddle flange in a continuous flow without creating air voids. Apply enough joint sealant to seal the DWV (waste pipe) to the floor junction, ensuring excess is expelled so it can be tooled off around the perimeter of the flange."
     },
     {
       step: 4,
-      title: "Apply Sealant",
-      details: "Apply appropriate waterproof sealant around the opening perimeter."
+      title: "Inspect the Rubber Ring Seal",
+      details: "Visually check the rubber ring seal by looking down through the flange spigot to ensure it has not shifted during installation. When correctly installed, the rubber ring seal will lap around to the inside bottom of the spigot."
     },
     {
       step: 5,
-      title: "Insert Installation",
-      details: "Carefully install the tile insert, ensuring the push-in rubber ring seal is properly seated."
+      title: "Apply Waterproofing Membrane",
+      details: "Apply waterproofing membrane over the textured horizontal surface of the primary puddle flange. Take care not to allow membrane to flow into the spigot. Allow membrane to fully cure before installing the secondary puddle flange."
     },
     {
       step: 6,
-      title: "Final Check",
-      details: "Verify all seals are properly positioned and conduct a water test to ensure waterproof integrity."
+      title: "Install the Secondary Puddle Flange",
+      details: "Apply a small dot of joint sealant to both locating lugs of the primary puddle flange. Press the secondary puddle flange into place, ensuring it is aligned, flat, and securely seated. Allow the joint sealant to fully cure before continuing. If required, the secondary puddle flange may also be fixed with a suitable fast-cure epoxy, PVC cement, or Cyanoacrylate (super glue)."
+    },
+    {
+      step: 7,
+      title: "Apply Tiler's Screed",
+      details: "Apply screed over the secondary puddle flange, fully encasing the bedding tabs. Ensure the screed terminates in line with the outside perimeter of the secondary puddle flange. Clean the top of the flange so it is ready for the next waterproofing layer. Inspect the inside of the spigot for screed overflow. Remove any material that may have entered the drainage flutes between the primary and secondary puddle flanges, as this could create a risk of capillary water ingress."
+    },
+    {
+      step: 8,
+      title: "Waterproof Over Screed",
+      details: "The system is now ready for second-stage waterproofing. Apply membrane in accordance with your manufacturer's specifications."
     }
   ];
 
-  const underOverSteps = [
+  const solventWeldedSteps = [
     {
       step: 1,
-      title: "Surface Preparation",
-      details: "Prepare the substrate ensuring it meets waterproofing membrane requirements."
+      title: "Prepare the DWV (Waste Pipe)",
+      details: "Ensure the DWV (waste pipe) is clean and free from any contaminants, including old membrane or adhesives, glue residues, burrs, debris, or sharp edges."
     },
     {
       step: 2,
-      title: "Position Flange",
-      details: "Position the under flange component according to your specific installation requirements."
+      title: "Rebate the Floor",
+      details: "Rebate the floor so that the top surface of the primary puddle flange sits slightly below the finished floor level."
     },
     {
       step: 3,
-      title: "Secure Installation",
-      details: "Secure the flange using appropriate fasteners for your substrate type."
+      title: "Set the Adjustable Sleeve Angle",
+      details: "Align the single notch on the adjustable sleeve with the single notch on the bottom of the primary puddle flange spigot (for straight DWV waste pipes). Rotate the primary puddle flange and sleeve in opposite directions until the flange matches the angle of the DWV (waste pipe). Adjustment range is reached when the two notches on the sleeve align."
     },
     {
       step: 4,
-      title: "Rubber Ring Seal",
-      details: "Install the rubber ring seal ensuring proper compression and waterproof integrity."
+      title: "Solvent Weld the Sleeve",
+      details: "Mark the final alignment before welding. Use Type N PVC pipe cement only (do not use primer on ABS parts). Apply joint sealant generously to the underside of the primary puddle flange to create a continuous, void-free bead. Ensure enough is applied to seal the DWV (waste pipe) to the floor junction, allowing excess to be tooled off. Apply PVC cement primer only on DWV PVC waste pipe (not on ABS parts). Apply Type N PVC pipe cement to the external surface of the adjustable spigot and the internal surface of the DWV (waste pipe). Insert the flange into the pipe until excess joint sealant is expelled. Confirm that the primary puddle flange is flush with or slightly below the floor surface. Tool off excess joint sealant around the perimeter."
     },
     {
       step: 5,
-      title: "Over Flange",
-      details: "Install the over flange component, ensuring perfect alignment with the under component."
+      title: "Apply Waterproofing Membrane",
+      details: "Apply waterproofing membrane over the textured horizontal surface of the primary puddle flange. Take care not to allow membrane to flow into the spigot. Allow membrane to fully cure before installing the secondary puddle flange."
     },
     {
       step: 6,
-      title: "Testing",
-      details: "Perform comprehensive water testing to verify installation integrity."
-    }
-  ];
-
-  const sleeveSteps = [
-    {
-      step: 1,
-      title: "Pipe Preparation",
-      details: "Ensure pipes are clean, properly cut, and deburred for optimal solvent welding."
+      title: "Install the Secondary Puddle Flange",
+      details: "Apply a small dot of joint sealant to both locating lugs of the primary puddle flange. Press the secondary puddle flange into place, ensuring it is aligned, flat, and securely seated. Allow the joint sealant to fully cure before continuing. If required, the secondary puddle flange may also be fixed with a suitable fast-cure epoxy, PVC cement, or Cyanoacrylate (super glue)."
     },
     {
-      step: 2,
-      title: "Adjustment",
-      details: "Adjust the sleeve to the required length and configuration for your specific application."
+      step: 7,
+      title: "Apply Tiler's Screed",
+      details: "Apply screed over the secondary puddle flange, fully encasing the bedding tabs. Ensure the screed terminates in line with the outside perimeter of the secondary puddle flange. Clean the top of the flange so it is ready for the next waterproofing layer. Inspect the inside of the spigot for screed overflow. Remove any material that may have entered the drainage flutes between the primary and secondary puddle flanges, as this could create a risk of capillary water ingress."
     },
     {
-      step: 3,
-      title: "Test Assembly",
-      details: "Perform a dry assembly to verify proper fit and alignment."
-    },
-    {
-      step: 4,
-      title: "Solvent Application",
-      details: "Apply appropriate solvent cement according to manufacturer specifications."
-    },
-    {
-      step: 5,
-      title: "Installation",
-      details: "Install the sleeve ensuring proper insertion depth and alignment."
-    },
-    {
-      step: 6,
-      title: "Curing",
-      details: "Allow appropriate curing time before testing or applying pressure."
+      step: 8,
+      title: "Waterproof Over Screed",
+      details: "The system is now ready for second-stage waterproofing. Apply membrane in accordance with your manufacturer's specifications."
     }
   ];
 
@@ -179,81 +166,54 @@ const InstallationInstructions = () => {
 
           {/* Product-Specific Instructions */}
           <div className="space-y-8">
-            {/* Tile Insert Kit Instructions */}
+            {/* Puddle Flange Installation Guide */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-primary">
-                  Tile Insert Kit with Push In Rubber Ring Seal
+                <CardTitle className="text-primary text-2xl">
+                  PUDDLE FLANGE INSTALLATION GUIDE
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {tileInsertSteps.map((step, index) => (
+                  {puddleFlangeSteps.map((step, index) => (
                     <div key={index}>
                       <div className="flex items-start space-x-4">
                         <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1">{step.title}</h4>
-                          <p className="text-muted-foreground">{step.details}</p>
+                          <h4 className="font-semibold text-foreground mb-2">{step.title}</h4>
+                          <p className="text-muted-foreground leading-relaxed">{step.details}</p>
                         </div>
                       </div>
-                      {index < tileInsertSteps.length - 1 && <Separator className="my-4" />}
+                      {index < puddleFlangeSteps.length - 1 && <Separator className="my-4" />}
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            {/* Under Over Flange Kit Instructions */}
+            {/* Solvent Welded Installation Option */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-primary">
-                  Under Over Flange Kit with Rubber Ring Seal
+                <CardTitle className="text-primary text-2xl">
+                  SOLVENT WELDED INSTALLATION OPTION
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {underOverSteps.map((step, index) => (
+                  {solventWeldedSteps.map((step, index) => (
                     <div key={index}>
                       <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
+                        <div className="flex-shrink-0 w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
                         </div>
                         <div>
-                          <h4 className="font-semibold text-foreground mb-1">{step.title}</h4>
-                          <p className="text-muted-foreground">{step.details}</p>
+                          <h4 className="font-semibold text-foreground mb-2">{step.title}</h4>
+                          <p className="text-muted-foreground leading-relaxed">{step.details}</p>
                         </div>
                       </div>
-                      {index < underOverSteps.length - 1 && <Separator className="my-4" />}
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Adjustable Solvent Welded Sleeve Instructions */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-primary">
-                  Adjustable Solvent Welded Sleeve
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {sleeveSteps.map((step, index) => (
-                    <div key={index}>
-                      <div className="flex items-start space-x-4">
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
-                          {step.step}
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-foreground mb-1">{step.title}</h4>
-                          <p className="text-muted-foreground">{step.details}</p>
-                        </div>
-                      </div>
-                      {index < sleeveSteps.length - 1 && <Separator className="my-4" />}
+                      {index < solventWeldedSteps.length - 1 && <Separator className="my-4" />}
                     </div>
                   ))}
                 </div>
