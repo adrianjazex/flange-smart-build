@@ -28,7 +28,10 @@ const Header = () => {
               alt="JAZEX Logo" 
               className="h-10 w-auto"
             />
-            <span className="font-bold text-2xl text-primary">JAZEX</span>
+            <span className="font-bold text-2xl">
+              <span className="text-foreground">JAZ</span>
+              <span className="text-teal-500">EX</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
