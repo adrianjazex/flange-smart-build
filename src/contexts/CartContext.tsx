@@ -32,24 +32,26 @@ const isStainlessSteel = (color: string) => {
   return color === "Polished Stainless Steel" || color === "Matte Stainless Steel";
 };
 
-const getUnitPrice = (color: string, totalCartQuantity: number, productType: string = "") => {
-  const isBoxPricing = totalCartQuantity >= 20;
-  
+const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
   // Special pricing for Adjustable Solvent Welded Sleeve
   if (productType === "Adjustable Solvent Welded Sleeve") {
-    return isBoxPricing ? 5.00 : 5.50; // AUD including GST
+    // Sleeves get box pricing if total cart >= 20 OR if stainless quantity >= 20
+    const sleeveBoxPricing = totalCartQuantity >= 20 || stainlessQuantity >= 20;
+    return sleeveBoxPricing ? 5.00 : 5.50; // AUD including GST
   }
   
+  // Stainless steel parts only get box pricing if stainless quantity >= 20
+  const stainlessBoxPricing = stainlessQuantity >= 20;
   const isStainless = isStainlessSteel(color);
   if (isStainless) {
-    return isBoxPricing ? 80 : 110; // AUD including GST
+    return stainlessBoxPricing ? 80 : 110; // AUD including GST
   } else {
-    return isBoxPricing ? 100 : 130; // AUD including GST
+    return stainlessBoxPricing ? 100 : 130; // AUD including GST
   }
 };
 
-const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number, productType: string = "") => {
-  return getUnitPrice(color, totalCartQuantity, productType) * quantity;
+const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
+  return getUnitPrice(color, totalCartQuantity, stainlessQuantity, productType) * quantity;
 };
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -71,7 +73,10 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const cartTotal = cart.reduce((total, item) => total + item.quantity, 0);
-  const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity, cartTotal, item.type), 0);
+  const stainlessTotal = cart
+    .filter(item => item.type !== "Adjustable Solvent Welded Sleeve")
+    .reduce((total, item) => total + item.quantity, 0);
+  const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity, cartTotal, stainlessTotal, item.type), 0);
 
   const value: CartContextType = {
     cart,
