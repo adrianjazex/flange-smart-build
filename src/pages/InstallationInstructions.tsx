@@ -4,19 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CheckCircle, AlertTriangle, Wrench, Download } from "lucide-react";
-import installationGuide from "@/assets/installation-guide.jpg";
 
 const InstallationInstructions = () => {
-  const generalTools = [
-    "Drill with appropriate bits",
-    "Measuring tape",
-    "Level",
-    "Pencil for marking",
-    "Safety glasses",
-    "Dust mask",
-    "Tile cutting tools (if required)"
-  ];
-
   const puddleFlangeSteps = [
     {
       step: 1,
@@ -132,35 +121,6 @@ const InstallationInstructions = () => {
                 All installations must comply with Australian Standards AS 3740 (Waterproofing of domestic wet areas) 
                 and local building codes. Professional installation is recommended for critical applications.
               </p>
-            </CardContent>
-          </Card>
-
-          {/* General Tools Required */}
-          <Card className="mb-8">
-            <CardHeader>
-              <CardTitle className="flex items-center text-primary">
-                <Wrench className="mr-2 h-5 w-5" />
-                General Tools Required
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <ul className="space-y-2">
-                  {generalTools.map((tool, index) => (
-                    <li key={index} className="flex items-center">
-                      <CheckCircle className="mr-2 h-4 w-4 text-green-500" />
-                      <span className="text-muted-foreground">{tool}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div>
-                  <img 
-                    src={installationGuide} 
-                    alt="Installation tools"
-                    className="w-full h-48 object-cover rounded-lg"
-                  />
-                </div>
-              </div>
             </CardContent>
           </Card>
 
