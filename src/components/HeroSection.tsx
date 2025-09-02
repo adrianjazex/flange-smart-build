@@ -1,52 +1,32 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Shield, Wrench } from "lucide-react";
-import { useEffect, useState } from "react";
-import { removeBackground, loadImage } from "@/lib/backgroundRemoval";
-const heroImageUrl = "/lovable-uploads/565d8e6e-809d-4fef-ace8-934317f1cd0d.png";
+import { ArrowDown, Shield, Wrench, Users } from "lucide-react";
+const heroImageUrl = "/lovable-uploads/7256bfe4-20d9-462c-b04c-f044049ef1dc.png";
 
 const HeroSection = () => {
-  const [processedImageUrl, setProcessedImageUrl] = useState<string>(heroImageUrl);
-  const [isProcessing, setIsProcessing] = useState(false);
-
   const scrollToProducts = () => {
     document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  useEffect(() => {
-    const processImage = async () => {
-      try {
-        setIsProcessing(true);
-        const response = await fetch(heroImageUrl);
-        const blob = await response.blob();
-        const img = await loadImage(blob);
-        const processedBlob = await removeBackground(img);
-        const processedUrl = URL.createObjectURL(processedBlob);
-        setProcessedImageUrl(processedUrl);
-      } catch (error) {
-        console.error('Failed to process image:', error);
-        // Keep original image if processing fails
-      } finally {
-        setIsProcessing(false);
-      }
-    };
-
-    processImage();
-  }, []);
-
   return (
-    <section className="relative min-h-[70vh] bg-gradient-hero flex items-center pt-12 pb-8">
-      <div className="absolute inset-0 bg-primary/20"></div>
+    <section className="relative min-h-screen bg-gradient-hero flex items-center">
+      <div className="absolute inset-0 bg-black/20"></div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-6 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-teal-400">Under Over</span>{" "}
-              <span className="text-white">Puddle Flange</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-8 font-light">
-              Revolutionary dual-stage waterproofing system
+            <div className="mb-6">
+              <h1 className="text-6xl lg:text-8xl font-orbitron font-black mb-4 leading-tight">
+                <span className="text-accent">UNDER OVER</span>™<br />
+                <span className="text-white">PUDDLE FLANGE</span>
+              </h1>
+              <p className="text-2xl lg:text-3xl font-serif italic text-primary-foreground/90 leading-relaxed">
+                the smarter way to waterproof
+              </p>
+            </div>
+            
+            <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
+              no ponding no restriction.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -69,22 +49,47 @@ const HeroSection = () => {
                 Installation Guide
               </Button>
             </div>
+
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-primary-foreground/20">
+              <div className="text-center">
+                <Wrench className="h-8 w-8 text-accent mx-auto mb-2" />
+                <div className="text-sm text-primary-foreground/80 font-semibold">Trade</div>
+                <div className="text-sm text-primary-foreground/80">Professional</div>
+              </div>
+              <div className="text-center">
+                <Shield className="h-8 w-8 text-accent mx-auto mb-2" />
+                <div className="text-sm text-primary-foreground/80 font-semibold">Waterproof</div>
+                <div className="text-sm text-primary-foreground/80">Guaranteed</div>
+              </div>
+              <div className="text-center">
+                <Users className="h-8 w-8 text-accent mx-auto mb-2" />
+                <div className="text-sm text-primary-foreground/80 font-semibold">DIY</div>
+                <div className="text-sm text-primary-foreground/80">Friendly</div>
+              </div>
+            </div>
           </div>
 
           {/* Image */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-product">
+            <div className="relative rounded-2xl overflow-hidden shadow-product bg-gradient-steel">
               <img 
-                src={processedImageUrl} 
-                alt="JAZEX Under Over puddle flange showing the two-piece design with ribbed top plate and cylindrical base"
+                src={heroImageUrl} 
+                alt="JAZEX Under Over dual-stage puddle flange system showing the innovative two-piece design"
                 className="w-full h-auto object-cover"
-                style={{ background: 'transparent' }}
               />
-              {isProcessing && (
-                <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                  <div className="text-primary-foreground">Processing image...</div>
-                </div>
-              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+            </div>
+            
+            {/* Floating Feature Cards */}
+            <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-4 shadow-steel border border-border">
+              <div className="text-sm font-semibold text-foreground">Primary Install</div>
+              <div className="text-xs text-muted-foreground">Membrane Integration</div>
+            </div>
+            
+            <div className="absolute -top-6 -right-6 bg-accent rounded-xl p-4 shadow-steel text-accent-foreground">
+              <div className="text-sm font-semibold">Secondary Lock</div>
+              <div className="text-xs opacity-90">Over Screed</div>
             </div>
           </div>
         </div>

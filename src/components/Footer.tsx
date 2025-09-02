@@ -46,21 +46,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-5 w-5 text-accent" />
-                <div>
-                  <div className="font-medium">Physical Address:</div>
-                  <div>1/8 Tectonic Cr</div>
-                  <div>Kunda Park QLD 4556</div>
-                  <div>Australia</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-accent" />
-                <div>
-                  <div className="font-medium">Postal Address:</div>
-                  <div>PO Box 5376</div>
-                  <div>Maroochydore BC, QLD 4558</div>
-                  <div>Australia</div>
-                </div>
+                <span>Sydney, Australia</span>
               </div>
             </div>
           </div>
@@ -73,11 +59,15 @@ const Footer = () => {
                 <Clock className="h-5 w-5 text-accent mt-0.5" />
                 <div>
                   <div className="font-medium">Monday - Friday</div>
-                  <div className="text-sm">7:00 AM - 4:00 PM</div>
+                  <div className="text-sm">8:00 AM - 6:00 PM</div>
                 </div>
               </div>
               <div className="ml-8">
-                <div className="font-medium">Saturday - Sunday</div>
+                <div className="font-medium">Saturday</div>
+                <div className="text-sm">9:00 AM - 2:00 PM</div>
+              </div>
+              <div className="ml-8">
+                <div className="font-medium">Sunday</div>
                 <div className="text-sm">Closed</div>
               </div>
             </div>

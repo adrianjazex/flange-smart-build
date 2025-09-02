@@ -1,19 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Mail } from "lucide-react";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false);
-  };
-
-  const handleNavigation = (path: string) => {
-    navigate(path);
     setIsMenuOpen(false);
   };
 
@@ -22,17 +15,9 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <img 
-              src="/lovable-uploads/b812fb40-741f-4ca3-81b0-995837c3e142.png" 
-              alt="JAZEX Logo" 
-              className="h-10 w-auto"
-            />
-            <span className="font-bold text-2xl">
-              <span className="text-foreground">JAZ</span>
-              <span className="text-teal-500">EX</span>
-            </span>
-          </Link>
+          <div className="font-bold text-2xl text-primary">
+            JAZEX
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -41,6 +26,18 @@ const Header = () => {
               className="text-foreground hover:text-primary font-medium transition-colors"
             >
               Products
+            </button>
+            <button 
+              onClick={() => scrollToSection('stockists')}
+              className="text-foreground hover:text-primary font-medium transition-colors"
+            >
+              Stockists
+            </button>
+            <button 
+              onClick={() => scrollToSection('installation')}
+              className="text-foreground hover:text-primary font-medium transition-colors"
+            >
+              Installation
             </button>
             <button 
               onClick={() => scrollToSection('order')}
@@ -52,15 +49,9 @@ const Header = () => {
 
           {/* Contact Info & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span>0411 430 652</span>
-              </div>
-              <div className="text-xs">
-                <div>Mon-Fri: 7AM-4PM</div>
-                <div>Sat-Sun: Closed</div>
-              </div>
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <Phone className="h-4 w-4" />
+              <span>0411 430 652</span>
             </div>
             <Button 
               onClick={() => scrollToSection('order')}
@@ -86,22 +77,22 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border bg-background">
             <nav className="flex flex-col space-y-4">
               <button 
-                onClick={() => handleNavigation('/')}
-                className="text-left text-foreground hover:text-primary font-medium transition-colors"
-              >
-                Home
-              </button>
-              <button 
                 onClick={() => scrollToSection('products')}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
                 Products
               </button>
               <button 
-                onClick={() => handleNavigation('/stockists')}
+                onClick={() => scrollToSection('stockists')}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
                 Stockists
+              </button>
+              <button 
+                onClick={() => scrollToSection('installation')}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Installation Guide
               </button>
               <button 
                 onClick={() => scrollToSection('order')}
@@ -110,11 +101,6 @@ const Header = () => {
                 Order Now
               </button>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <div className="text-sm text-muted-foreground">
-                  <div className="font-medium mb-2">Opening Hours:</div>
-                  <div>Mon-Fri: 7AM-4PM</div>
-                  <div>Sat-Sun: Closed</div>
-                </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <Phone className="h-4 w-4" />
                   <div className="flex flex-col">

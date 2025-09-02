@@ -25,7 +25,7 @@ const COLORS = [
   "Matte Stainless Steel", 
   "Black Stainless Steel",
   "Gold Stainless Steel",
-  "Antique Brass Stainless Steel",
+  "Rose Stainless Steel",
   "Gun Metal Stainless Steel"
 ];
 
