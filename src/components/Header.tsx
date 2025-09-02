@@ -103,7 +103,7 @@ const Header = () => {
                 onClick={() => scrollToSection('order')}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
-                Order Now
+                Order products
               </button>
               <button 
                 onClick={() => {
@@ -112,7 +112,16 @@ const Header = () => {
                 }}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
-                View Full Range
+                Product range
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/waterproof-screed');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Can I waterproof under and over screed?
               </button>
               <button 
                 onClick={() => {
@@ -140,15 +149,6 @@ const Header = () => {
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
                 Stockists
-              </button>
-              <button 
-                onClick={() => {
-                  navigate('/waterproof-screed');
-                  setIsMenuOpen(false);
-                }}
-                className="text-left text-foreground hover:text-primary font-medium transition-colors"
-              >
-                Can I waterproof under and over screed?
               </button>
               <button 
                 onClick={() => {
