@@ -100,29 +100,8 @@ const InstallationGuide = () => {
             </Card>
           </div>
 
-          {/* Steps */}
+          {/* Professional Installation */}
           <div className="space-y-4">
-            {INSTALLATION_STEPS.map((item) => (
-              <Card key={item.step} className="shadow-steel hover:shadow-construction transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
-                      <span className="text-primary-foreground font-bold text-lg">{item.step}</span>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-foreground mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                    <CheckCircle className="h-6 w-6 text-success flex-shrink-0 mt-1" />
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-
             <Card className="shadow-construction bg-accent/10 border-accent/20">
               <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-semibold text-foreground mb-2">
