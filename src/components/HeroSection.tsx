@@ -1,17 +1,43 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Shield, Wrench, Users } from "lucide-react";
+import { ArrowDown, Shield, Wrench } from "lucide-react";
+import { useEffect, useState } from "react";
+import { removeBackground, loadImage } from "@/lib/backgroundRemoval";
 const heroImageUrl = "/lovable-uploads/c0ef7774-04c6-470c-9ae2-b777f2e5d707.png";
 
 const HeroSection = () => {
+  const [processedImageUrl, setProcessedImageUrl] = useState<string>(heroImageUrl);
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const scrollToProducts = () => {
     document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const processImage = async () => {
+      try {
+        setIsProcessing(true);
+        const response = await fetch(heroImageUrl);
+        const blob = await response.blob();
+        const img = await loadImage(blob);
+        const processedBlob = await removeBackground(img);
+        const processedUrl = URL.createObjectURL(processedBlob);
+        setProcessedImageUrl(processedUrl);
+      } catch (error) {
+        console.error('Failed to process image:', error);
+        // Keep original image if processing fails
+      } finally {
+        setIsProcessing(false);
+      }
+    };
+
+    processImage();
+  }, []);
+
   return (
-    <section className="relative min-h-[80vh] bg-gradient-hero flex items-center pt-16">
+    <section className="relative min-h-[70vh] bg-gradient-hero flex items-center pt-12 pb-8">
       <div className="absolute inset-0 bg-primary/20"></div>
       
-      <div className="container mx-auto px-4 relative z-10 mt-8">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-6 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
@@ -53,13 +79,18 @@ const HeroSection = () => {
 
           {/* Image */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-product bg-gradient-steel">
+            <div className="relative rounded-2xl overflow-hidden shadow-product">
               <img 
-                src={heroImageUrl} 
+                src={processedImageUrl} 
                 alt="JAZEX Under Over dual-stage puddle flange system showing the innovative two-piece design"
                 className="w-full h-auto object-cover"
+                style={{ background: 'transparent' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              {isProcessing && (
+                <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
+                  <div className="text-primary-foreground">Processing image...</div>
+                </div>
+              )}
             </div>
             
             {/* Floating Feature Cards */}
