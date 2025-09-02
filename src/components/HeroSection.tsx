@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Shield, Wrench, Users } from "lucide-react";
-const heroImageUrl = "/lovable-uploads/7256bfe4-20d9-462c-b04c-f044049ef1dc.png";
+const heroImageUrl = "/lovable-uploads/c0ef7774-04c6-470c-9ae2-b777f2e5d707.png";
 
 const HeroSection = () => {
   const scrollToProducts = () => {
