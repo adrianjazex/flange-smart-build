@@ -22,12 +22,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="hover:opacity-80 transition-opacity">
+          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <img 
               src="/lovable-uploads/b812fb40-741f-4ca3-81b0-995837c3e142.png" 
               alt="JAZEX Logo" 
               className="h-10 w-auto"
             />
+            <span className="font-bold text-2xl text-primary">JAZEX</span>
           </Link>
 
           {/* Desktop Navigation */}
