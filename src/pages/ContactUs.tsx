@@ -66,13 +66,14 @@ const ContactUs = () => {
               </div>
             </div>
 
-            {/* Quick Contact */}
+            {/* Become a Stockist */}
             <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
               <div className="flex items-center mb-4">
                 <Building className="h-6 w-6 text-primary mr-3" />
-                <h3 className="text-xl font-semibold">John</h3>
+                <h3 className="text-xl font-semibold">Become a Stockist</h3>
               </div>
               <div className="space-y-2">
+                <p className="font-medium">Call John</p>
                 <p className="text-muted-foreground">0419 750 066</p>
               </div>
             </div>
