@@ -4,7 +4,7 @@ import { ArrowDown, Shield, Wrench } from "lucide-react";
 const HeroSection = () => {
 
   const scrollToProducts = () => {
-    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' });
   };
 
 
@@ -33,7 +33,6 @@ const HeroSection = () => {
                 size="lg"
                 className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold px-8 py-4 text-lg shadow-construction"
               >
-                <Wrench className="mr-2 h-6 w-6" />
                 Order Now
               </Button>
             </div>
