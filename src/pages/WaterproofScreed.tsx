@@ -94,6 +94,20 @@ const WaterproofScreed = () => {
               </div>
             </div>
 
+            {/* Australian Standards */}
+            <div className="bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border shadow-elegant">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-accent/10 rounded-full">
+                  <CheckCircle className="h-6 w-6 text-accent" />
+                </div>
+                <h2 className="text-2xl font-semibold">Australian Standards & NCC Compliance</h2>
+              </div>
+              
+              <p className="text-muted-foreground leading-relaxed">
+                The Australian Standards serve as a guideline that becomes mandatory when referenced by the National Construction Code (NCC) regarding underscreed and overscreed waterproofing. The NCC specifies that either underscreed or overscreed waterproofing must be implemented; however, it does not prohibit the use of both methods. Therefore, employing both techniques can provide enhanced protection and ensure superior waterproofing performance.
+              </p>
+            </div>
+
             {/* Best Practices */}
             <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-8 border border-primary/20">
               <h2 className="text-2xl font-semibold mb-6">Best Practices</h2>
