@@ -26,11 +26,11 @@ const ContactUs = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             
-            {/* Sales Contact */}
+            {/* Sales Inquiries */}
             <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
               <div className="flex items-center mb-4">
                 <Phone className="h-6 w-6 text-primary mr-3" />
-                <h3 className="text-xl font-semibold">Sales Contact</h3>
+                <h3 className="text-xl font-semibold">Sales Inquiries</h3>
               </div>
               <div className="space-y-2">
                 <p className="font-medium">Zach</p>
