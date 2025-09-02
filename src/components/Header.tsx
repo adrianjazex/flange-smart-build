@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Mail } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -71,6 +73,15 @@ const Header = () => {
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
                 Order Now
+              </button>
+              <button 
+                onClick={() => {
+                  navigate('/contact-us');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Contact Us
               </button>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
