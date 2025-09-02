@@ -14,7 +14,7 @@ interface ProductSelection {
 
 const PRODUCT_TYPES = [
   "Tile Insert Kit with Push In Rubber Ring Seal",
-  "Under Over Flange Kit",
+  "Under Over Flange Kit with Rubber Ring Seal",
   "Adjustable Solvent Weld Sleeve"
 ];
 
