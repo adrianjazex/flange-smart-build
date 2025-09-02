@@ -41,19 +41,6 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
-            <div className="mb-6">
-              <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4 leading-tight">
-                <span className="text-accent">UNDER OVER</span><sup className="text-accent text-2xl lg:text-3xl font-bold ml-1 animate-pulse">™</sup><br />
-                <span className="text-white">PUDDLE FLANGE</span>
-              </h1>
-              <p className="text-2xl lg:text-3xl font-serif italic text-primary-foreground/90 leading-relaxed">
-                the smarter way to waterproof
-              </p>
-            </div>
-            
-            <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
-              no ponding no restriction.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button 
@@ -91,17 +78,6 @@ const HeroSection = () => {
                   <div className="text-primary-foreground">Processing image...</div>
                 </div>
               )}
-            </div>
-            
-            {/* Floating Feature Cards */}
-            <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-4 shadow-steel border border-border">
-              <div className="text-sm font-semibold text-foreground">Primary Install</div>
-              <div className="text-xs text-muted-foreground">Membrane Integration</div>
-            </div>
-            
-            <div className="absolute -top-6 -right-6 bg-accent rounded-xl p-4 shadow-steel text-accent-foreground">
-              <div className="text-sm font-semibold">Secondary Lock</div>
-              <div className="text-xs opacity-90">Over Screed</div>
             </div>
           </div>
         </div>
