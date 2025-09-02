@@ -1,12 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Mail } from "lucide-react";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
     setIsMenuOpen(false);
   };
 
@@ -15,9 +22,9 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-bold text-2xl text-primary">
+          <Link to="/" className="font-bold text-2xl text-primary hover:text-primary/80 transition-colors">
             JAZEX
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -28,7 +35,7 @@ const Header = () => {
               Products
             </button>
             <button 
-              onClick={() => scrollToSection('stockists')}
+              onClick={() => handleNavigation('/stockists')}
               className="text-foreground hover:text-primary font-medium transition-colors"
             >
               Stockists
@@ -83,7 +90,7 @@ const Header = () => {
                 Products
               </button>
               <button 
-                onClick={() => scrollToSection('stockists')}
+                onClick={() => handleNavigation('/stockists')}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
                 Stockists
