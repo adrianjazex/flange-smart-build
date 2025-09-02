@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-2xl mb-4">JAZEX</h3>
             <p className="text-primary-foreground/80 mb-4 leading-relaxed">
-              Revolutionary dual-stage under over puddle flange systems for professional waterproofing solutions.
+              Revolutionary dual-stage under over tile insert kit systems with push in rubber ring seal for professional waterproofing solutions.
             </p>
             <p className="text-primary-foreground/80 text-sm">
               Trusted by tradesmen and DIY enthusiasts across Australia.

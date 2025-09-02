@@ -17,9 +17,9 @@ const HeroSection = () => {
           {/* Content */}
           <div>
             <div className="mb-6">
-              <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4 leading-tight">
+               <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4 leading-tight">
                 <span className="text-accent">UNDER OVER</span><sup className="text-accent text-2xl lg:text-3xl font-bold ml-1 animate-pulse">™</sup><br />
-                <span className="text-white">PUDDLE FLANGE</span>
+                <span className="text-white">TILE INSERT KIT</span>
               </h1>
               <p className="text-2xl lg:text-3xl font-serif italic text-primary-foreground/90 leading-relaxed">
                 the smarter way to waterproof
@@ -45,7 +45,7 @@ const HeroSection = () => {
             <div className="relative mt-4 max-w-md mx-auto">
               <img 
                 src="/lovable-uploads/f070d3f0-64d0-4f29-8cfc-7df8a95e0535.png" 
-                alt="JAZEX Under Over puddle flange product"
+                alt="JAZEX Under Over tile insert kit with push in rubber ring seal"
                 className="w-full h-auto object-contain"
               />
             </div>

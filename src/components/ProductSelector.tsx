@@ -13,9 +13,9 @@ interface ProductSelection {
 }
 
 const PRODUCT_TYPES = [
-  "Puddle Flanges",
-  "Puddle Flange with Tail/Suit Kit with O-ring",
-  "Puddle Flange with Solvent Weld Adapter"
+  "Tile Insert Kit with Push In Rubber Ring Seal",
+  "Tile Insert Kit with Tail/Suit Kit with O-ring", 
+  "Tile Insert Kit with Solvent Weld Adapter"
 ];
 
 const SIZES = ["50mm", "80mm", "100mm"];
@@ -87,7 +87,7 @@ const ProductSelector = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-foreground mb-4">Configure Your Order</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Select your puddle flange specifications and we'll calculate shipping to your location
+            Select your tile insert kit specifications and we'll calculate shipping to your location
           </p>
         </div>
 
