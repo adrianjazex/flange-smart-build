@@ -15,7 +15,7 @@ interface ProductSelection {
 const PRODUCT_TYPES = [
   "Tile Insert Kit with Push In Rubber Ring Seal",
   "Under Over Flange Kit with Rubber Ring Seal",
-  "Adjustable Solvent Weld Sleeve"
+  "Adjustable Solvent Welded Sleeve"
 ];
 
 const SIZES = ["50mm", "80mm", "100mm"];
@@ -54,10 +54,15 @@ const ProductSelector = () => {
     return color === "Polished Stainless Steel" || color === "Matte Stainless Steel";
   };
 
-  const getUnitPrice = (color: string, totalCartQuantity: number) => {
-    const isStainless = isStainlessSteel(color);
-    const isBoxPricing = totalCartQuantity >= 18;
+  const getUnitPrice = (color: string, totalCartQuantity: number, productType: string = "") => {
+    const isBoxPricing = totalCartQuantity >= 20;
     
+    // Special pricing for Adjustable Solvent Welded Sleeve
+    if (productType === "Adjustable Solvent Welded Sleeve") {
+      return isBoxPricing ? 5.00 : 5.50; // AUD including GST
+    }
+    
+    const isStainless = isStainlessSteel(color);
     if (isStainless) {
       return isBoxPricing ? 80 : 110; // AUD including GST
     } else {
@@ -65,8 +70,8 @@ const ProductSelector = () => {
     }
   };
 
-  const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number) => {
-    return getUnitPrice(color, totalCartQuantity) * quantity;
+  const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number, productType: string = "") => {
+    return getUnitPrice(color, totalCartQuantity, productType) * quantity;
   };
 
   const handleAddToCart = () => {
@@ -133,13 +138,13 @@ const ProductSelector = () => {
                     <Plus className="h-4 w-4" />
                   </Button>
                 </div>
-                {cartTotal + selection.quantity >= 18 ? (
+                {cartTotal + selection.quantity >= 20 ? (
                   <p className="text-sm text-accent font-medium mt-2">
-                    Box pricing will apply! (18+ total units - mixed colours allowed)
+                    Box pricing will apply! (20+ total units - mixed colours allowed)
                   </p>
                 ) : (
                   <p className="text-sm text-muted-foreground mt-2">
-                    Box pricing applies! (18+ units)
+                    Box pricing applies! (20+ units)
                   </p>
                 )}
               </div>
@@ -188,25 +193,27 @@ const ProductSelector = () => {
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-foreground">Unit Price:</span>
                     <span className="text-lg font-bold text-primary">
-                      $AUD {getUnitPrice(selection.color, cartTotal + selection.quantity)}
+                      $AUD {getUnitPrice(selection.color, cartTotal + selection.quantity, selection.type)}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-semibold text-foreground">Total:</span>
                     <span className="text-xl font-bold text-accent">
-                      $AUD {getTotalPrice(selection.color, selection.quantity, cartTotal + selection.quantity)}
+                      $AUD {getTotalPrice(selection.color, selection.quantity, cartTotal + selection.quantity, selection.type)}
                     </span>
                   </div>
-                  {cartTotal + selection.quantity >= 18 ? (
+                  {cartTotal + selection.quantity >= 20 ? (
                     <p className="text-sm text-accent font-medium mt-2">
-                      Box pricing applied! (18+ total units - mixed colours allowed)
+                      Box pricing applied! (20+ total units - mixed colours allowed)
                     </p>
                   ) : (
                     <p className="text-sm text-muted-foreground mt-2">
-                      Box pricing available at 18+ total units (mixed colours allowed)<br/>
-                      {isStainlessSteel(selection.color) 
-                        ? "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit" 
-                        : "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit"}
+                      Box pricing available at 20+ total units (mixed colours allowed)<br/>
+                      {selection.type === "Adjustable Solvent Welded Sleeve" 
+                        ? "Sleeve: $AUD 5.00/unit | Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit"
+                        : isStainlessSteel(selection.color) 
+                          ? "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit" 
+                          : "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit"}
                     </p>
                   )}
                   <p className="text-xs text-muted-foreground mt-1">
@@ -259,10 +266,10 @@ const ProductSelector = () => {
                       </div>
                       <div className="flex justify-between items-center mt-3 pt-2 border-t border-border">
                         <span className="text-sm text-muted-foreground">
-                          $AUD {getUnitPrice(item.color, cartTotal)}/unit
+                          $AUD {getUnitPrice(item.color, cartTotal, item.type)}/unit
                         </span>
                         <span className="font-bold text-accent">
-                          $AUD {getTotalPrice(item.color, item.quantity, cartTotal)}
+                          $AUD {getTotalPrice(item.color, item.quantity, cartTotal, item.type)}
                         </span>
                       </div>
                     </div>
@@ -273,7 +280,7 @@ const ProductSelector = () => {
                       <span className="text-lg font-semibold text-foreground">Total Items:</span>
                       <span className="text-lg font-semibold text-foreground">{cartTotal}</span>
                     </div>
-                    {cartTotal >= 18 && (
+                    {cartTotal >= 20 && (
                       <div className="text-sm text-accent font-medium mb-2">
                         ✓ Box pricing applied (mixed colours allowed)
                       </div>
