@@ -50,6 +50,15 @@ const HeroSection = () => {
                 Installation Guide
               </Button>
             </div>
+
+            {/* Hero Product Image */}
+            <div className="relative mt-8 max-w-md mx-auto">
+              <img 
+                src="/lovable-uploads/f070d3f0-64d0-4f29-8cfc-7df8a95e0535.png" 
+                alt="JAZEX Under Over puddle flange product"
+                className="w-full h-auto object-contain"
+              />
+            </div>
           </div>
         </div>
 
