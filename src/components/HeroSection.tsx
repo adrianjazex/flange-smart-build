@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Wrench } from "lucide-react";
-const heroImageUrl = "/lovable-uploads/7256bfe4-20d9-462c-b04c-f044049ef1dc.png";
+const heroImageUrl = "/lovable-uploads/be95811f-b141-41c4-b923-7819106c9494.png";
 
 const HeroSection = () => {
   const scrollToProducts = () => {
@@ -46,7 +46,7 @@ const HeroSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-product bg-gradient-steel">
               <img 
                 src={heroImageUrl} 
-                alt="JAZEX Under Over dual-stage puddle flange system showing the innovative two-piece design"
+                alt="JAZEX Under Over puddle flange with innovative dual-stage design in clean white finish"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
