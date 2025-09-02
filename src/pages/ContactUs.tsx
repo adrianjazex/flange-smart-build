@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Phone, Mail, MapPin, Building } from "lucide-react";
+import { Phone, Mail, MapPin, Building, Clock } from "lucide-react";
 
 const ContactUs = () => {
   return (
@@ -75,6 +75,28 @@ const ContactUs = () => {
               <div className="space-y-2">
                 <p className="font-medium">Call John</p>
                 <p className="text-muted-foreground">0419 750 066</p>
+              </div>
+            </div>
+
+            {/* Business Hours */}
+            <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
+              <div className="flex items-center mb-4">
+                <Clock className="h-6 w-6 text-primary mr-3" />
+                <h3 className="text-xl font-semibold">Business Hours</h3>
+              </div>
+              <div className="space-y-2">
+                <div>
+                  <p className="font-medium">Monday - Friday</p>
+                  <p className="text-muted-foreground">7:00 AM - 4:00 PM</p>
+                </div>
+                <div>
+                  <p className="font-medium">Saturday</p>
+                  <p className="text-muted-foreground">Closed</p>
+                </div>
+                <div>
+                  <p className="font-medium">Sunday</p>
+                  <p className="text-muted-foreground">Closed</p>
+                </div>
               </div>
             </div>
           </div>
