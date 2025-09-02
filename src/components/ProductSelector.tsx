@@ -87,20 +87,20 @@ const ProductSelector = () => {
   };
 
   const handleAddToCart = () => {
-    const isSleeveProduct = selection.type === "Adjustable Solvent Welded Sleeve";
-    const hasRequiredFields = selection.type && selection.size && (selection.color || isSleeveProduct);
+    const isNonColorProduct = selection.type === "Adjustable Solvent Welded Sleeve" || selection.type === "Under Over Flange Kit with Rubber Ring Seal";
+    const hasRequiredFields = selection.type && selection.size && (selection.color || isNonColorProduct);
     
     if (hasRequiredFields) {
       addToCart({ 
         ...selection, 
-        color: isSleeveProduct ? "Standard" : selection.color 
+        color: isNonColorProduct ? "Standard" : selection.color 
       });
       setSelection(prev => ({ ...prev, quantity: 1 }));
     }
   };
 
-  const isSleeveProduct = selection.type === "Adjustable Solvent Welded Sleeve";
-  const isSelectionComplete = selection.type && selection.size && (selection.color || isSleeveProduct);
+  const isNonColorProduct = selection.type === "Adjustable Solvent Welded Sleeve" || selection.type === "Under Over Flange Kit with Rubber Ring Seal";
+  const isSelectionComplete = selection.type && selection.size && (selection.color || isNonColorProduct);
 
   return (
     <section className="py-4 bg-gradient-steel">
@@ -218,7 +218,7 @@ const ProductSelector = () => {
               </div>
 
               {/* Color - Only show for products that come in colors */}
-              {selection.type !== "Adjustable Solvent Welded Sleeve" && (
+              {selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal" && (
                 <div>
                   <label className="block text-sm font-semibold text-foreground mb-2">
                     Stainless Steel Tile Insert Colour Selection
@@ -239,7 +239,7 @@ const ProductSelector = () => {
               )}
 
               {/* Pricing Display */}
-              {(selection.color || selection.type === "Adjustable Solvent Welded Sleeve") && (
+              {(selection.color || selection.type === "Adjustable Solvent Welded Sleeve" || selection.type === "Under Over Flange Kit with Rubber Ring Seal") && (
                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-foreground">Unit Price:</span>
@@ -338,7 +338,7 @@ const ProductSelector = () => {
                       <div className="text-sm text-muted-foreground space-y-1">
                         <div>Quantity: {item.quantity}</div>
                         <div>Size: {item.size}</div>
-                        {item.type !== "Adjustable Solvent Welded Sleeve" && (
+                        {item.type !== "Adjustable Solvent Welded Sleeve" && item.type !== "Under Over Flange Kit with Rubber Ring Seal" && (
                           <div>Finish: {item.color}</div>
                         )}
                       </div>
