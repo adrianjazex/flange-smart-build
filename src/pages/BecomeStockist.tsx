@@ -103,7 +103,7 @@ const BecomeStockist = () => {
     {
       icon: <Shield className="h-8 w-8 text-accent" />,
       title: "Quality Guarantee",
-      description: "Backed by our reputation for quality and innovation in waterproofing solutions."
+      description: "Backed by our reputation for quality and innovation in wastewater solutions."
     }
   ];
 

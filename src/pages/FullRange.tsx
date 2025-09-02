@@ -14,12 +14,12 @@ const FullRange = () => {
     {
       name: "Tile Insert Kit with Push In Rubber Ring Seal",
       image: puddleFlangeHero,
-      description: "Our premium tile insert kit designed for superior waterproofing with a push-in rubber ring seal system.",
+      description: "Our premium tile insert kit designed for superior wastewater solutions with a push-in rubber ring seal system.",
       features: [
         "Push-in rubber ring seal technology",
         "Available in multiple stainless steel finishes",
         "Sizes: 50mm, 80mm, 100mm",
-        "Professional waterproofing solution"
+        "Professional wastewater solution"
       ],
       pricing: "From $80 AUD (Box pricing available)"
     },
@@ -60,7 +60,7 @@ const FullRange = () => {
               Full Range of Products
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover our complete collection of professional waterproofing solutions, 
+              Discover our complete collection of professional wastewater solutions, 
               designed to double your chances of keeping water out.
             </p>
           </div>
