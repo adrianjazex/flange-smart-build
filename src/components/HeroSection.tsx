@@ -41,6 +41,12 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+              Under Over Puddle Flange
+            </h1>
+            <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-8 font-light">
+              Revolutionary dual-stage waterproofing system
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button 
