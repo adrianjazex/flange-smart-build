@@ -75,13 +75,20 @@ const ProductSelector = () => {
   };
 
   const handleAddToCart = () => {
-    if (selection.type && selection.size && selection.color) {
-      addToCart({ ...selection });
+    const isSleeveProduct = selection.type === "Adjustable Solvent Welded Sleeve";
+    const hasRequiredFields = selection.type && selection.size && (selection.color || isSleeveProduct);
+    
+    if (hasRequiredFields) {
+      addToCart({ 
+        ...selection, 
+        color: isSleeveProduct ? "Standard" : selection.color 
+      });
       setSelection(prev => ({ ...prev, quantity: 1 }));
     }
   };
 
-  const isSelectionComplete = selection.type && selection.size && selection.color;
+  const isSleeveProduct = selection.type === "Adjustable Solvent Welded Sleeve";
+  const isSelectionComplete = selection.type && selection.size && (selection.color || isSleeveProduct);
 
   return (
     <section className="py-4 bg-gradient-steel">
@@ -168,38 +175,40 @@ const ProductSelector = () => {
                 </Select>
               </div>
 
-              {/* Color */}
-              <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">
-                  Stainless Steel Tile Insert Colour Selection
-                </label>
-                <Select onValueChange={(value) => updateSelection('color', value)} value={selection.color}>
-                  <SelectTrigger className="w-full bg-background border-2 border-border hover:border-primary transition-colors">
-                    <SelectValue placeholder="Select finish" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-background border-2 border-border z-50">
-                    {COLORS.map((color) => (
-                      <SelectItem key={color} value={color} className="hover:bg-muted">
-                        {color}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+              {/* Color - Only show for products that come in colors */}
+              {selection.type !== "Adjustable Solvent Welded Sleeve" && (
+                <div>
+                  <label className="block text-sm font-semibold text-foreground mb-2">
+                    Stainless Steel Tile Insert Colour Selection
+                  </label>
+                  <Select onValueChange={(value) => updateSelection('color', value)} value={selection.color}>
+                    <SelectTrigger className="w-full bg-background border-2 border-border hover:border-primary transition-colors">
+                      <SelectValue placeholder="Select finish" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background border-2 border-border z-50">
+                      {COLORS.map((color) => (
+                        <SelectItem key={color} value={color} className="hover:bg-muted">
+                          {color}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
 
               {/* Pricing Display */}
-              {selection.color && (
+              {(selection.color || selection.type === "Adjustable Solvent Welded Sleeve") && (
                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-foreground">Unit Price:</span>
                     <span className="text-lg font-bold text-primary">
-                      $AUD {getUnitPrice(selection.color, cartTotal + selection.quantity, selection.type)}
+                      $AUD {getUnitPrice(selection.color || "", cartTotal + selection.quantity, selection.type)}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-semibold text-foreground">Total:</span>
                     <span className="text-xl font-bold text-accent">
-                      $AUD {getTotalPrice(selection.color, selection.quantity, cartTotal + selection.quantity, selection.type)}
+                      $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + selection.quantity, selection.type)}
                     </span>
                   </div>
                   {cartTotal + selection.quantity >= 20 ? (
@@ -211,7 +220,7 @@ const ProductSelector = () => {
                       Box pricing available at 20+ total units (mixed colours allowed)<br/>
                       {selection.type === "Adjustable Solvent Welded Sleeve" 
                         ? "Sleeve: $AUD 5.00/unit | Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit"
-                        : isStainlessSteel(selection.color) 
+                        : isStainlessSteel(selection.color || "") 
                           ? "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit" 
                           : "Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit"}
                     </p>
