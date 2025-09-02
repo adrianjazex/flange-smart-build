@@ -40,9 +40,9 @@ const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantit
     return sleeveBoxPricing ? 5.00 : 5.50; // AUD including GST
   }
   
-  // Special pricing for Under Over Flange Kit
+  // Special pricing for Under Over Flange Kit (ABS parts only)
   if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
-    const flangeBoxPricing = stainlessQuantity >= 20;
+    const flangeBoxPricing = totalCartQuantity >= 20;
     return flangeBoxPricing ? 20.00 : 25.00; // AUD including GST
   }
   
@@ -80,7 +80,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const cartTotal = cart.reduce((total, item) => total + item.quantity, 0);
   const stainlessTotal = cart
-    .filter(item => item.type !== "Adjustable Solvent Welded Sleeve")
+    .filter(item => item.type !== "Adjustable Solvent Welded Sleeve" && item.type !== "Under Over Flange Kit with Rubber Ring Seal")
     .reduce((total, item) => total + item.quantity, 0);
   const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity, cartTotal, stainlessTotal, item.type), 0);
 
