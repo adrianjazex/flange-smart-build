@@ -21,9 +21,6 @@ const HeroSection = () => {
                 <span className="text-accent">UNDER OVER</span><sup className="text-accent text-2xl lg:text-3xl font-bold ml-1 animate-pulse">™</sup><br />
                 <span className="text-white">TILE INSERT KIT</span>
               </h1>
-              <p className="text-2xl lg:text-3xl font-serif italic text-primary-foreground/90 leading-relaxed">
-                the smarter way to waterproof
-              </p>
             </div>
             
             <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
