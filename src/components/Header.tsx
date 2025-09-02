@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Phone, Mail } from "lucide-react";
+import { Menu, Phone, Mail, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "@/contexts/CartContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { cartTotal, recentlyAdded } = useCart();
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -51,17 +53,49 @@ const Header = () => {
             >
               Get Quote
             </Button>
+            
+            {/* Shopping Cart */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => scrollToSection('order')}
+              className={`relative p-2 ${recentlyAdded ? 'animate-bounce' : ''}`}
+            >
+              <ShoppingCart className="h-6 w-6" />
+              {cartTotal > 0 && (
+                <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
+                  {cartTotal}
+                </span>
+              )}
+            </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <Menu className="h-6 w-6" />
-          </Button>
+          {/* Mobile Actions */}
+          <div className="flex items-center space-x-2 md:hidden">
+            {/* Shopping Cart */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => scrollToSection('order')}
+              className={`relative p-2 ${recentlyAdded ? 'animate-bounce' : ''}`}
+            >
+              <ShoppingCart className="h-6 w-6" />
+              {cartTotal > 0 && (
+                <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
+                  {cartTotal}
+                </span>
+              )}
+            </Button>
+            
+            {/* Mobile Menu Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}

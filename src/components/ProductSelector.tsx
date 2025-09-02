@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShoppingCart, Plus, Minus } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 interface ProductSelection {
   type: string;
@@ -29,14 +30,14 @@ const COLORS = [
 ];
 
 const ProductSelector = () => {
+  const { cart, addToCart, cartTotal, cartValue } = useCart();
+  
   const [selection, setSelection] = useState<ProductSelection>({
     type: "",
     quantity: 1,
     size: "",
     color: ""
   });
-
-  const [cart, setCart] = useState<ProductSelection[]>([]);
 
   const updateSelection = (field: keyof ProductSelection, value: string | number) => {
     setSelection(prev => ({ ...prev, [field]: value }));
@@ -68,16 +69,14 @@ const ProductSelector = () => {
     return getUnitPrice(color, quantity) * quantity;
   };
 
-  const addToCart = () => {
+  const handleAddToCart = () => {
     if (selection.type && selection.size && selection.color) {
-      setCart(prev => [...prev, { ...selection }]);
+      addToCart({ ...selection });
       setSelection(prev => ({ ...prev, quantity: 1 }));
     }
   };
 
   const isSelectionComplete = selection.type && selection.size && selection.color;
-  const cartTotal = cart.reduce((total, item) => total + item.quantity, 0);
-  const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity), 0);
 
   return (
     <section className="py-4 bg-gradient-steel">
@@ -205,7 +204,7 @@ const ProductSelector = () => {
               )}
 
               <Button
-                onClick={addToCart}
+                onClick={handleAddToCart}
                 disabled={!isSelectionComplete}
                 className="w-full bg-gradient-primary hover:shadow-construction transition-all duration-300 text-lg py-6 font-semibold"
               >
