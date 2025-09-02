@@ -27,7 +27,7 @@ const HeroSection = () => {
             </div>
             
             <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
-              Minimise The chance of leaks for pocket change.
+              Significantly minimize the risk of leaks without breaking the bank.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
