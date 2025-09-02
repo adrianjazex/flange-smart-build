@@ -23,23 +23,72 @@ const WaterproofScreed = () => {
           {/* Main Content */}
           <div className="max-w-4xl mx-auto space-y-12">
             
-            {/* Under Screed Section */}
+            {/* Optimal Solution: Both Methods */}
+            <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-xl p-8 border border-primary/30 shadow-glow">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-3 bg-primary/20 rounded-full">
+                  <Shield className="h-6 w-6 text-primary" />
+                </div>
+                <h2 className="text-2xl font-semibold text-primary">The Optimal Solution: Under & Over Screed System</h2>
+              </div>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Double Protection System</h3>
+                    <p className="text-muted-foreground">
+                      The under/over puddle flange system provides the ultimate waterproofing solution. 
+                      In the event of a top over-screed membrane failure, the under-screed membrane still protects 
+                      your bathroom or balcony from leaking.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <Shield className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Advanced Drainage System</h3>
+                    <p className="text-muted-foreground">
+                      The under/over screed system allows drainage between the membranes if water penetrates into the screed. 
+                      This prevents water entrapment and provides continuous protection even if the primary membrane is compromised.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <Wrench className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold mb-2">Installation Benefits</h3>
+                    <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                      <li>Redundant protection - if one membrane fails, the other maintains waterproofing</li>
+                      <li>Drainage pathway between membranes prevents water accumulation</li>
+                      <li>Enhanced long-term reliability and peace of mind</li>
+                      <li>Suitable for high-risk areas like bathrooms and balconies</li>
+                      <li>Complies with and exceeds Australian Standards requirements</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Under Screed Component */}
             <div className="bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border shadow-elegant">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-primary/10 rounded-full">
                   <Shield className="h-6 w-6 text-primary" />
                 </div>
-                <h2 className="text-2xl font-semibold">Waterproofing Under Screed</h2>
+                <h2 className="text-2xl font-semibold">Under Screed Waterproofing</h2>
               </div>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">Recommended Method</h3>
+                    <h3 className="font-semibold mb-2">Primary Protection Layer</h3>
                     <p className="text-muted-foreground">
-                      Yes, waterproofing under screed is the preferred method for wet areas. 
-                      Apply the waterproof membrane directly to the substrate before laying the screed.
+                      The under-screed membrane forms the foundation of your waterproofing system, 
+                      applied directly to the substrate before laying the screed.
                     </p>
                   </div>
                 </div>
@@ -51,7 +100,7 @@ const WaterproofScreed = () => {
                     <ul className="list-disc list-inside text-muted-foreground space-y-1">
                       <li>Clean and prepare the substrate thoroughly</li>
                       <li>Apply primer if required</li>
-                      <li>Install waterproof membrane</li>
+                      <li>Install under-screed waterproof membrane</li>
                       <li>Allow proper curing time</li>
                       <li>Lay screed over the membrane</li>
                     </ul>
@@ -60,34 +109,35 @@ const WaterproofScreed = () => {
               </div>
             </div>
 
-            {/* Over Screed Section */}
+            {/* Over Screed Component */}
             <div className="bg-card/50 backdrop-blur-sm rounded-xl p-8 border border-border shadow-elegant">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-destructive/10 rounded-full">
-                  <AlertTriangle className="h-6 w-6 text-destructive" />
+                <div className="p-3 bg-accent/10 rounded-full">
+                  <CheckCircle className="h-6 w-6 text-accent" />
                 </div>
-                <h2 className="text-2xl font-semibold">Waterproofing Over Screed</h2>
+                <h2 className="text-2xl font-semibold">Over Screed Waterproofing</h2>
               </div>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <AlertTriangle className="h-5 w-5 text-orange-500 mt-1 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">Not Recommended</h3>
+                    <h3 className="font-semibold mb-2">Secondary Protection Layer</h3>
                     <p className="text-muted-foreground">
-                      Waterproofing over screed is generally not recommended as the primary waterproofing method. 
-                      If water penetrates the membrane, it can be trapped in the screed layer.
+                      When combined with under-screed waterproofing, the over-screed membrane provides 
+                      an additional barrier and is the recommended approach for maximum protection.
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-yellow-500 mt-1 flex-shrink-0" />
+                  <Shield className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold mb-2">Special Circumstances</h3>
+                    <h3 className="font-semibold mb-2">Enhanced System Benefits</h3>
                     <p className="text-muted-foreground">
-                      In renovation situations where screed cannot be removed, waterproofing over screed 
-                      may be the only option. Ensure proper substrate preparation and use appropriate products.
+                      As part of the dual-membrane system, the over-screed layer works in conjunction 
+                      with the under-screed membrane to provide unparalleled waterproofing performance 
+                      and built-in redundancy.
                     </p>
                   </div>
                 </div>
