@@ -1,18 +1,44 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Wrench } from "lucide-react";
-const heroImageUrl = "/lovable-uploads/be95811f-b141-41c4-b923-7819106c9494.png";
+import { ArrowDown, Shield, Wrench } from "lucide-react";
+import { useEffect, useState } from "react";
+import { removeBackground, loadImage } from "@/lib/backgroundRemoval";
+const heroImageUrl = "/lovable-uploads/565d8e6e-809d-4fef-ace8-934317f1cd0d.png";
 
 const HeroSection = () => {
+  const [processedImageUrl, setProcessedImageUrl] = useState<string>(heroImageUrl);
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const scrollToProducts = () => {
-    document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const processImage = async () => {
+      try {
+        setIsProcessing(true);
+        const response = await fetch(heroImageUrl);
+        const blob = await response.blob();
+        const img = await loadImage(blob);
+        const processedBlob = await removeBackground(img);
+        const processedUrl = URL.createObjectURL(processedBlob);
+        setProcessedImageUrl(processedUrl);
+      } catch (error) {
+        console.error('Failed to process image:', error);
+        // Keep original image if processing fails
+      } finally {
+        setIsProcessing(false);
+      }
+    };
+
+    processImage();
+  }, []);
+
   return (
-    <section className="relative min-h-[80vh] bg-gradient-hero flex items-center pt-16">
-      <div className="absolute inset-0 bg-black/20"></div>
+    <section className="relative min-h-[70vh] bg-gradient-hero flex items-center pt-12 pb-8">
+      <div className="absolute inset-0 bg-primary/20"></div>
       
-      <div className="container mx-auto px-4 relative z-10 mt-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-6 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
             <div className="mb-6">
@@ -38,18 +64,44 @@ const HeroSection = () => {
                 <Wrench className="mr-2 h-6 w-6" />
                 Order Now
               </Button>
+              
+              <Button 
+                onClick={() => document.getElementById('installation')?.scrollIntoView({ behavior: 'smooth' })}
+                variant="outline"
+                size="lg"
+                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold px-8 py-4 text-lg"
+              >
+                <Shield className="mr-2 h-6 w-6" />
+                Installation Guide
+              </Button>
             </div>
           </div>
 
           {/* Image */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-product bg-gradient-steel">
+            <div className="relative rounded-2xl overflow-hidden shadow-product">
               <img 
-                src={heroImageUrl} 
-                alt="JAZEX Under Over puddle flange with innovative dual-stage design in clean white finish"
+                src={processedImageUrl} 
+                alt="JAZEX Under Over puddle flange showing the two-piece design with ribbed top plate and cylindrical base"
                 className="w-full h-auto object-cover"
+                style={{ background: 'transparent' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              {isProcessing && (
+                <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
+                  <div className="text-primary-foreground">Processing image...</div>
+                </div>
+              )}
+            </div>
+            
+            {/* Floating Feature Cards */}
+            <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-4 shadow-steel border border-border">
+              <div className="text-sm font-semibold text-foreground">Primary Install</div>
+              <div className="text-xs text-muted-foreground">Membrane Integration</div>
+            </div>
+            
+            <div className="absolute -top-6 -right-6 bg-accent rounded-xl p-4 shadow-steel text-accent-foreground">
+              <div className="text-sm font-semibold">Secondary Lock</div>
+              <div className="text-xs opacity-90">Over Screed</div>
             </div>
           </div>
         </div>

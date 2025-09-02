@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Phone, Mail, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import StockistMap from "./StockistMap";
 
 const StockistsSection = () => {
   const stockists = [
@@ -11,7 +12,10 @@ const StockistsSection = () => {
       address: "123 Trade Street, Silverwater NSW 2128",
       phone: "02 9999 8888",
       email: "orders@premiumplumbing.com.au",
-      website: "www.premiumplumbing.com.au"
+      website: "www.premiumplumbing.com.au",
+      coordinates: [151.0734, -33.8485] as [number, number],
+      postcode: "2128",
+      suburb: "Silverwater"
     },
     {
       name: "Trade Direct Building Supplies",
@@ -19,7 +23,10 @@ const StockistsSection = () => {
       address: "456 Industrial Way, Clayton VIC 3168",
       phone: "03 8888 7777",
       email: "sales@tradedirect.com.au",
-      website: "www.tradedirect.com.au"
+      website: "www.tradedirect.com.au",
+      coordinates: [145.1252, -37.9249] as [number, number],
+      postcode: "3168",
+      suburb: "Clayton"
     },
     {
       name: "Construction Pro Supplies",
@@ -27,7 +34,10 @@ const StockistsSection = () => {
       address: "789 Builder Boulevard, Eagle Farm QLD 4009",
       phone: "07 7777 6666",
       email: "info@constructionpro.com.au",
-      website: "www.constructionpro.com.au"
+      website: "www.constructionpro.com.au",
+      coordinates: [153.0819, -27.4103] as [number, number],
+      postcode: "4009",
+      suburb: "Eagle Farm"
     },
     {
       name: "Perth Trade Depot",
@@ -35,7 +45,10 @@ const StockistsSection = () => {
       address: "321 Commercial Drive, Welshpool WA 6106",
       phone: "08 6666 5555",
       email: "orders@perthtrade.com.au",
-      website: "www.perthtrade.com.au"
+      website: "www.perthtrade.com.au",
+      coordinates: [115.9594, -31.9761] as [number, number],
+      postcode: "6106",
+      suburb: "Welshpool"
     },
     {
       name: "Adelaide Building Solutions",
@@ -43,7 +56,10 @@ const StockistsSection = () => {
       address: "654 Industry Road, Hindmarsh SA 5007",
       phone: "08 5555 4444",
       email: "sales@adelaidesolutions.com.au",
-      website: "www.adelaidesolutions.com.au"
+      website: "www.adelaidesolutions.com.au",
+      coordinates: [138.5671, -34.9119] as [number, number],
+      postcode: "5007",
+      suburb: "Hindmarsh"
     },
     {
       name: "Hobart Hardware & Trade",
@@ -51,7 +67,10 @@ const StockistsSection = () => {
       address: "987 Warehouse Lane, Moonah TAS 7009",
       phone: "03 4444 3333",
       email: "trade@hobarthardware.com.au",
-      website: "www.hobarthardware.com.au"
+      website: "www.hobarthardware.com.au",
+      coordinates: [147.2869, -42.8563] as [number, number],
+      postcode: "7009",
+      suburb: "Moonah"
     }
   ];
 
@@ -72,6 +91,14 @@ const StockistsSection = () => {
               Become a Stockist
             </Button>
           </Link>
+        </div>
+
+        {/* Interactive Map */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8">
+            Find Stockists on <span className="text-accent">Map</span>
+          </h3>
+          <StockistMap stockists={stockists} />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
