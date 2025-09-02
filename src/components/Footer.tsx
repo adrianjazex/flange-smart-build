@@ -9,7 +9,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-2xl mb-4">JAZEX</h3>
             <p className="text-primary-foreground/80 mb-4 leading-relaxed">
-              Reduce potential leaks with double independent waterproofing membrane systems only with Under Over puddle flanges. No trapping water in screeds.
+              Enhance leak prevention by implementing dual independent waterproofing membrane systems, complemented by Under Over puddle flanges. This design eliminates water trapping in screeds, ensuring superior protection and longevity.
             </p>
             <p className="text-primary-foreground/80 text-sm">
               Trusted by tradesmen and DIY enthusiasts across Australia.
