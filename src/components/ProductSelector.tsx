@@ -80,7 +80,7 @@ const ProductSelector = () => {
   const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity), 0);
 
   return (
-    <section className="py-16 bg-gradient-steel">
+    <section className="py-4 bg-gradient-steel">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Product Configuration */}
