@@ -51,17 +51,6 @@ const HeroSection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
-            
-            {/* Floating Feature Cards */}
-            <div className="absolute -bottom-6 -left-6 bg-background rounded-xl p-4 shadow-steel border border-border">
-              <div className="text-sm font-semibold text-foreground">Primary Install</div>
-              <div className="text-xs text-muted-foreground">Membrane Integration</div>
-            </div>
-            
-            <div className="absolute -top-6 -right-6 bg-accent rounded-xl p-4 shadow-steel text-accent-foreground">
-              <div className="text-sm font-semibold">Secondary Lock</div>
-              <div className="text-xs opacity-90">Over Screed</div>
-            </div>
           </div>
         </div>
 
