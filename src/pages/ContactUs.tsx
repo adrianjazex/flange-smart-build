@@ -146,7 +146,7 @@ const ContactUs = () => {
                 <p>1/8 Tectonic Cres</p>
                 <p>Kunda Park QLD 4556</p>
                 <p>Australia</p>
-                <p className="text-sm font-medium text-primary mt-2">By appointment only for commercial quantities</p>
+                <p className="text-sm font-medium text-primary mt-2">All visitors by appointment only</p>
               </div>
             </div>
           </div>
