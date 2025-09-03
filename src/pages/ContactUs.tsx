@@ -62,22 +62,6 @@ const ContactUs = () => {
               </div>
             </div>
 
-            {/* Email */}
-            <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
-              <div className="flex items-center mb-4">
-                <Mail className="h-6 w-6 text-primary mr-3" />
-                <h3 className="text-xl font-semibold">Email</h3>
-              </div>
-              <div className="space-y-2">
-                <a 
-                  href="mailto:sales@jazex.com.au" 
-                  className="text-primary hover:underline"
-                >
-                  sales@jazex.com.au
-                </a>
-              </div>
-            </div>
-
             {/* Become a Stockist */}
             <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
               <div className="flex items-center mb-4">
@@ -92,6 +76,22 @@ const ContactUs = () => {
                   className="text-primary hover:underline block"
                 >
                   john@jazex.com.au
+                </a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
+              <div className="flex items-center mb-4">
+                <Mail className="h-6 w-6 text-primary mr-3" />
+                <h3 className="text-xl font-semibold">Email</h3>
+              </div>
+              <div className="space-y-2">
+                <a 
+                  href="mailto:sales@jazex.com.au" 
+                  className="text-primary hover:underline"
+                >
+                  sales@jazex.com.au
                 </a>
               </div>
             </div>
