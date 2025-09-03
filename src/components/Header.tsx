@@ -19,11 +19,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-3 font-bold text-2xl">
+          <div className="flex items-end space-x-3 font-bold text-2xl">
             <img 
               src="/lovable-uploads/90858696-1d7b-4d95-9b61-a8f32ad5b9da.png" 
               alt="Jazex Logo"
-              className="h-8 w-8"
+              className="h-12 w-12 object-contain"
+              style={{ filter: 'drop-shadow(0 0 0 transparent)' }}
             />
             <div>
               <span className="text-black">JAZ</span>
