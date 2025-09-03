@@ -8,7 +8,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
-      <div id="order" className="-mt-8">
+      <div id="order" className="-mt-16">
         <ProductSelector />
       </div>
       <Footer />

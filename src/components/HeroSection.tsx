@@ -9,10 +9,10 @@ const HeroSection = () => {
 
 
   return (
-    <section className="relative min-h-[85vh] bg-gradient-hero flex items-end justify-center pt-24 pb-16">
+    <section className="relative min-h-[85vh] bg-gradient-hero flex items-end justify-center pt-24 pb-4">
       <div className="absolute inset-0 bg-primary/20"></div>
       
-      <div className="container mx-auto px-4 relative z-10 mb-4">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Content */}
           <div>
