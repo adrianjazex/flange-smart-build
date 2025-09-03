@@ -185,20 +185,7 @@ const Header = () => {
               >
                 Contact Us
               </button>
-              <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                  <Phone className="h-4 w-4" />
-                  <div className="flex flex-col">
-                    <span>Zach: 0411 430 652</span>
-                    <span>Adrian: 0413 428 228</span>
-                    <span>John: 0419 750 066</span>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                  <Mail className="h-4 w-4" />
-                  <span>sales@jazex.com.au</span>
-                </div>
-              </div>
+              
             </nav>
           </div>
         )}
