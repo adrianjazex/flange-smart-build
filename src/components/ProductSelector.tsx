@@ -326,7 +326,7 @@ const ProductSelector = () => {
           </Card>
 
           {/* Shopping Cart */}
-          <Card className="shadow-construction">
+          <Card className="shadow-construction" id="shopping-cart">
             <CardHeader>
               <CardTitle className="text-2xl text-primary flex items-center">
                 <ShoppingCart className="mr-2 h-6 w-6" />

@@ -38,7 +38,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => scrollToSection('order')}
+              onClick={() => scrollToSection('shopping-cart')}
               className={`relative p-2 ${recentlyAdded ? 'animate-bounce' : ''}`}
             >
               <ShoppingCart className="h-6 w-6" />
@@ -66,7 +66,7 @@ const Header = () => {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => scrollToSection('order')}
+              onClick={() => scrollToSection('shopping-cart')}
               className={`relative p-2 ${recentlyAdded ? 'animate-bounce' : ''}`}
             >
               <ShoppingCart className="h-6 w-6" />
