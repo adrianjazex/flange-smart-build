@@ -4,8 +4,24 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { CheckCircle, AlertTriangle, Wrench, Download } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const InstallationInstructions = () => {
+  const [searchParams] = useSearchParams();
+  const installationType = searchParams.get('type');
+
+  useEffect(() => {
+    if (installationType === 'solvent-weld') {
+      // Delay scroll to ensure the page has loaded
+      setTimeout(() => {
+        document.getElementById('solvent-weld-section')?.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 100);
+    }
+  }, [installationType]);
   const puddleFlangeSteps = [
     {
       step: 1,
@@ -154,7 +170,7 @@ const InstallationInstructions = () => {
             </Card>
 
             {/* Solvent Welded Installation Option */}
-            <Card>
+            <Card id="solvent-weld-section">
               <CardHeader>
                 <CardTitle className="text-primary text-2xl">
                   SOLVENT WELDED INSTALLATION OPTION
