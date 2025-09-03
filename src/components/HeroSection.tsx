@@ -27,7 +27,7 @@ const HeroSection = () => {
               Significantly minimize the risk of leaks.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 mb-2 justify-center">
               <Button 
                 onClick={scrollToProducts}
                 size="lg"
