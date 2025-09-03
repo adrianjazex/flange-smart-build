@@ -12,7 +12,7 @@ const HeroSection = () => {
     <section className="relative min-h-[85vh] bg-gradient-hero flex items-end justify-center pt-24 pb-16">
       <div className="absolute inset-0 bg-primary/20"></div>
       
-      <div className="container mx-auto px-4 relative z-10 mb-16">
+      <div className="container mx-auto px-4 relative z-10 mb-4">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Content */}
           <div>
@@ -38,7 +38,7 @@ const HeroSection = () => {
             </div>
 
             {/* Hero Product Image */}
-            <div className="relative mt-2 max-w-md mx-auto">
+            <div className="relative max-w-md mx-auto">
               <img 
                 src="/lovable-uploads/f070d3f0-64d0-4f29-8cfc-7df8a95e0535.png" 
                 alt="JAZEX Under Over tile insert kit with push in rubber ring seal"
