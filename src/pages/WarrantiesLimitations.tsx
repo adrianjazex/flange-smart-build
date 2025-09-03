@@ -29,8 +29,7 @@ const WarrantiesLimitations = () => {
     "Professional installation recommended for warranty validation",
     "Proof of purchase required for all warranty claims",
     "Products must be used for intended applications only",
-    "Regular maintenance and inspections as recommended",
-    "Warranty registration within 30 days of installation recommended"
+    "Regular maintenance and inspections as recommended"
   ];
 
   const coveredDefects = [
