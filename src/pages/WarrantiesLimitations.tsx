@@ -37,8 +37,7 @@ const WarrantiesLimitations = () => {
     "Premature seal failure under normal use",
     "Structural integrity issues",
     "Corrosion resistance failure (stainless steel products)",
-    "Dimensional inaccuracies affecting function",
-    "Joint integrity failure (when properly installed)"
+    "Dimensional inaccuracies affecting function"
   ];
 
   const limitations = [
