@@ -25,9 +25,9 @@ const Header = () => {
               alt="Jazex Logo"
               className="h-8 w-8"
             />
-            <div>
-              <span className="text-black">JAZ</span>
-              <span className="text-teal-500">EX</span>
+            <div className="flex flex-col">
+              <span className="text-teal-500 text-lg font-bold leading-tight">under over</span>
+              <span className="text-white text-lg font-bold leading-tight">puddle flange</span>
             </div>
           </div>
 
