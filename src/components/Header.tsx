@@ -90,7 +90,7 @@ const Header = () => {
 
         {/* Menu */}
         {isMenuOpen && (
-          <div className="py-4 border-t border-border bg-background">
+          <div className="py-4 border-t border-border bg-background backdrop-blur-sm">
             <nav className="flex flex-col space-y-4">
               <button 
                 onClick={() => {
