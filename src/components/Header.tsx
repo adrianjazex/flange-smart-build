@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Phone, Mail, ShoppingCart } from "lucide-react";
+import { Menu, Phone, Mail, ShoppingCart, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isInstallationDropdownOpen, setIsInstallationDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const { cartTotal, recentlyAdded } = useCart();
 
@@ -124,15 +125,39 @@ const Header = () => {
               >
                 Can I waterproof under and over screed?
               </button>
-              <button 
-                onClick={() => {
-                  navigate('/installation-instructions');
-                  setIsMenuOpen(false);
-                }}
-                className="text-left text-foreground hover:text-primary font-medium transition-colors"
-              >
-                Installation Instructions
-              </button>
+              <div className="flex flex-col">
+                <button 
+                  onClick={() => setIsInstallationDropdownOpen(!isInstallationDropdownOpen)}
+                  className="flex items-center justify-between text-left text-foreground hover:text-primary font-medium transition-colors"
+                >
+                  Installation Instructions
+                  <ChevronDown className={`h-4 w-4 transition-transform ${isInstallationDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isInstallationDropdownOpen && (
+                  <div className="ml-4 mt-2 flex flex-col space-y-2">
+                    <button 
+                      onClick={() => {
+                        navigate('/installation-instructions?type=rubber-ring');
+                        setIsMenuOpen(false);
+                        setIsInstallationDropdownOpen(false);
+                      }}
+                      className="text-left text-foreground hover:text-primary font-medium transition-colors py-1 text-sm"
+                    >
+                      Rubber ring seal installation
+                    </button>
+                    <button 
+                      onClick={() => {
+                        navigate('/installation-instructions?type=solvent-weld');
+                        setIsMenuOpen(false);
+                        setIsInstallationDropdownOpen(false);
+                      }}
+                      className="text-left text-foreground hover:text-primary font-medium transition-colors py-1 text-sm"
+                    >
+                      Adjustable solvent weld sleeve
+                    </button>
+                  </div>
+                )}
+              </div>
               <button 
                 onClick={() => {
                   navigate('/warranties-limitations');
