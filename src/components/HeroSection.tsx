@@ -27,7 +27,7 @@ const HeroSection = () => {
               Significantly minimize the risk of leaks.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6 justify-center">
               <Button 
                 onClick={scrollToProducts}
                 size="lg"
@@ -38,7 +38,7 @@ const HeroSection = () => {
             </div>
 
             {/* Hero Product Image */}
-            <div className="relative mt-4 max-w-md mx-auto">
+            <div className="relative mt-2 max-w-md mx-auto">
               <img 
                 src="/lovable-uploads/f070d3f0-64d0-4f29-8cfc-7df8a95e0535.png" 
                 alt="JAZEX Under Over tile insert kit with push in rubber ring seal"
