@@ -35,6 +35,12 @@ const ContactUs = () => {
               <div className="space-y-2">
                 <p className="font-medium">Zach</p>
                 <p className="text-muted-foreground">0411 430 652</p>
+                <a 
+                  href="mailto:zach@jazex.com.au" 
+                  className="text-primary hover:underline block"
+                >
+                  zach@jazex.com.au
+                </a>
               </div>
             </div>
 
@@ -47,6 +53,12 @@ const ContactUs = () => {
               <div className="space-y-2">
                 <p className="font-medium">Adrian</p>
                 <p className="text-muted-foreground">0413 428 228</p>
+                <a 
+                  href="mailto:adrian@jazex.com.au" 
+                  className="text-primary hover:underline block"
+                >
+                  adrian@jazex.com.au
+                </a>
               </div>
             </div>
 
@@ -75,6 +87,12 @@ const ContactUs = () => {
               <div className="space-y-2">
                 <p className="font-medium">Call John</p>
                 <p className="text-muted-foreground">0419 750 066</p>
+                <a 
+                  href="mailto:john@jazex.com.au" 
+                  className="text-primary hover:underline block"
+                >
+                  john@jazex.com.au
+                </a>
               </div>
             </div>
 
