@@ -48,7 +48,8 @@ const WarrantiesLimitations = () => {
     "Damage from excessive force or impact",
     "Consequential or indirect damages",
     "Labor costs for removal and reinstallation",
-    "Damage from failure to follow maintenance recommendations"
+    "Damage from failure to follow maintenance recommendations",
+    "Tea staining or discoloration"
   ];
 
   const claimProcess = [
