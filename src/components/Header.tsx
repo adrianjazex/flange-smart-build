@@ -137,7 +137,7 @@ const Header = () => {
                   <div className="ml-4 mt-2 flex flex-col space-y-2">
                     <button 
                       onClick={() => {
-                        navigate('/installation-instructions?type=rubber-ring');
+                        navigate('/rubber-ring-installation');
                         setIsMenuOpen(false);
                         setIsInstallationDropdownOpen(false);
                       }}
@@ -147,7 +147,7 @@ const Header = () => {
                     </button>
                     <button 
                       onClick={() => {
-                        navigate('/installation-instructions?type=solvent-weld');
+                        navigate('/solvent-weld-installation');
                         setIsMenuOpen(false);
                         setIsInstallationDropdownOpen(false);
                       }}

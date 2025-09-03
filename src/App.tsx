@@ -11,6 +11,8 @@ import ContactUs from "./pages/ContactUs";
 import Stockists from "./pages/Stockists";
 import FullRange from "./pages/FullRange";
 import InstallationInstructions from "./pages/InstallationInstructions";
+import RubberRingSealInstallation from "./pages/RubberRingSealInstallation";
+import SolventWeldInstallation from "./pages/SolventWeldInstallation";
 import WarrantiesLimitations from "./pages/WarrantiesLimitations";
 import WaterproofScreed from "./pages/WaterproofScreed";
 
@@ -30,6 +32,8 @@ const App = () => (
             <Route path="/stockists" element={<Stockists />} />
             <Route path="/full-range" element={<FullRange />} />
             <Route path="/installation-instructions" element={<InstallationInstructions />} />
+            <Route path="/rubber-ring-installation" element={<RubberRingSealInstallation />} />
+            <Route path="/solvent-weld-installation" element={<SolventWeldInstallation />} />
             <Route path="/warranties-limitations" element={<WarrantiesLimitations />} />
             <Route path="/waterproof-screed" element={<WaterproofScreed />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
