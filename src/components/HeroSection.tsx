@@ -38,7 +38,7 @@ const HeroSection = () => {
             </div>
 
             {/* Hero Product Image */}
-            <div className="relative max-w-md mx-auto">
+            <div className="relative max-w-md mx-auto mb-3">
               <img 
                 src="/lovable-uploads/f070d3f0-64d0-4f29-8cfc-7df8a95e0535.png" 
                 alt="JAZEX Under Over tile insert kit with push in rubber ring seal"
