@@ -8,17 +8,17 @@ const WarrantiesLimitations = () => {
   const warrantyPeriods = [
     {
       product: "Tile Insert Kit with Push In Rubber Ring Seal",
-      period: "10 Years",
+      period: "1 Year",
       coverage: "Manufacturing defects, material failure, seal integrity"
     },
     {
       product: "Under Over Flange Kit with Rubber Ring Seal", 
-      period: "10 Years",
+      period: "1 Year",
       coverage: "Manufacturing defects, material failure, seal performance"
     },
     {
       product: "Adjustable Solvent Welded Sleeve",
-      period: "10 Years", 
+      period: "1 Year", 
       coverage: "Manufacturing defects, material failure, joint integrity"
     }
   ];
@@ -36,7 +36,7 @@ const WarrantiesLimitations = () => {
     "Manufacturing defects in materials",
     "Premature seal failure under normal use",
     "Structural integrity issues",
-    "Corrosion resistance failure (stainless steel products)",
+    "Corrosion resistance failure (316 stainless steel products)",
     "Dimensional inaccuracies affecting function"
   ];
 
@@ -49,7 +49,9 @@ const WarrantiesLimitations = () => {
     "Consequential or indirect damages",
     "Labor costs for removal and reinstallation",
     "Damage from failure to follow maintenance recommendations",
-    "Tea staining or discoloration"
+    "Tea staining or discoloration",
+    "Rust or corrosion of 316 stainless steel components (not warranted or guaranteed against rust)",
+    "Damage from use with anything other than normal foot traffic (all waste tops designed for normal foot traffic only)"
   ];
 
   const claimProcess = [
