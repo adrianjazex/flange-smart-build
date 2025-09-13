@@ -37,13 +37,18 @@ const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantit
   if (productType === "Adjustable Solvent Welded Sleeve") {
     // Sleeves get box pricing if total cart >= 20 OR if stainless quantity >= 20
     const sleeveBoxPricing = totalCartQuantity >= 20 || stainlessQuantity >= 20;
-    return sleeveBoxPricing ? 5.00 : 5.50; // AUD including GST
+    return sleeveBoxPricing ? 6.00 : 6.60; // AUD including GST
   }
   
-  // Special pricing for Under Over Flange Kit (ABS parts only)
+  // Special pricing for Under Over Flange Kit
   if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
     const flangeBoxPricing = totalCartQuantity >= 20;
-    return flangeBoxPricing ? 20.00 : 25.00; // AUD including GST
+    // Different pricing for polished stainless steel vs other colors
+    if (color === "Polished Stainless Steel") {
+      return flangeBoxPricing ? 90.00 : 100.00; // AUD including GST
+    } else {
+      return flangeBoxPricing ? 117.00 : 130.00; // AUD including GST
+    }
   }
   
   // Stainless steel parts only get box pricing if stainless quantity >= 20
