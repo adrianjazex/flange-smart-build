@@ -205,16 +205,11 @@ const InstallationInstructions = () => {
             <CardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">Professional Support</h4>
+                  <h4 className="font-semibold text-foreground mb-2">Professional Installation</h4>
                   <p className="text-muted-foreground mb-4">
-                    Need installation assistance? Our technical team is available to provide guidance and support.
+                    Professional installation is recommended for critical applications. Please ensure all 
+                    installations comply with local building codes and standards.
                   </p>
-                  <div className="space-y-2 text-sm">
-                    <div>Zach: 0411 430 652</div>
-                    <div>Adrian: 0413 428 228</div>
-                    <div>John: 0419 750 066</div>
-                    <div>Email: sales@jazex.com.au</div>
-                  </div>
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">Compliance & Standards</h4>
