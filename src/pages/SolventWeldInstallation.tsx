@@ -64,21 +64,6 @@ const SolventWeldInstallation = () => {
             </p>
           </div>
 
-          {/* Important Notice */}
-          <Card className="mb-8 border-amber-200 dark:border-amber-800">
-            <CardHeader>
-              <CardTitle className="flex items-center text-amber-700 dark:text-amber-300">
-                <AlertTriangle className="mr-2 h-5 w-5" />
-                Important Notice
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-amber-700 dark:text-amber-300">
-              <p>
-                All installations must comply with Australian Standards AS 3740 (Waterproofing of domestic wet areas) 
-                and local building codes. Professional installation is recommended for critical applications.
-              </p>
-            </CardContent>
-          </Card>
 
           {/* Installation Guide */}
           <Card>
