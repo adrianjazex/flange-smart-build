@@ -300,7 +300,7 @@ const ProductSelector = () => {
                           if (selection.type === "Adjustable Solvent Welded Sleeve") {
                             return "Box pricing available with 20+ total units or 20+ stainless parts<br/>ABS Sleeve: $AUD 5.00/unit with box pricing";
                           } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                            return "Box pricing available at 20+ total units<br/>ABS Flange Kit: $AUD 20.00/unit with box pricing";
+                            return "Box pricing available at 20+ total units<br/>ABS Puddle Flange Kit: $AUD 20.00/unit with box pricing";
                           } else {
                             return "Box pricing available at 20+ stainless parts (mixed colours allowed)<br/>Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit";
                           }

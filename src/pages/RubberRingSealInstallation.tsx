@@ -24,7 +24,7 @@ const RubberRingSealInstallation = () => {
     {
       step: 4,
       title: "Inspect the Rubber Ring Seal",
-      details: "Visually check the rubber ring seal by looking down through the flange spigot to ensure it has not shifted during installation. When correctly installed, the rubber ring seal will lap around to the inside bottom of the spigot."
+      details: "Visually check the rubber ring seal by looking down through the puddle flange spigot to ensure it has not shifted during installation. When correctly installed, the rubber ring seal will lap around to the inside bottom of the spigot."
     },
     {
       step: 5,
@@ -39,7 +39,7 @@ const RubberRingSealInstallation = () => {
     {
       step: 7,
       title: "Apply Tiler's Screed",
-      details: "Apply screed over the secondary puddle flange, fully encasing the bedding tabs. Ensure the screed terminates in line with the outside perimeter of the secondary puddle flange. Clean the top of the flange so it is ready for the next waterproofing layer. Inspect the inside of the spigot for screed overflow. Remove any material that may have entered the drainage flutes between the primary and secondary puddle flanges, as this could create a risk of capillary water ingress."
+      details: "Apply screed over the secondary puddle flange, fully encasing the bedding tabs. Ensure the screed terminates in line with the outside perimeter of the secondary puddle flange. Clean the top of the puddle flange so it is ready for the next waterproofing layer. Inspect the inside of the spigot for screed overflow. Remove any material that may have entered the drainage flutes between the primary and secondary puddle flanges, as this could create a risk of capillary water ingress."
     },
     {
       step: 8,

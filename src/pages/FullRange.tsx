@@ -26,7 +26,7 @@ const FullRange = () => {
     {
       name: "Under Over Flange Kit with Rubber Ring Seal",
       image: productRange,
-      description: "Comprehensive flange kit solution for under and over tile applications with integrated rubber ring seal.",
+      description: "Comprehensive puddle flange kit solution for under and over tile applications with integrated rubber ring seal.",
       features: [
         "Dual under/over installation capability",
         "Integrated rubber ring seal",

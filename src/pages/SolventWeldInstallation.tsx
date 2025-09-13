@@ -19,12 +19,12 @@ const SolventWeldInstallation = () => {
     {
       step: 3,
       title: "Set the Adjustable Sleeve Angle",
-      details: "Align the single notch on the adjustable sleeve with the single notch on the bottom of the primary puddle flange spigot (for straight DWV waste pipes). Rotate the primary puddle flange and sleeve in opposite directions until the flange matches the angle of the DWV (waste pipe). Adjustment range is reached when the two notches on the sleeve align."
+      details: "Align the single notch on the adjustable sleeve with the single notch on the bottom of the primary puddle flange spigot (for straight DWV waste pipes). Rotate the primary puddle flange and sleeve in opposite directions until the puddle flange matches the angle of the DWV (waste pipe). Adjustment range is reached when the two notches on the sleeve align."
     },
     {
       step: 4,
       title: "Solvent Weld the Sleeve",
-      details: "Mark the final alignment before welding. Use Type N PVC pipe cement only (do not use primer on ABS parts). Apply joint sealant generously to the underside of the primary puddle flange to create a continuous, void-free bead. Ensure enough is applied to seal the DWV (waste pipe) to the floor junction, allowing excess to be tooled off. Apply PVC cement primer only on DWV PVC waste pipe (not on ABS parts). Apply Type N PVC pipe cement to the external surface of the adjustable spigot and the internal surface of the DWV (waste pipe). Insert the flange into the pipe until excess joint sealant is expelled. Confirm that the primary puddle flange is flush with or slightly below the floor surface. Tool off excess joint sealant around the perimeter of the puddle flange."
+      details: "Mark the final alignment before welding. Use Type N PVC pipe cement only (do not use primer on ABS parts). Apply joint sealant generously to the underside of the primary puddle flange to create a continuous, void-free bead. Ensure enough is applied to seal the DWV (waste pipe) to the floor junction, allowing excess to be tooled off. Apply PVC cement primer only on DWV PVC waste pipe (not on ABS parts). Apply Type N PVC pipe cement to the external surface of the adjustable spigot and the internal surface of the DWV (waste pipe). Insert the puddle flange into the pipe until excess joint sealant is expelled. Confirm that the primary puddle flange is flush with or slightly below the floor surface. Tool off excess joint sealant around the perimeter of the puddle flange."
     },
     {
       step: 5,
@@ -39,7 +39,7 @@ const SolventWeldInstallation = () => {
     {
       step: 7,
       title: "Apply Tiler's Screed",
-      details: "Apply screed over the secondary puddle flange, fully encasing the bedding tabs. Ensure the screed terminates in line with the outside perimeter of the secondary puddle flange. Clean the top of the flange so it is ready for the next waterproofing layer. Inspect the inside of the spigot for screed overflow. Remove any material that may have entered the drainage flutes between the primary and secondary puddle flanges, as this could create a risk of capillary water ingress."
+      details: "Apply screed over the secondary puddle flange, fully encasing the bedding tabs. Ensure the screed terminates in line with the outside perimeter of the secondary puddle flange. Clean the top of the puddle flange so it is ready for the next waterproofing layer. Inspect the inside of the spigot for screed overflow. Remove any material that may have entered the drainage flutes between the primary and secondary puddle flanges, as this could create a risk of capillary water ingress."
     },
     {
       step: 8,
