@@ -173,7 +173,7 @@ const ProductSelector = () => {
               {/* Quantity */}
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Quantity
+                  Single Units Quantity (Individual pieces)
                 </label>
                 <div className="flex items-center space-x-3">
                   <Button
@@ -196,12 +196,15 @@ const ProductSelector = () => {
                     <Plus className="h-4 w-4" />
                   </Button>
                 </div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Buy individual pieces (1-17 units)
+                </p>
               </div>
 
               {/* Box Quantity */}
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
-                  Box Quantity (18 pieces per box)
+                  Box Purchase (18 pieces per box)
                 </label>
                 <div className="flex items-center space-x-3">
                   <Button
@@ -224,6 +227,9 @@ const ProductSelector = () => {
                     <Plus className="h-4 w-4" />
                   </Button>
                 </div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Number of whole boxes to purchase
+                </p>
                 {selection.boxQuantity > 0 && (
                   <div className="mt-2">
                     <p className="text-sm text-accent font-medium">
