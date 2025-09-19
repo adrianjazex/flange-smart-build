@@ -118,7 +118,7 @@ const ProductSelector = () => {
           {/* Product Configuration */}
           <Card className="shadow-construction">
             <CardHeader>
-              <CardTitle className="text-2xl text-primary">Product Configuration</CardTitle>
+              <CardTitle className="text-2xl text-primary">Order</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Product Type */}
