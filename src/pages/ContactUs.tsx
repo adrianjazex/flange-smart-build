@@ -15,7 +15,7 @@ const ContactUs = () => {
               Contact <span className="text-primary">JAZEX</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Get in touch with our team for sales inquiries, technical support, or any questions about our puddle flange products.
+              Get in touch with our team for sales enquiries, technical support, or any questions about our puddle flange products.
             </p>
           </div>
         </div>
@@ -30,7 +30,7 @@ const ContactUs = () => {
             <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
               <div className="flex items-center mb-4">
                 <Phone className="h-6 w-6 text-primary mr-3" />
-                <h3 className="text-xl font-semibold">Sales Inquiries</h3>
+                <h3 className="text-xl font-semibold">Sales Enquiries</h3>
               </div>
               <div className="space-y-2">
                 <p className="font-medium">Zach</p>
