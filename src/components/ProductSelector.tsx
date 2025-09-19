@@ -11,6 +11,7 @@ import installationGuide from "@/assets/installation-guide.jpg";
 interface ProductSelection {
   type: string;
   quantity: number;
+  boxQuantity: number;
   size: string;
   color: string;
 }
@@ -48,6 +49,7 @@ const ProductSelector = () => {
   const [selection, setSelection] = useState<ProductSelection>({
     type: "",
     quantity: 1,
+    boxQuantity: 0,
     size: "",
     color: ""
   });
@@ -63,6 +65,13 @@ const ProductSelector = () => {
     }));
   };
 
+  const adjustBoxQuantity = (increment: boolean) => {
+    setSelection(prev => ({
+      ...prev,
+      boxQuantity: Math.max(0, prev.boxQuantity + (increment ? 1 : -1))
+    }));
+  };
+
   const isStainlessSteel = (color: string) => {
     return color === "Polished Stainless Steel" || color === "Matte Stainless Steel";
   };
@@ -70,19 +79,19 @@ const ProductSelector = () => {
   const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
     // Special pricing for Adjustable Solvent Welded Sleeve
     if (productType === "Adjustable Solvent Welded Sleeve") {
-      // Sleeves get box pricing if total cart >= 20 OR if stainless quantity >= 20
-      const sleeveBoxPricing = totalCartQuantity >= 20 || stainlessQuantity >= 20;
+      // Sleeves get box pricing if total cart >= 18 OR if stainless quantity >= 18
+      const sleeveBoxPricing = totalCartQuantity >= 18 || stainlessQuantity >= 18;
       return sleeveBoxPricing ? 5.00 : 5.50; // AUD including GST
     }
     
     // Special pricing for Under Over Flange Kit (ABS parts only)
     if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
-      const flangeBoxPricing = totalCartQuantity >= 20;
+      const flangeBoxPricing = totalCartQuantity >= 18;
       return flangeBoxPricing ? 20.00 : 25.00; // AUD including GST
     }
     
-    // Stainless steel parts only get box pricing if stainless quantity >= 20
-    const stainlessBoxPricing = stainlessQuantity >= 20;
+    // Stainless steel parts only get box pricing if stainless quantity >= 18
+    const stainlessBoxPricing = stainlessQuantity >= 18;
     const isStainless = isStainlessSteel(color);
     if (isStainless) {
       return stainlessBoxPricing ? 80 : 110; // AUD including GST
@@ -100,16 +109,30 @@ const ProductSelector = () => {
     const hasRequiredFields = selection.type && selection.size && (selection.color || isNonColorProduct);
     
     if (hasRequiredFields) {
-      addToCart({ 
-        ...selection, 
-        color: isNonColorProduct ? "Standard" : selection.color 
-      });
-      setSelection(prev => ({ ...prev, quantity: 1 }));
+      // Add individual items
+      if (selection.quantity > 0) {
+        addToCart({ 
+          ...selection, 
+          color: isNonColorProduct ? "Standard" : selection.color 
+        });
+      }
+      
+      // Add box items
+      if (selection.boxQuantity > 0) {
+        addToCart({ 
+          ...selection, 
+          quantity: selection.boxQuantity * 18,
+          color: isNonColorProduct ? "Standard" : selection.color 
+        });
+      }
+      
+      setSelection(prev => ({ ...prev, quantity: 1, boxQuantity: 0 }));
     }
   };
 
   const isNonColorProduct = selection.type === "Adjustable Solvent Welded Sleeve" || selection.type === "Under Over Flange Kit with Rubber Ring Seal";
-  const isSelectionComplete = selection.type && selection.size && (selection.color || isNonColorProduct);
+  const isSelectionComplete = selection.type && selection.size && (selection.color || isNonColorProduct) && (selection.quantity > 0 || selection.boxQuantity > 0);
+  const totalSelectedQuantity = selection.quantity + (selection.boxQuantity * 18);
 
   return (
     <section className="py-4 bg-gradient-steel">
@@ -174,27 +197,27 @@ const ProductSelector = () => {
                   </Button>
                 </div>
                 {(() => {
-                  const futureStainless = (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + selection.quantity : stainlessTotal;
-                  const futureTotal = cartTotal + selection.quantity;
+                  const futureStainless = (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal;
+                  const futureTotal = cartTotal + totalSelectedQuantity;
                   let willGetBoxPricing = false;
                   
                   if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                    willGetBoxPricing = futureTotal >= 20 || stainlessTotal >= 20;
+                    willGetBoxPricing = futureTotal >= 18 || stainlessTotal >= 18;
                   } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                    willGetBoxPricing = futureTotal >= 20;
+                    willGetBoxPricing = futureTotal >= 18;
                   } else {
-                    willGetBoxPricing = futureStainless >= 20;
+                    willGetBoxPricing = futureStainless >= 18;
                   }
                   
                   return willGetBoxPricing ? (
                     <p className="text-sm text-accent font-medium mt-2">
                       Box pricing will apply! {(() => {
                         if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                          return "(20+ total units or 20+ stainless parts)";
+                          return "(18+ total units or 18+ stainless parts)";
                         } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                          return "(20+ total units)";
+                          return "(18+ total units)";
                         } else {
-                          return "(20+ stainless parts - mixed colours allowed)";
+                          return "(18+ stainless parts - mixed colours allowed)";
                         }
                       })()}
                     </p>
@@ -202,16 +225,49 @@ const ProductSelector = () => {
                     <p className="text-sm text-muted-foreground mt-2">
                       {(() => {
                         if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                          return "Box pricing applies at 20+ total units or 20+ stainless parts";
+                          return "Box pricing applies at 18+ total units or 18+ stainless parts";
                         } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                          return "Box pricing applies at 20+ total units";
+                          return "Box pricing applies at 18+ total units";
                         } else {
-                          return "Box pricing applies at 20+ stainless parts";
+                          return "Box pricing applies at 18+ stainless parts";
                         }
                       })()}
                     </p>
                   );
                 })()}
+              </div>
+
+              {/* Box Quantity */}
+              <div>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Box Quantity (18 pieces per box)
+                </label>
+                <div className="flex items-center space-x-3">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => adjustBoxQuantity(false)}
+                    className="h-10 w-10 p-0 border-2 border-border hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <Minus className="h-4 w-4" />
+                  </Button>
+                  <span className="text-2xl font-bold text-foreground min-w-[3rem] text-center">
+                    {selection.boxQuantity}
+                  </span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => adjustBoxQuantity(true)}
+                    className="h-10 w-10 p-0 border-2 border-border hover:border-primary hover:bg-primary hover:text-primary-foreground"
+                  >
+                    <Plus className="h-4 w-4" />
+                  </Button>
+                </div>
+                {selection.boxQuantity > 0 && (
+                  <p className="text-sm text-accent font-medium mt-2">
+                    Total: {selection.boxQuantity * 18} pieces from boxes
+                  </p>
+                )}
               </div>
 
               {/* Size */}
@@ -254,19 +310,33 @@ const ProductSelector = () => {
                 </div>
               )}
 
-              {/* Pricing Display */}
-              {(selection.color || selection.type === "Adjustable Solvent Welded Sleeve" || selection.type === "Under Over Flange Kit with Rubber Ring Seal") && (
+               {/* Pricing Display */}
+              {(selection.color || selection.type === "Adjustable Solvent Welded Sleeve" || selection.type === "Under Over Flange Kit with Rubber Ring Seal") && totalSelectedQuantity > 0 && (
                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-foreground">Unit Price:</span>
                     <span className="text-lg font-bold text-primary">
-                      $AUD {getUnitPrice(selection.color || "", cartTotal + selection.quantity, (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + selection.quantity : stainlessTotal, selection.type)}
+                      $AUD {getUnitPrice(selection.color || "", cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type)}
                     </span>
                   </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-semibold text-foreground">Individual Total:</span>
+                    <span className="text-lg font-bold text-primary">
+                      $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type)}
+                    </span>
+                  </div>
+                  {selection.boxQuantity > 0 && (
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-semibold text-foreground">Box Total ({selection.boxQuantity} boxes):</span>
+                      <span className="text-lg font-bold text-primary">
+                        $AUD {getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type)}
+                      </span>
+                    </div>
+                  )}
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-foreground">Total:</span>
+                    <span className="font-semibold text-foreground">Grand Total:</span>
                     <span className="text-xl font-bold text-accent">
-                      $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + selection.quantity, (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + selection.quantity : stainlessTotal, selection.type)}
+                      $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) + (selection.boxQuantity > 0 ? getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) : 0)}
                     </span>
                   </div>
                   {(() => {
@@ -275,22 +345,22 @@ const ProductSelector = () => {
                     let hasBoxPricing = false;
                     
                     if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                      hasBoxPricing = futureTotal >= 20 || stainlessTotal >= 20;
+                      hasBoxPricing = futureTotal >= 18 || stainlessTotal >= 18;
                     } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                      hasBoxPricing = futureTotal >= 20;
+                      hasBoxPricing = futureTotal >= 18;
                     } else {
-                      hasBoxPricing = futureStainless >= 20;
+                      hasBoxPricing = futureStainless >= 18;
                     }
                     
                     return hasBoxPricing ? (
                       <p className="text-sm text-accent font-medium mt-2">
                         Box pricing applied! {(() => {
                           if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                            return "(20+ total units or 20+ stainless parts)";
+                            return "(18+ total units or 18+ stainless parts)";
                           } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                            return "(20+ total units)";
+                            return "(18+ total units)";
                           } else {
-                            return "(20+ stainless parts - mixed colours allowed)";
+                            return "(18+ stainless parts - mixed colours allowed)";
                           }
                         })()}
                       </p>
@@ -298,11 +368,11 @@ const ProductSelector = () => {
                       <p className="text-sm text-muted-foreground mt-2">
                         {(() => {
                           if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                            return "Box pricing available with 20+ total units or 20+ stainless parts<br/>ABS Sleeve: $AUD 5.00/unit with box pricing";
+                            return "Box pricing available with 18+ total units or 18+ stainless parts<br/>ABS Sleeve: $AUD 6.00/unit with box pricing";
                           } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                            return "Box pricing available at 20+ total units<br/>ABS Puddle Flange Kit: $AUD 20.00/unit with box pricing";
+                            return "Box pricing available at 18+ total units<br/>ABS Puddle Flange Kit: Polished SS $AUD 90.00/unit | Others $AUD 117.00/unit";
                           } else {
-                            return "Box pricing available at 20+ stainless parts (mixed colours allowed)<br/>Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit";
+                            return "Box pricing available at 18+ stainless parts (mixed colours allowed)<br/>Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit";
                           }
                         })()}
                       </p>

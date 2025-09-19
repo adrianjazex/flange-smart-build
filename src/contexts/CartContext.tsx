@@ -35,14 +35,14 @@ const isStainlessSteel = (color: string) => {
 const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
   // Special pricing for Adjustable Solvent Welded Sleeve
   if (productType === "Adjustable Solvent Welded Sleeve") {
-    // Sleeves get box pricing if total cart >= 20 OR if stainless quantity >= 20
-    const sleeveBoxPricing = totalCartQuantity >= 20 || stainlessQuantity >= 20;
+    // Sleeves get box pricing if total cart >= 18 OR if stainless quantity >= 18
+    const sleeveBoxPricing = totalCartQuantity >= 18 || stainlessQuantity >= 18;
     return sleeveBoxPricing ? 6.00 : 6.60; // AUD including GST
   }
   
   // Special pricing for Under Over Flange Kit
   if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
-    const flangeBoxPricing = totalCartQuantity >= 20;
+    const flangeBoxPricing = totalCartQuantity >= 18;
     // Different pricing for polished stainless steel vs other colors
     if (color === "Polished Stainless Steel") {
       return flangeBoxPricing ? 90.00 : 100.00; // AUD including GST
@@ -51,8 +51,8 @@ const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantit
     }
   }
   
-  // Stainless steel parts only get box pricing if stainless quantity >= 20
-  const stainlessBoxPricing = stainlessQuantity >= 20;
+  // Stainless steel parts only get box pricing if stainless quantity >= 18
+  const stainlessBoxPricing = stainlessQuantity >= 18;
   const isStainless = isStainlessSteel(color);
   if (isStainless) {
     return stainlessBoxPricing ? 80 : 110; // AUD including GST
