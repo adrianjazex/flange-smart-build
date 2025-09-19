@@ -196,45 +196,6 @@ const ProductSelector = () => {
                     <Plus className="h-4 w-4" />
                   </Button>
                 </div>
-                {(() => {
-                  const futureStainless = (selection.type !== "Adjustable Solvent Welded Sleeve" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal;
-                  const futureTotal = cartTotal + totalSelectedQuantity;
-                  let willGetBoxPricing = false;
-                  
-                  if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                    willGetBoxPricing = futureTotal >= 18 || stainlessTotal >= 18;
-                  } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                    willGetBoxPricing = futureTotal >= 18;
-                  } else {
-                    willGetBoxPricing = futureStainless >= 18;
-                  }
-                  
-                  return willGetBoxPricing ? (
-                    <p className="text-sm text-accent font-medium mt-2">
-                      Box pricing will apply! {(() => {
-                        if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                          return "(18+ total units or 18+ stainless parts)";
-                        } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                          return "(18+ total units)";
-                        } else {
-                          return "(18+ stainless parts - mixed colours allowed)";
-                        }
-                      })()}
-                    </p>
-                  ) : (
-                    <p className="text-sm text-muted-foreground mt-2">
-                      {(() => {
-                        if (selection.type === "Adjustable Solvent Welded Sleeve") {
-                          return "Box pricing applies at 18+ total units or 18+ stainless parts";
-                        } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
-                          return "Box pricing applies at 18+ total units";
-                        } else {
-                          return "Box pricing applies at 18+ stainless parts";
-                        }
-                      })()}
-                    </p>
-                  );
-                })()}
               </div>
 
               {/* Box Quantity */}
