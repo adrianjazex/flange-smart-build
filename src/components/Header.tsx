@@ -106,7 +106,10 @@ const Header = () => {
                 Home
               </button>
               <button 
-                onClick={() => scrollToSection('order')}
+                onClick={() => {
+                  navigate('/');
+                  setIsMenuOpen(false);
+                }}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
                 Order products
