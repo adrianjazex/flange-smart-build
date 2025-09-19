@@ -20,7 +20,10 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-end space-x-1 font-bold text-2xl">
+          <div 
+            className="flex items-end space-x-1 font-bold text-2xl cursor-pointer hover:opacity-80 transition-opacity"
+            onClick={() => navigate('/')}
+          >
             <img 
               src="/lovable-uploads/90858696-1d7b-4d95-9b61-a8f32ad5b9da.png" 
               alt="Jazex Logo"
