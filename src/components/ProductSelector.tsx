@@ -61,7 +61,7 @@ const ProductSelector = () => {
   const adjustQuantity = (increment: boolean) => {
     setSelection(prev => ({
       ...prev,
-      quantity: Math.max(1, prev.quantity + (increment ? 1 : -1))
+      quantity: Math.max(0, prev.quantity + (increment ? 1 : -1))
     }));
   };
 
@@ -197,7 +197,7 @@ const ProductSelector = () => {
                   </Button>
                 </div>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Buy individual pieces (1-17 units)
+                  Buy individual pieces - Get a discount for box purchases!
                 </p>
               </div>
 
