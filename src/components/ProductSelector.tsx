@@ -235,22 +235,6 @@ const ProductSelector = () => {
                     <p className="text-sm text-accent font-medium">
                       Total: {selection.boxQuantity * 18} pieces from boxes
                     </p>
-                    {(() => {
-                      const individualPrice = getUnitPrice(selection.color || "", 1, 0, selection.type);
-                      const boxPrice = getUnitPrice(selection.color || "", 18, 0, selection.type);
-                      const savings = ((individualPrice - boxPrice) / individualPrice) * 100;
-                      
-                      return savings > 0 && (
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-3 mt-2">
-                          <p className="text-sm font-bold text-red-600">
-                            💰 SAVE {savings.toFixed(1)}% buying by the box!
-                          </p>
-                          <p className="text-xs text-red-500">
-                            Individual: $AUD {individualPrice.toFixed(2)} each | Box: $AUD {boxPrice.toFixed(2)} each
-                          </p>
-                        </div>
-                      );
-                    })()}
                   </div>
                 )}
                 <div className="bg-green-50 border border-green-200 rounded-lg p-3 mt-2">
