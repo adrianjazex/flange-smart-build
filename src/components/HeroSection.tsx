@@ -25,11 +25,6 @@ const HeroSection = () => {
                 <span className="text-white">PUDDLE FLANGE</span>
               </h1>
             </div>
-            
-            <p className="text-xl lg:text-2xl text-primary-foreground/90 mb-8 max-w-xl">
-              Significantly minimize the risk of leaks.
-            </p>
-
             <div className="flex flex-col sm:flex-row gap-4 mb-2 justify-center">
               <Button 
                 onClick={scrollToProducts}
