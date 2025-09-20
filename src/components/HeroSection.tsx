@@ -17,6 +17,9 @@ const HeroSection = () => {
           {/* Content */}
           <div>
             <div className="mb-6">
+              <p className="text-lg lg:text-xl text-primary-foreground/80 mb-4 font-medium">
+                Innovative Technical, Advanced Over Engineered Building Better Products
+              </p>
                <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4 leading-tight">
                 <span className="text-accent">UNDER OVER</span><sup className="text-accent text-2xl lg:text-3xl font-bold ml-1 animate-pulse">™</sup><br />
                 <span className="text-white">PUDDLE FLANGE</span>
