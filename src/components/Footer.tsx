@@ -21,9 +21,15 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li><Link to="/#order" className="hover:text-accent transition-colors">Order Online</Link></li>
-              <li><Link to="/contact-us" className="hover:text-accent transition-colors">Technical Support</Link></li>
-              <li><a href="#" className="hover:text-accent transition-colors">Warranty Information</a></li>
+              <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
+              <li><Link to="/#order" className="hover:text-accent transition-colors">Order products</Link></li>
+              <li><Link to="/full-range" className="hover:text-accent transition-colors">Product range</Link></li>
+              <li><Link to="/waterproof-screed" className="hover:text-accent transition-colors">Can I waterproof under and over screed?</Link></li>
+              <li><Link to="/rubber-ring-installation" className="hover:text-accent transition-colors">Rubber ring seal installation</Link></li>
+              <li><Link to="/solvent-weld-installation" className="hover:text-accent transition-colors">Adjustable solvent weld sleeve</Link></li>
+              <li><Link to="/warranties-limitations" className="hover:text-accent transition-colors">Warranties & Limitations</Link></li>
+              <li><Link to="/stockists" className="hover:text-accent transition-colors">Stockists</Link></li>
+              <li><Link to="/contact-us" className="hover:text-accent transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
