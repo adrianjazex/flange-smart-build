@@ -94,8 +94,8 @@ const ProductSelector = () => {
       hasBoxPricing = stainlessQuantity >= 18;
     }
     
-    // Apply 10% discount for box pricing
-    return hasBoxPricing ? singlePrice * 0.9 : singlePrice;
+    // Apply discount for box pricing: divide by 11, multiply by 10
+    return hasBoxPricing ? (singlePrice / 11) * 10 : singlePrice;
   };
 
   const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
