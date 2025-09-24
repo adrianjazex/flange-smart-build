@@ -77,27 +77,25 @@ const ProductSelector = () => {
   };
 
   const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
-    // Special pricing for Adjustable Solvent Welded Sleeve
+    let singlePrice: number;
+    let hasBoxPricing: boolean;
+    
+    // Determine single price and box pricing eligibility
     if (productType === "Adjustable Solvent Welded Sleeve") {
-      // Sleeves get box pricing if total cart >= 18 OR if stainless quantity >= 18
-      const sleeveBoxPricing = totalCartQuantity >= 18 || stainlessQuantity >= 18;
-      return sleeveBoxPricing ? 5.00 : 5.50; // AUD including GST
-    }
-    
-    // Special pricing for Under Over Flange Kit (ABS parts only)
-    if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
-      const flangeBoxPricing = totalCartQuantity >= 18;
-      return flangeBoxPricing ? 20.00 : 25.00; // AUD including GST
-    }
-    
-    // Stainless steel parts only get box pricing if stainless quantity >= 18
-    const stainlessBoxPricing = stainlessQuantity >= 18;
-    const isStainless = isStainlessSteel(color);
-    if (isStainless) {
-      return stainlessBoxPricing ? 80 : 115.50; // AUD including GST
+      singlePrice = 5.50; // AUD including GST
+      hasBoxPricing = totalCartQuantity >= 18 || stainlessQuantity >= 18;
+    } else if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
+      singlePrice = 25.00; // AUD including GST
+      hasBoxPricing = totalCartQuantity >= 18;
     } else {
-      return stainlessBoxPricing ? 100 : 130; // AUD including GST
+      // Stainless steel parts
+      const isStainless = isStainlessSteel(color);
+      singlePrice = isStainless ? 115.50 : 130; // AUD including GST
+      hasBoxPricing = stainlessQuantity >= 18;
     }
+    
+    // Apply 10% discount for box pricing
+    return hasBoxPricing ? singlePrice * 0.9 : singlePrice;
   };
 
   const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
