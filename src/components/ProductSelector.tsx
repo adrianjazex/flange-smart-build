@@ -85,7 +85,7 @@ const ProductSelector = () => {
       singlePrice = 5.50; // AUD including GST
       hasBoxPricing = totalCartQuantity >= 18 || stainlessQuantity >= 18;
     } else if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
-      singlePrice = 25.00; // AUD including GST
+      singlePrice = 35.00; // AUD including GST
       hasBoxPricing = totalCartQuantity >= 18;
     } else {
       // Stainless steel parts
