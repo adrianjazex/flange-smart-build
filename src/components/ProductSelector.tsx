@@ -94,7 +94,7 @@ const ProductSelector = () => {
     const stainlessBoxPricing = stainlessQuantity >= 18;
     const isStainless = isStainlessSteel(color);
     if (isStainless) {
-      return stainlessBoxPricing ? 80 : 110; // AUD including GST
+      return stainlessBoxPricing ? 80 : 115.50; // AUD including GST
     } else {
       return stainlessBoxPricing ? 100 : 130; // AUD including GST
     }
