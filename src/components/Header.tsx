@@ -1,30 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Mail, ShoppingCart, ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/contexts/CartContext";
-import { processLogoImage } from "@/utils/processLogo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isInstallationDropdownOpen, setIsInstallationDropdownOpen] = useState(false);
-  const [processedLogoUrl, setProcessedLogoUrl] = useState<string | null>(null);
   const navigate = useNavigate();
   const { cartTotal, recentlyAdded } = useCart();
-
-  useEffect(() => {
-    const processLogo = async () => {
-      try {
-        const processedUrl = await processLogoImage('/lovable-uploads/90858696-1d7b-4d95-9b61-a8f32ad5b9da.png');
-        setProcessedLogoUrl(processedUrl);
-      } catch (error) {
-        console.error('Failed to process logo:', error);
-        // Fallback to original logo
-      }
-    };
-
-    processLogo();
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -32,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 shadow-steel">
+    <header className="fixed top-0 w-full bg-card border-b border-border z-50 shadow-none">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -41,7 +25,7 @@ const Header = () => {
             onClick={() => navigate('/')}
           >
             <img 
-              src={processedLogoUrl || "/lovable-uploads/90858696-1d7b-4d95-9b61-a8f32ad5b9da.png"} 
+              src="/lovable-uploads/90858696-1d7b-4d95-9b61-a8f32ad5b9da.png" 
               alt="Jazex Logo"
               className="h-12 w-12 object-contain"
               style={{ filter: 'drop-shadow(0 0 0 transparent)' }}
