@@ -165,7 +165,7 @@ const WarrantiesLimitations = () => {
             {/* Limitations & Exclusions */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center text-red-600 dark:text-red-400">
+                <CardTitle className="flex items-center text-yellow-600 dark:text-yellow-400">
                   <XCircle className="mr-2 h-5 w-5" />
                   Limitations & Exclusions
                 </CardTitle>
@@ -174,7 +174,7 @@ const WarrantiesLimitations = () => {
                 <ul className="space-y-3">
                   {limitations.map((item, index) => (
                     <li key={index} className="flex items-start">
-                      <XCircle className="mr-2 h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
+                      <XCircle className="mr-2 h-4 w-4 text-yellow-500 mt-0.5 flex-shrink-0" />
                       <span className="text-muted-foreground">{item}</span>
                     </li>
                   ))}
@@ -236,7 +236,6 @@ const WarrantiesLimitations = () => {
                 <div className="mt-6 pt-4 border-t border-amber-300/30">
                   <h4 className="font-semibold mb-2">Contact Information for Warranty Claims:</h4>
                   <div className="space-y-1">
-                    <div>Phone: 0411 430 652 (Zach)</div>
                     <div>Email: sales@jazex.com.au</div>
                     <div>Business Hours: Monday - Friday 8:00 AM - 5:00 PM AEST</div>
                   </div>
