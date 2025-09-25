@@ -33,36 +33,43 @@ const isStainlessSteel = (color: string) => {
 };
 
 const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
+  let price: number;
+  
   // Special pricing for Adjustable Solvent Welded Sleeve
   if (productType === "Adjustable Solvent Welded Sleeve") {
     // Sleeves get box pricing if total cart >= 18 OR if stainless quantity >= 18
     const sleeveBoxPricing = totalCartQuantity >= 18 || stainlessQuantity >= 18;
-    return sleeveBoxPricing ? 6.00 : 6.60; // AUD including GST
+    price = sleeveBoxPricing ? 6.00 : 6.60; // AUD including GST
   }
-  
   // Special pricing for Under Over Flange Kit
-  if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
+  else if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
     const flangeBoxPricing = totalCartQuantity >= 18;
     // Different pricing for polished stainless steel vs other colors
     if (color === "Polished Stainless Steel") {
-      return flangeBoxPricing ? 90.00 : 100.00; // AUD including GST
+      price = flangeBoxPricing ? 90.00 : 100.00; // AUD including GST
     } else {
-      return flangeBoxPricing ? 117.00 : 130.00; // AUD including GST
+      price = flangeBoxPricing ? 117.00 : 130.00; // AUD including GST
+    }
+  }
+  // Stainless steel parts only get box pricing if stainless quantity >= 18
+  else {
+    const stainlessBoxPricing = stainlessQuantity >= 18;
+    const isStainless = isStainlessSteel(color);
+    if (isStainless) {
+      price = stainlessBoxPricing ? 80 : 110; // AUD including GST
+    } else {
+      price = stainlessBoxPricing ? 100 : 130; // AUD including GST
     }
   }
   
-  // Stainless steel parts only get box pricing if stainless quantity >= 18
-  const stainlessBoxPricing = stainlessQuantity >= 18;
-  const isStainless = isStainlessSteel(color);
-  if (isStainless) {
-    return stainlessBoxPricing ? 80 : 110; // AUD including GST
-  } else {
-    return stainlessBoxPricing ? 100 : 130; // AUD including GST
-  }
+  // Round to 2 decimal places to ensure proper dollars and cents
+  return Math.round(price * 100) / 100;
 };
 
 const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
-  return getUnitPrice(color, totalCartQuantity, stainlessQuantity, productType) * quantity;
+  const total = getUnitPrice(color, totalCartQuantity, stainlessQuantity, productType) * quantity;
+  // Round to 2 decimal places to ensure proper dollars and cents
+  return Math.round(total * 100) / 100;
 };
 
 export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {

@@ -95,11 +95,15 @@ const ProductSelector = () => {
     }
     
     // Apply discount for box pricing: divide by 11, multiply by 10
-    return hasBoxPricing ? (singlePrice / 11) * 10 : singlePrice;
+    const price = hasBoxPricing ? (singlePrice / 11) * 10 : singlePrice;
+    // Round to 2 decimal places to ensure proper dollars and cents
+    return Math.round(price * 100) / 100;
   };
 
   const getTotalPrice = (color: string, quantity: number, totalCartQuantity: number, stainlessQuantity: number, productType: string = "") => {
-    return getUnitPrice(color, totalCartQuantity, stainlessQuantity, productType) * quantity;
+    const total = getUnitPrice(color, totalCartQuantity, stainlessQuantity, productType) * quantity;
+    // Round to 2 decimal places to ensure proper dollars and cents
+    return Math.round(total * 100) / 100;
   };
 
   const handleAddToCart = () => {
@@ -290,29 +294,29 @@ const ProductSelector = () => {
                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-foreground">Unit Price:</span>
-                    <span className="text-lg font-bold text-primary">
-                      $AUD {getUnitPrice(selection.color || "", cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type)}
-                    </span>
+                     <span className="text-lg font-bold text-primary">
+                       $AUD {getUnitPrice(selection.color || "", cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
+                     </span>
                   </div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-foreground">Individual Total:</span>
-                    <span className="text-lg font-bold text-primary">
-                      $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type)}
-                    </span>
+                     <span className="text-lg font-bold text-primary">
+                       $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
+                     </span>
                   </div>
                   {selection.boxQuantity > 0 && (
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold text-foreground">Box Total ({selection.boxQuantity} boxes):</span>
-                      <span className="text-lg font-bold text-primary">
-                        $AUD {getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type)}
-                      </span>
+                       <span className="text-lg font-bold text-primary">
+                         $AUD {getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
+                       </span>
                     </div>
                   )}
                   <div className="flex justify-between items-center">
                     <span className="font-semibold text-foreground">Grand Total:</span>
-                    <span className="text-xl font-bold text-accent">
-                      $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) + (selection.boxQuantity > 0 ? getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) : 0)}
-                    </span>
+                     <span className="text-xl font-bold text-accent">
+                       $AUD {(getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) + (selection.boxQuantity > 0 ? getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) : 0)).toFixed(2)}
+                     </span>
                   </div>
                   {(() => {
                     const futureStainless = (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + selection.quantity : stainlessTotal;
@@ -404,12 +408,12 @@ const ProductSelector = () => {
                         )}
                       </div>
                       <div className="flex justify-between items-center mt-3 pt-2 border-t border-border">
-                        <span className="text-sm text-muted-foreground">
-                          $AUD {getUnitPrice(item.color, cartTotal, stainlessTotal, item.type)}/unit
-                        </span>
-                        <span className="font-bold text-accent">
-                          $AUD {getTotalPrice(item.color, item.quantity, cartTotal, stainlessTotal, item.type)}
-                        </span>
+                         <span className="text-sm text-muted-foreground">
+                           $AUD {getUnitPrice(item.color, cartTotal, stainlessTotal, item.type).toFixed(2)}/unit
+                         </span>
+                         <span className="font-bold text-accent">
+                           $AUD {getTotalPrice(item.color, item.quantity, cartTotal, stainlessTotal, item.type).toFixed(2)}
+                         </span>
                       </div>
                     </div>
                   ))}
@@ -426,7 +430,7 @@ const ProductSelector = () => {
                     )}
                     <div className="flex justify-between items-center mb-4">
                       <span className="text-lg font-semibold text-foreground">Total:</span>
-                      <span className="text-2xl font-bold text-primary">$AUD {cartValue}</span>
+                      <span className="text-2xl font-bold text-primary">$AUD {cartValue.toFixed(2)}</span>
                     </div>
                     <p className="text-xs text-muted-foreground mb-4">Prices include GST</p>
                     <Button 
