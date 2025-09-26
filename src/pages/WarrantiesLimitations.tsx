@@ -90,10 +90,10 @@ const WarrantiesLimitations = () => {
                 when products are installed and maintained according to our specifications.
               </p>
               <div className="text-center bg-background rounded-lg p-6 border border-border">
-                <div className="text-4xl font-bold text-primary mb-2">1 Year</div>
+                <div className="text-4xl font-bold text-primary mb-2">2 Years</div>
                 <h4 className="font-semibold text-foreground mb-3">All JAZEX Products</h4>
                 <p className="text-muted-foreground">
-                  Warranty covers product manufacturing defects and material failure
+                  JAZEX products are covered by a 2-year warranty against manufacturing defects and material failure
                 </p>
               </div>
             </CardContent>
