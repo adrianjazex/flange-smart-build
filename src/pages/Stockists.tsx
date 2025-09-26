@@ -19,21 +19,18 @@ const Stockists = () => {
       id: 1,
       name: "Sydney Plumbing Supplies",
       address: "123 George Street, Sydney NSW 2000",
-      phone: "(02) 9000 1234",
       distance: "2.5km"
     },
     {
       id: 2,
       name: "Melbourne Trade Center",
       address: "456 Collins Street, Melbourne VIC 3000", 
-      phone: "(03) 9000 5678",
       distance: "3.1km"
     },
     {
       id: 3,
       name: "Brisbane Building Supplies",
       address: "789 Queen Street, Brisbane QLD 4000",
-      phone: "(07) 3000 9012",
       distance: "4.2km"
     }
   ];
@@ -125,13 +122,9 @@ const Stockists = () => {
                               {stockist.name}
                             </h3>
                           </div>
-                          <div className="flex items-center mb-2 text-muted-foreground">
+                          <div className="flex items-center text-muted-foreground">
                             <MapPin className="mr-2 h-4 w-4" />
                             <span>{stockist.address}</span>
-                          </div>
-                          <div className="flex items-center text-muted-foreground">
-                            <Phone className="mr-2 h-4 w-4" />
-                            <span>{stockist.phone}</span>
                           </div>
                         </div>
                         <div className="text-right">
@@ -162,20 +155,11 @@ const Stockists = () => {
                 <h3 className="text-xl font-semibold text-foreground mb-4">
                   Contact Our Sales Team
                 </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex items-center justify-center space-x-3">
-                    <Phone className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground">John</p>
-                      <p className="text-muted-foreground">0419 750 066</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center space-x-3">
-                    <Mail className="h-5 w-5 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground">Email</p>
-                      <p className="text-muted-foreground">sales@jazex.com.au</p>
-                    </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium text-foreground">Email</p>
+                    <p className="text-muted-foreground">sales@jazex.com.au</p>
                   </div>
                 </div>
               </div>
