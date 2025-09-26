@@ -191,12 +191,7 @@ const WaterproofScreed = () => {
               <p className="text-muted-foreground mb-6">
                 Contact our technical team for specific guidance on your waterproofing project.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <span>Zach: 0411 430 652</span>
-                <span>Adrian: 0413 428 228</span>
-                <span>John: 0419 750 066</span>
-              </div>
-              <p className="text-sm text-muted-foreground mt-2">sales@jazex.com.au</p>
+              <p className="text-sm text-muted-foreground">sales@jazex.com.au</p>
             </div>
           </div>
         </div>
