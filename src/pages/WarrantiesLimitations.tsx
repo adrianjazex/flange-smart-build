@@ -5,23 +5,6 @@ import { Separator } from "@/components/ui/separator";
 import { Shield, AlertCircle, FileText, Clock, CheckCircle2, XCircle } from "lucide-react";
 
 const WarrantiesLimitations = () => {
-  const warrantyPeriods = [
-    {
-      product: "Tile Insert Kit with Push In Rubber Ring Seal",
-      period: "1 Year",
-      coverage: "Manufacturing defects, material failure, seal integrity"
-    },
-    {
-      product: "Under Over Flange Kit with Rubber Ring Seal", 
-      period: "1 Year",
-      coverage: "Manufacturing defects, material failure, seal performance"
-    },
-    {
-      product: "Adjustable Solvent Welded Sleeve",
-      period: "1 Year", 
-      coverage: "Manufacturing defects, material failure, joint integrity"
-    }
-  ];
 
   const warrantyConditions = [
     "Products must be installed according to JAZEX installation instructions",
@@ -106,14 +89,12 @@ const WarrantiesLimitations = () => {
                 JAZEX stands behind the quality of our waste water solution products with comprehensive warranty coverage 
                 when products are installed and maintained according to our specifications.
               </p>
-              <div className="grid md:grid-cols-3 gap-4">
-                {warrantyPeriods.map((item, index) => (
-                  <div key={index} className="bg-background rounded-lg p-4 border border-border">
-                    <h4 className="font-semibold text-foreground text-sm mb-2">{item.product}</h4>
-                    <div className="text-2xl font-bold text-primary mb-2">{item.period}</div>
-                    <p className="text-xs text-muted-foreground">{item.coverage}</p>
-                  </div>
-                ))}
+              <div className="text-center bg-background rounded-lg p-6 border border-border">
+                <div className="text-4xl font-bold text-primary mb-2">1 Year</div>
+                <h4 className="font-semibold text-foreground mb-3">All JAZEX Products</h4>
+                <p className="text-muted-foreground">
+                  Warranty covers product manufacturing defects and material failure
+                </p>
               </div>
             </CardContent>
           </Card>
