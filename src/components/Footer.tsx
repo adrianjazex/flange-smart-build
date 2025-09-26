@@ -12,9 +12,6 @@ const Footer = () => {
             <p className="text-primary-foreground/80 mb-4 leading-relaxed">
               Enhance leak prevention by implementing dual independent waterproofing membrane systems, complemented by Under Over puddle flanges. This design eliminates water trapping in screeds, ensuring superior protection and longevity.
             </p>
-            <p className="text-primary-foreground/80 text-sm">
-              Trusted by tradesmen and DIY enthusiasts across Australia.
-            </p>
           </div>
 
           {/* Quick Links */}
