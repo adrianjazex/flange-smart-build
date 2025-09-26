@@ -237,7 +237,6 @@ const WarrantiesLimitations = () => {
                   <h4 className="font-semibold mb-2">Contact Information for Warranty Claims:</h4>
                   <div className="space-y-1">
                     <div>Email: sales@jazex.com.au</div>
-                    <div>Business Hours: Monday - Friday 8:00 AM - 5:00 PM AEST</div>
                   </div>
                 </div>
               </div>
