@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Mail, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -37,14 +37,6 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
             <div className="space-y-3 text-primary-foreground/80">
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent" />
-                <div className="flex flex-col">
-                  <span>Zach: 0411 430 652</span>
-                  <span>Adrian: 0413 428 228</span>
-                  <span>John: 0419 750 066</span>
-                </div>
-              </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent" />
                 <span>sales@jazex.com.au</span>

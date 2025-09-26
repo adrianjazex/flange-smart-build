@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Phone, Mail, MapPin, Building, Clock } from "lucide-react";
+import { Mail, MapPin, Building, Clock } from "lucide-react";
 
 const ContactUs = () => {
   return (
@@ -29,12 +29,10 @@ const ContactUs = () => {
             {/* Sales Inquiries */}
             <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
               <div className="flex items-center mb-4">
-                <Phone className="h-6 w-6 text-primary mr-3" />
+                <Mail className="h-6 w-6 text-primary mr-3" />
                 <h3 className="text-xl font-semibold">Sales Enquiries</h3>
               </div>
               <div className="space-y-2">
-                <p className="font-medium">Zach</p>
-                <p className="text-muted-foreground">0411 430 652</p>
                 <a 
                   href="mailto:zach@jazex.com.au" 
                   className="text-primary hover:underline block"
@@ -47,12 +45,10 @@ const ContactUs = () => {
             {/* Technical Support */}
             <div className="bg-background rounded-lg p-6 border border-border shadow-steel">
               <div className="flex items-center mb-4">
-                <Phone className="h-6 w-6 text-primary mr-3" />
+                <Mail className="h-6 w-6 text-primary mr-3" />
                 <h3 className="text-xl font-semibold">Technical Support</h3>
               </div>
               <div className="space-y-2">
-                <p className="font-medium">Adrian</p>
-                <p className="text-muted-foreground">0413 428 228</p>
                 <a 
                   href="mailto:adrian@jazex.com.au" 
                   className="text-primary hover:underline block"
@@ -69,8 +65,6 @@ const ContactUs = () => {
                 <h3 className="text-xl font-semibold">Become a Stockist</h3>
               </div>
               <div className="space-y-2">
-                <p className="font-medium">Call John</p>
-                <p className="text-muted-foreground">0419 750 066</p>
                 <a 
                   href="mailto:john@jazex.com.au" 
                   className="text-primary hover:underline block"
