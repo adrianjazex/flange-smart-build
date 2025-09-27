@@ -2,7 +2,7 @@ import { pipeline, env } from '@huggingface/transformers';
 
 // Configure transformers.js to always download models
 env.allowLocalModels = false;
-env.useBrowserCache = true;
+env.useBrowserCache = false;
 
 const MAX_IMAGE_DIMENSION = 1024;
 
@@ -35,7 +35,7 @@ export const removeBackground = async (imageElement: HTMLImageElement): Promise<
   try {
     console.log('Starting background removal process...');
     const segmenter = await pipeline('image-segmentation', 'Xenova/segformer-b0-finetuned-ade-512-512', {
-      device: 'wasm',
+      device: 'webgpu',
     });
     
     // Convert HTMLImageElement to canvas
