@@ -1,8 +1,11 @@
+import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { VideoFrameProcessor } from "@/components/VideoFrameProcessor";
+import { SpigotFrameDisplay } from "@/components/SpigotFrameDisplay";
 import puddleFlangeHero from "@/assets/puddle-flange-hero.jpg";
 import productRange from "@/assets/product-range.jpg";
 import installationGuide from "@/assets/installation-guide.jpg";
@@ -10,6 +13,7 @@ import spigotAdjustmentDemo from "@/assets/spigot-adjustment-demo.mov";
 
 const FullRange = () => {
   const navigate = useNavigate();
+  const [processedFrames, setProcessedFrames] = useState<string[]>([]);
 
   const products = [
     {
@@ -99,19 +103,32 @@ const FullRange = () => {
                       </div>
                       {product.video && (
                         <div className="mb-4">
-                          <h4 className="font-semibold text-foreground mb-2">Spigot Adjustment Demo:</h4>
-                          <video 
-                            controls 
-                            className="w-full max-w-md rounded-lg shadow-sm"
-                            preload="metadata"
-                          >
-                            <source src={product.video} type="video/quicktime" />
-                            <source src={product.video} type="video/mp4" />
-                            Your browser does not support the video tag.
-                          </video>
-                          <p className="text-xs text-muted-foreground mt-2">
-                            Demonstration of different spigot adjustment angles
-                          </p>
+                          {processedFrames.length > 0 ? (
+                            <SpigotFrameDisplay frames={processedFrames} />
+                          ) : (
+                            <div className="space-y-3">
+                              <VideoFrameProcessor 
+                                videoSrc={product.video}
+                                onFramesProcessed={setProcessedFrames}
+                              />
+                              <details className="text-sm">
+                                <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
+                                  View original video
+                                </summary>
+                                <div className="mt-2">
+                                  <video 
+                                    controls 
+                                    className="w-full max-w-md rounded-lg shadow-sm"
+                                    preload="metadata"
+                                  >
+                                    <source src={product.video} type="video/quicktime" />
+                                    <source src={product.video} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                  </video>
+                                </div>
+                              </details>
+                            </div>
+                          )}
                         </div>
                       )}
                       <div className="flex justify-between items-center">
