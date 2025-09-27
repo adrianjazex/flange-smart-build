@@ -22,7 +22,7 @@ export const VideoFrameProcessor: React.FC<VideoFrameProcessorProps> = ({
     if (!videoRef.current || !canvasRef.current) return;
 
     setIsProcessing(true);
-    toast.info('Extracting and processing video frames...');
+    toast.info('Extracting and processing video frames... First run may take up to a minute to download the AI model.');
 
     try {
       const video = videoRef.current;
@@ -37,6 +37,10 @@ export const VideoFrameProcessor: React.FC<VideoFrameProcessorProps> = ({
         else video.addEventListener('loadedmetadata', () => resolve(null));
       });
 
+      // Ensure silent operations for programmatic seeking
+      video.muted = true;
+      video.pause();
+
       const duration = video.duration;
       const frameCount = 6; // Extract 6 key frames
       const frames: string[] = [];
@@ -45,14 +49,36 @@ export const VideoFrameProcessor: React.FC<VideoFrameProcessorProps> = ({
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
 
+      // Robust seek helper with timeout fallback
+      const seekTo = (targetTime: number, timeout = 5000) =>
+        new Promise<void>((resolve) => {
+          let settled = false;
+          const onSeeked = () => {
+            if (settled) return; settled = true; cleanup(); resolve();
+          };
+          const onError = () => {
+            if (settled) return; settled = true; cleanup(); resolve();
+          };
+          const cleanup = () => {
+            video.removeEventListener('seeked', onSeeked);
+            video.removeEventListener('error', onError);
+          };
+          // Clamp target time to valid range
+          const clamped = Math.max(0, Math.min(targetTime, Math.max(0, (video.duration || 0) - 0.05)));
+          video.addEventListener('seeked', onSeeked, { once: true });
+          video.addEventListener('error', onError, { once: true });
+          const timer = setTimeout(() => {
+            if (settled) return; settled = true; cleanup(); resolve();
+          }, timeout);
+          // Clear timer in onSeeked/onError via settled flag
+          video.currentTime = clamped;
+        });
+
       for (let i = 0; i < frameCount; i++) {
         const time = (duration / (frameCount - 1)) * i;
         
-        // Seek to specific time
-        video.currentTime = time;
-        await new Promise((resolve) => {
-          video.addEventListener('seeked', resolve, { once: true });
-        });
+        // Seek to specific time using robust helper
+        await seekTo(time);
 
         // Draw frame to canvas
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);

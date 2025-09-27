@@ -2,7 +2,7 @@ import { pipeline, env } from '@huggingface/transformers';
 
 // Configure transformers.js to always download models
 env.allowLocalModels = false;
-env.useBrowserCache = false;
+env.useBrowserCache = true;
 
 const MAX_IMAGE_DIMENSION = 1024;
 
