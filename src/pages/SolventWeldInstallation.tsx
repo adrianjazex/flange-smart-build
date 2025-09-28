@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { AlertTriangle } from "lucide-react";
 import installationDemo from "@/assets/installation-demo.jpg";
+import secondaryFlange1 from "@/assets/secondary-flange-1.jpg";
+import secondaryFlange2 from "@/assets/secondary-flange-2.jpg";
 
 const SolventWeldInstallation = () => {
   const solventWeldedSteps = [
@@ -96,6 +98,32 @@ const SolventWeldInstallation = () => {
                             <p className="text-xs text-muted-foreground mt-2">
                               Demonstration: Puddle flange properly rebated and installed in concrete floor
                             </p>
+                          </div>
+                        )}
+                        
+                        {/* Add secondary puddle flange installation photos for step 6 */}
+                        {step.step === 6 && (
+                          <div className="mt-1 space-y-4">
+                            <div>
+                              <img 
+                                src={secondaryFlange1} 
+                                alt="Secondary puddle flange being positioned for installation"
+                                className="w-full max-w-md rounded-lg shadow-sm"
+                              />
+                              <p className="text-xs text-muted-foreground mt-2">
+                                Step 1: Positioning the secondary puddle flange for installation
+                              </p>
+                            </div>
+                            <div>
+                              <img 
+                                src={secondaryFlange2} 
+                                alt="Secondary puddle flange fully installed and seated"
+                                className="w-full max-w-md rounded-lg shadow-sm"
+                              />
+                              <p className="text-xs text-muted-foreground mt-2">
+                                Step 2: Secondary puddle flange properly aligned and securely seated
+                              </p>
+                            </div>
                           </div>
                         )}
                       </div>
