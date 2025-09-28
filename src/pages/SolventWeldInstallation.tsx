@@ -66,25 +66,6 @@ const SolventWeldInstallation = () => {
           </div>
 
 
-          {/* Demonstration Photo */}
-          <Card className="mb-8">
-            <CardHeader>
-              <CardTitle className="text-primary">Installation Demonstration</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-center">
-                <img 
-                  src={installationDemo} 
-                  alt="Puddle flange installation demonstration showing proper placement in concrete floor"
-                  className="w-full max-w-md mx-auto rounded-lg shadow-sm"
-                />
-                <p className="text-sm text-muted-foreground mt-2">
-                  Puddle flange properly installed and sealed in concrete floor
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
           {/* Installation Guide */}
           <Card>
             <CardHeader>
@@ -100,9 +81,23 @@ const SolventWeldInstallation = () => {
                       <div className="flex-shrink-0 w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-sm">
                         {step.step}
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h4 className="font-semibold text-foreground mb-2">{step.title}</h4>
                         <p className="text-muted-foreground leading-relaxed">{step.details}</p>
+                        
+                        {/* Add demonstration photo for step 2 */}
+                        {step.step === 2 && (
+                          <div className="mt-4">
+                            <img 
+                              src={installationDemo} 
+                              alt="Puddle flange installation demonstration showing proper rebated floor placement"
+                              className="w-full max-w-md rounded-lg shadow-sm"
+                            />
+                            <p className="text-xs text-muted-foreground mt-2">
+                              Demonstration: Puddle flange properly rebated and installed in concrete floor
+                            </p>
+                          </div>
+                        )}
                       </div>
                     </div>
                     {index < solventWeldedSteps.length - 1 && <Separator className="my-4" />}
