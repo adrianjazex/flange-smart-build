@@ -102,7 +102,7 @@ const RubberRingSealInstallation = () => {
                         
                         {/* Add rubber ring seal inspection photo for step 4 */}
                         {step.step === 4 && (
-                          <div className="mt-2">
+                          <div className="mt-1">
                             <img 
                               src={rubberRingInspection} 
                               alt="Visual inspection view of rubber ring seal properly positioned inside puddle flange spigot"
