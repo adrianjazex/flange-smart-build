@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { AlertTriangle } from "lucide-react";
+import installationDemo from "@/assets/installation-demo.jpg";
 
 const SolventWeldInstallation = () => {
   const solventWeldedSteps = [
@@ -64,6 +65,25 @@ const SolventWeldInstallation = () => {
             </p>
           </div>
 
+
+          {/* Demonstration Photo */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle className="text-primary">Installation Demonstration</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-center">
+                <img 
+                  src={installationDemo} 
+                  alt="Puddle flange installation demonstration showing proper placement in concrete floor"
+                  className="w-full max-w-md mx-auto rounded-lg shadow-sm"
+                />
+                <p className="text-sm text-muted-foreground mt-2">
+                  Puddle flange properly installed and sealed in concrete floor
+                </p>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Installation Guide */}
           <Card>
