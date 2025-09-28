@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { AlertTriangle } from "lucide-react";
 import installationDemo from "@/assets/installation-demo.jpg";
+import rubberRingInspection from "@/assets/rubber-ring-inspection.png";
 
 const RubberRingSealInstallation = () => {
   const puddleFlangeSteps = [
@@ -95,6 +96,20 @@ const RubberRingSealInstallation = () => {
                             />
                             <p className="text-xs text-muted-foreground mt-2">
                               Demonstration: Puddle flange properly rebated and installed in concrete floor
+                            </p>
+                          </div>
+                        )}
+                        
+                        {/* Add rubber ring seal inspection photo for step 4 */}
+                        {step.step === 4 && (
+                          <div className="mt-4">
+                            <img 
+                              src={rubberRingInspection} 
+                              alt="Visual inspection view of rubber ring seal properly positioned inside puddle flange spigot"
+                              className="w-full max-w-md rounded-lg shadow-sm"
+                            />
+                            <p className="text-xs text-muted-foreground mt-2">
+                              Visual inspection: Rubber ring seal correctly positioned and visible at the bottom of the spigot
                             </p>
                           </div>
                         )}
