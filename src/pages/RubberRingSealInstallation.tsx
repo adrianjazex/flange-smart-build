@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { AlertTriangle } from "lucide-react";
 import installationDemo from "@/assets/installation-demo.jpg";
-import rubberRingInspection from "@/assets/rubber-ring-inspection.png";
+import rubberRingInspection from "@/assets/rubber-ring-inspection-new.jpg";
 
 const RubberRingSealInstallation = () => {
   const puddleFlangeSteps = [
