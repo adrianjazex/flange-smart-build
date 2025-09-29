@@ -126,7 +126,7 @@ const RubberRingSealInstallation = () => {
                                 className="w-full max-w-md rounded-lg shadow-sm"
                               />
                               <p className="text-xs text-muted-foreground mt-2">
-                                Step 1: Positioning the secondary puddle flange for installation
+                                Step one applying adhesive to locating lugs
                               </p>
                             </div>
                             <div>
