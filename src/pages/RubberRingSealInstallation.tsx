@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { AlertTriangle } from "lucide-react";
 import installationDemo from "@/assets/installation-demo.jpg";
-import rubberRingInspection from "@/assets/rubber-ring-inspection-new.jpg";
+import rubberRingInspection from "@/assets/rubber-ring-inspection-with-arrow.jpg";
 import secondaryFlange1 from "@/assets/secondary-flange-1.jpg";
 import secondaryFlange2 from "@/assets/secondary-flange-2.jpg";
 import screedApplication1 from "@/assets/screed-application-1.jpg";
