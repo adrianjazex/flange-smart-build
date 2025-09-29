@@ -7,6 +7,8 @@ import installationDemo from "@/assets/installation-demo.jpg";
 import rubberRingInspection from "@/assets/rubber-ring-inspection-new.jpg";
 import secondaryFlange1 from "@/assets/secondary-flange-1.jpg";
 import secondaryFlange2 from "@/assets/secondary-flange-2.jpg";
+import screedApplication1 from "@/assets/screed-application-1.jpg";
+import screedApplication2 from "@/assets/screed-application-2.jpg";
 
 const RubberRingSealInstallation = () => {
   const puddleFlangeSteps = [
@@ -137,6 +139,32 @@ const RubberRingSealInstallation = () => {
                               />
                               <p className="text-xs text-muted-foreground mt-2">
                                 Step 2: Secondary puddle flange properly aligned and securely seated
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {/* Add screed application photos for step 7 */}
+                        {step.step === 7 && (
+                          <div className="mt-4 space-y-4">
+                            <div>
+                              <img 
+                                src={screedApplication1} 
+                                alt="Applying tiler's screed over the secondary puddle flange"
+                                className="w-full max-w-md rounded-lg shadow-sm"
+                              />
+                              <p className="text-xs text-muted-foreground mt-2">
+                                Applying screed over the secondary puddle flange, fully encasing the bedding tabs
+                              </p>
+                            </div>
+                            <div>
+                              <img 
+                                src={screedApplication2} 
+                                alt="Completed screed application with proper perimeter termination"
+                                className="w-full max-w-md rounded-lg shadow-sm"
+                              />
+                              <p className="text-xs text-muted-foreground mt-2">
+                                Completed screed application with proper perimeter termination and clean flange surface
                               </p>
                             </div>
                           </div>
