@@ -7,6 +7,7 @@ import { useCart } from "@/contexts/CartContext";
 import puddleFlangeHero from "@/assets/puddle-flange-hero.jpg";
 import productRange from "@/assets/product-range.jpg";
 import installationGuide from "@/assets/installation-guide.jpg";
+import underOverTileInsert from "@/assets/under-over-tile-insert-assembled.jpg";
 
 interface ProductSelection {
   type: string;
@@ -18,7 +19,7 @@ interface ProductSelection {
 
 const PRODUCT_TYPES = [
   "Tile Insert Kit with Push In Rubber Ring Seal",
-  "Under Over Flange Kit with Rubber Ring Seal",
+  "Under Over Puddle Flange Tile Insert Waste Kit",
   "Adjustable Solvent Welded Sleeve Adapter"
 ];
 
@@ -35,7 +36,7 @@ const COLORS = [
 
 const PRODUCT_IMAGES = {
   "Tile Insert Kit with Push In Rubber Ring Seal": puddleFlangeHero,
-  "Under Over Flange Kit with Rubber Ring Seal": productRange,
+  "Under Over Puddle Flange Tile Insert Waste Kit": underOverTileInsert,
   "Adjustable Solvent Welded Sleeve Adapter": installationGuide
 };
 
@@ -43,7 +44,7 @@ const ProductSelector = () => {
   const { cart, addToCart, removeFromCart, cartTotal, cartValue } = useCart();
   
   const stainlessTotal = cart
-    .filter(item => item.type !== "Adjustable Solvent Welded Sleeve Adapter" && item.type !== "Under Over Flange Kit with Rubber Ring Seal")
+    .filter(item => item.type !== "Adjustable Solvent Welded Sleeve Adapter" && item.type !== "Under Over Puddle Flange Tile Insert Waste Kit")
     .reduce((total, item) => total + item.quantity, 0);
   
   const [selection, setSelection] = useState<ProductSelection>({
@@ -84,7 +85,7 @@ const ProductSelector = () => {
     if (productType === "Adjustable Solvent Welded Sleeve Adapter") {
       singlePrice = 6.38; // AUD including GST
       hasBoxPricing = totalCartQuantity >= 18 || stainlessQuantity >= 18;
-    } else if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
+    } else if (productType === "Under Over Puddle Flange Tile Insert Waste Kit") {
       singlePrice = 38.50; // AUD including GST
       hasBoxPricing = totalCartQuantity >= 18;
     } else {
@@ -107,7 +108,7 @@ const ProductSelector = () => {
   };
 
   const handleAddToCart = () => {
-    const isNonColorProduct = selection.type === "Adjustable Solvent Welded Sleeve Adapter" || selection.type === "Under Over Flange Kit with Rubber Ring Seal";
+    const isNonColorProduct = selection.type === "Adjustable Solvent Welded Sleeve Adapter" || selection.type === "Under Over Puddle Flange Tile Insert Waste Kit";
     const hasRequiredFields = selection.type && selection.size && (selection.color || isNonColorProduct);
     
     if (hasRequiredFields) {
@@ -132,7 +133,7 @@ const ProductSelector = () => {
     }
   };
 
-  const isNonColorProduct = selection.type === "Adjustable Solvent Welded Sleeve Adapter" || selection.type === "Under Over Flange Kit with Rubber Ring Seal";
+  const isNonColorProduct = selection.type === "Adjustable Solvent Welded Sleeve Adapter" || selection.type === "Under Over Puddle Flange Tile Insert Waste Kit";
   const isSelectionComplete = selection.type && selection.size && (selection.color || isNonColorProduct) && (selection.quantity > 0 || selection.boxQuantity > 0);
   const totalSelectedQuantity = selection.quantity + (selection.boxQuantity * 18);
 
@@ -269,7 +270,7 @@ const ProductSelector = () => {
               </div>
 
               {/* Color - Only show for products that come in colors */}
-              {selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal" && (
+              {selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Puddle Flange Tile Insert Waste Kit" && (
                 <div>
                   <label className="block text-sm font-semibold text-foreground mb-2">
                     Stainless Steel Tile Insert Colour Selection
@@ -290,42 +291,42 @@ const ProductSelector = () => {
               )}
 
                {/* Pricing Display */}
-              {(selection.color || selection.type === "Adjustable Solvent Welded Sleeve Adapter" || selection.type === "Under Over Flange Kit with Rubber Ring Seal") && totalSelectedQuantity > 0 && (
+              {(selection.color || selection.type === "Adjustable Solvent Welded Sleeve Adapter" || selection.type === "Under Over Puddle Flange Tile Insert Waste Kit") && totalSelectedQuantity > 0 && (
                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-foreground">Unit Price:</span>
                      <span className="text-lg font-bold text-primary">
-                       $AUD {getUnitPrice(selection.color || "", cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
+                       $AUD {getUnitPrice(selection.color || "", cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Puddle Flange Tile Insert Waste Kit") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
                      </span>
                   </div>
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-foreground">Individual Total:</span>
                      <span className="text-lg font-bold text-primary">
-                       $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
+                       $AUD {getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Puddle Flange Tile Insert Waste Kit") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
                      </span>
                   </div>
                   {selection.boxQuantity > 0 && (
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold text-foreground">Box Total ({selection.boxQuantity} boxes):</span>
                        <span className="text-lg font-bold text-primary">
-                         $AUD {getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
+                         $AUD {getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Puddle Flange Tile Insert Waste Kit") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type).toFixed(2)}
                        </span>
                     </div>
                   )}
                   <div className="flex justify-between items-center">
                     <span className="font-semibold text-foreground">Grand Total:</span>
                      <span className="text-xl font-bold text-accent">
-                       $AUD {(getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) + (selection.boxQuantity > 0 ? getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) : 0)).toFixed(2)}
+                       $AUD {(getTotalPrice(selection.color || "", selection.quantity, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Puddle Flange Tile Insert Waste Kit") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) + (selection.boxQuantity > 0 ? getTotalPrice(selection.color || "", selection.boxQuantity * 18, cartTotal + totalSelectedQuantity, (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Puddle Flange Tile Insert Waste Kit") ? stainlessTotal + totalSelectedQuantity : stainlessTotal, selection.type) : 0)).toFixed(2)}
                      </span>
                   </div>
                   {(() => {
-                    const futureStainless = (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + selection.quantity : stainlessTotal;
+                    const futureStainless = (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Puddle Flange Tile Insert Waste Kit") ? stainlessTotal + selection.quantity : stainlessTotal;
                     const futureTotal = cartTotal + selection.quantity;
                     let hasBoxPricing = false;
                     
                     if (selection.type === "Adjustable Solvent Welded Sleeve Adapter") {
                       hasBoxPricing = futureTotal >= 18 || stainlessTotal >= 18;
-                    } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
+                    } else if (selection.type === "Under Over Puddle Flange Tile Insert Waste Kit") {
                       hasBoxPricing = futureTotal >= 18;
                     } else {
                       hasBoxPricing = futureStainless >= 18;
@@ -336,7 +337,7 @@ const ProductSelector = () => {
                         Box pricing applied! {(() => {
                           if (selection.type === "Adjustable Solvent Welded Sleeve Adapter") {
                             return "(18+ total units or 18+ stainless parts)";
-                          } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
+                          } else if (selection.type === "Under Over Puddle Flange Tile Insert Waste Kit") {
                             return "(18+ total units)";
                           } else {
                             return "(18+ stainless parts - mixed colours allowed)";
@@ -348,7 +349,7 @@ const ProductSelector = () => {
                         {(() => {
                           if (selection.type === "Adjustable Solvent Welded Sleeve Adapter") {
                             return "Box pricing available with 18+ total units or 18+ stainless parts<br/>ABS Sleeve Adapter: $AUD 5.80/unit with box pricing";
-                          } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
+                          } else if (selection.type === "Under Over Puddle Flange Tile Insert Waste Kit") {
                             return "Box pricing available at 18+ total units<br/>ABS Puddle Flange Kit: Polished SS $AUD 90.00/unit | Others $AUD 117.00/unit";
                           } else {
                             return "Box pricing available at 18+ stainless parts (mixed colours allowed)<br/>Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit";
@@ -403,7 +404,7 @@ const ProductSelector = () => {
                       <div className="text-sm text-muted-foreground space-y-1">
                         <div>Quantity: {item.quantity}</div>
                         <div>Size: {item.size}</div>
-                        {item.type !== "Adjustable Solvent Welded Sleeve Adapter" && item.type !== "Under Over Flange Kit with Rubber Ring Seal" && (
+                        {item.type !== "Adjustable Solvent Welded Sleeve Adapter" && item.type !== "Under Over Puddle Flange Tile Insert Waste Kit" && (
                           <div>Finish: {item.color}</div>
                         )}
                       </div>
