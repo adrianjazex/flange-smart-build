@@ -26,7 +26,7 @@ const FullRange = () => {
       pricing: "From $80 AUD (Box pricing available)"
     },
     {
-      name: "Under Over Puddle Flange Tile Insert Waste Kit",
+      name: "Under Over Flange Kit with Rubber Ring Seal",
       image: underOverTileInsert,
       description: "Comprehensive puddle flange kit solution for under and over tile applications with integrated rubber ring seal.",
       features: [
