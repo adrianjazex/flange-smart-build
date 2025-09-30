@@ -7,7 +7,7 @@ import puddleFlangeHero from "@/assets/puddle-flange-hero.jpg";
 import productRange from "@/assets/product-range.jpg";
 import installationGuide from "@/assets/installation-guide.jpg";
 import spigotAdjustmentDemo from "@/assets/spigot-adjustment-demo.mov";
-import underOverTileInsert from "@/assets/under-over-tile-insert.jpg";
+import underOverTileInsert from "@/assets/under-over-tile-insert-kit.jpg";
 
 const FullRange = () => {
   const navigate = useNavigate();
