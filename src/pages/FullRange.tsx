@@ -8,6 +8,7 @@ import productRange from "@/assets/product-range.jpg";
 import installationGuide from "@/assets/installation-guide.jpg";
 import spigotAdjustmentDemo from "@/assets/spigot-adjustment-demo.mov";
 import underOverTileInsert from "@/assets/under-over-tile-insert-kit.jpg";
+import solventWeldedAdapter from "@/assets/solvent-welded-adapter.jpg";
 
 const FullRange = () => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const FullRange = () => {
     },
     {
       name: "Adjustable Solvent Welded Sleeve",
-      image: installationGuide,
+      image: solventWeldedAdapter,
       description: "Professional-grade adjustable sleeve for solvent welding applications with precise fit capabilities.",
       features: [
         "Adjustable design for versatile installation",
