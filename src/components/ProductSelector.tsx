@@ -158,14 +158,14 @@ const ProductSelector = () => {
                   </SelectTrigger>
                   <SelectContent className="bg-background border-2 border-border z-50 max-w-md">
                     {PRODUCT_TYPES.map((type) => (
-                      <SelectItem key={type} value={type} className="hover:bg-muted cursor-pointer px-4">
-                        <div className="flex items-center space-x-4 py-2">
+                      <SelectItem key={type} value={type} className="hover:bg-muted cursor-pointer px-4 py-3">
+                        <div className="flex items-center gap-4 w-full">
                           <img 
                             src={PRODUCT_IMAGES[type as keyof typeof PRODUCT_IMAGES]} 
                             alt={type}
-                            className="w-24 h-24 object-cover rounded border border-border flex-shrink-0"
+                            className="w-24 h-24 object-cover rounded flex-shrink-0"
                           />
-                          <span className="text-sm leading-tight flex-1 pr-2">{type}</span>
+                          <span className="text-sm leading-tight flex-1">{type}</span>
                         </div>
                       </SelectItem>
                     ))}
