@@ -9,6 +9,7 @@ import installationGuide from "@/assets/installation-guide.jpg";
 import spigotAdjustmentDemo from "@/assets/spigot-adjustment-demo.mov";
 import underOverTileInsert from "@/assets/under-over-tile-insert-kit.jpg";
 import solventWeldedAdapter from "@/assets/solvent-welded-adapter.jpg";
+import underOverPuddleFlange from "@/assets/under-over-puddle-flange.jpg";
 
 const FullRange = () => {
   const navigate = useNavigate();
@@ -27,8 +28,8 @@ const FullRange = () => {
       pricing: "From $80 AUD (Box pricing available)"
     },
     {
-      name: "Under Over Flange Kit with Rubber Ring Seal",
-      image: puddleFlangeHero,
+      name: "Under Over Puddle Flange Kit with Push In Rubber Seal",
+      image: underOverPuddleFlange,
       description: "Comprehensive puddle flange kit solution for under and over tile applications with integrated rubber ring seal.",
       features: [
         "Dual under/over installation capability",

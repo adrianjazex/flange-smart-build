@@ -42,7 +42,7 @@ const getUnitPrice = (color: string, totalCartQuantity: number, stainlessQuantit
     price = sleeveBoxPricing ? 6.00 : 6.60; // AUD including GST
   }
   // Special pricing for Under Over Flange Kit
-  else if (productType === "Under Over Flange Kit with Rubber Ring Seal") {
+  else if (productType === "Under Over Puddle Flange Kit with Push In Rubber Seal") {
     const flangeBoxPricing = totalCartQuantity >= 18;
     // Different pricing for polished stainless steel vs other colors
     if (color === "Polished Stainless Steel") {
@@ -92,7 +92,7 @@ export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const cartTotal = cart.reduce((total, item) => total + item.quantity, 0);
   const stainlessTotal = cart
-    .filter(item => item.type !== "Adjustable Solvent Welded Sleeve" && item.type !== "Under Over Flange Kit with Rubber Ring Seal")
+    .filter(item => item.type !== "Adjustable Solvent Welded Sleeve" && item.type !== "Under Over Puddle Flange Kit with Push In Rubber Seal")
     .reduce((total, item) => total + item.quantity, 0);
   const cartValue = cart.reduce((total, item) => total + getTotalPrice(item.color, item.quantity, cartTotal, stainlessTotal, item.type), 0);
 
