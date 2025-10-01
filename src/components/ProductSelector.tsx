@@ -35,8 +35,8 @@ const COLORS = [
 ];
 
 const PRODUCT_IMAGES = {
-  "Tile Insert Kit with Push In Rubber Ring Seal": puddleFlangeHero,
-  "Under Over Flange Kit with Rubber Ring Seal": underOverTileInsert,
+  "Tile Insert Kit with Push In Rubber Ring Seal": underOverTileInsert,
+  "Under Over Flange Kit with Rubber Ring Seal": puddleFlangeHero,
   "Adjustable Solvent Welded Sleeve Adapter": installationGuide
 };
 

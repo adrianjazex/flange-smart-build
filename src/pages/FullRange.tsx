@@ -15,7 +15,7 @@ const FullRange = () => {
   const products = [
     {
       name: "Tile Insert Kit with Push In Rubber Ring Seal",
-      image: puddleFlangeHero,
+      image: underOverTileInsert,
       description: "Our premium tile insert kit designed for superior waste water solutions with a push-in rubber ring seal system.",
       features: [
         "Push-in rubber ring seal technology",
@@ -27,7 +27,7 @@ const FullRange = () => {
     },
     {
       name: "Under Over Flange Kit with Rubber Ring Seal",
-      image: underOverTileInsert,
+      image: puddleFlangeHero,
       description: "Comprehensive puddle flange kit solution for under and over tile applications with integrated rubber ring seal.",
       features: [
         "Dual under/over installation capability",
