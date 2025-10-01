@@ -156,16 +156,16 @@ const ProductSelector = () => {
                   <SelectTrigger className="w-full bg-background border-2 border-border hover:border-primary transition-colors">
                     <SelectValue placeholder="Select product type" />
                   </SelectTrigger>
-                  <SelectContent className="bg-background border-2 border-border z-50">
+                  <SelectContent className="bg-background border-2 border-border z-50 max-w-md">
                     {PRODUCT_TYPES.map((type) => (
-                      <SelectItem key={type} value={type} className="hover:bg-muted">
-                        <div className="flex items-center space-x-3 py-1">
+                      <SelectItem key={type} value={type} className="hover:bg-muted cursor-pointer">
+                        <div className="flex items-center space-x-4 py-2">
                           <img 
                             src={PRODUCT_IMAGES[type as keyof typeof PRODUCT_IMAGES]} 
                             alt={type}
-                            className="w-12 h-12 object-cover rounded border border-border flex-shrink-0"
+                            className="w-20 h-20 object-cover rounded border border-border flex-shrink-0"
                           />
-                          <span className="text-sm leading-tight">{type}</span>
+                          <span className="text-sm leading-tight flex-1">{type}</span>
                         </div>
                       </SelectItem>
                     ))}
