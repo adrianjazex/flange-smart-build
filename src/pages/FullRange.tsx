@@ -77,7 +77,7 @@ const FullRange = () => {
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-64 md:h-full object-cover"
+                      className="w-full h-64 md:h-full object-contain bg-muted/20"
                     />
                   </div>
                   <div className="md:w-2/3">
