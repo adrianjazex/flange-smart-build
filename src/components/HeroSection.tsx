@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Shield, Wrench } from "lucide-react";
+import puddleFlangeComponents from "@/assets/puddle-flange-components.jpg";
+import puddleFlangeAssembled from "@/assets/puddle-flange-assembled.jpg";
 
 const HeroSection = () => {
 
@@ -32,13 +34,20 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Hero Product Image */}
-            <div className="relative max-w-md mx-auto mb-3">
-              <img 
-                src="/lovable-uploads/f070d3f0-64d0-4f29-8cfc-7df8a95e0535.png" 
-                alt="JAZEX Under Over tile insert kit with push in rubber ring seal"
-                className="w-full h-auto object-contain"
-              />
+            {/* Hero Product Images */}
+            <div className="relative max-w-4xl mx-auto mb-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img 
+                  src={puddleFlangeComponents}
+                  alt="Under Over puddle flange components - primary and secondary flanges"
+                  className="w-full h-auto object-contain"
+                />
+                <img 
+                  src={puddleFlangeAssembled}
+                  alt="Under Over puddle flange fully assembled system with tile insert"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
