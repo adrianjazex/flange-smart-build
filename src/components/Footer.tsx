@@ -25,6 +25,7 @@ const Footer = () => {
               <li><Link to="/rubber-ring-installation" className="hover:text-accent transition-colors">Rubber ring seal installation</Link></li>
               <li><Link to="/solvent-weld-installation" className="hover:text-accent transition-colors">Adjustable solvent weld sleeve</Link></li>
               <li><Link to="/warranties-limitations" className="hover:text-accent transition-colors">Warranties & Limitations</Link></li>
+              <li><Link to="/faq" className="hover:text-accent transition-colors">Frequently Asked Questions (FAQ)</Link></li>
               <li><Link to="/stockists" className="hover:text-accent transition-colors">Stockists</Link></li>
               <li><Link to="/contact-us" className="hover:text-accent transition-colors">Contact Us</Link></li>
             </ul>

@@ -176,6 +176,15 @@ const Header = () => {
               </button>
               <button 
                 onClick={() => {
+                  navigate('/faq');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Frequently Asked Questions (FAQ)
+              </button>
+              <button 
+                onClick={() => {
                   navigate('/stockists');
                   setIsMenuOpen(false);
                 }}

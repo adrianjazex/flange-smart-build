@@ -15,6 +15,7 @@ import RubberRingSealInstallation from "./pages/RubberRingSealInstallation";
 import SolventWeldInstallation from "./pages/SolventWeldInstallation";
 import WarrantiesLimitations from "./pages/WarrantiesLimitations";
 import WaterproofScreed from "./pages/WaterproofScreed";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/solvent-weld-installation" element={<SolventWeldInstallation />} />
             <Route path="/warranties-limitations" element={<WarrantiesLimitations />} />
             <Route path="/waterproof-screed" element={<WaterproofScreed />} />
+            <Route path="/faq" element={<FAQ />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
