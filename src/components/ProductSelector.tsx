@@ -20,7 +20,7 @@ interface ProductSelection {
 }
 
 const PRODUCT_TYPES = [
-  "Tile Insert Kit with Push In Rubber Ring Seal",
+  "Tile Insert Kit with Rubber Seal",
   "Under Over Puddle Flange Kit with Push In Rubber Seal",
   "Adjustable Solvent Welded Sleeve Adapter"
 ];
@@ -37,7 +37,7 @@ const COLORS = [
 ];
 
 const PRODUCT_IMAGES = {
-  "Tile Insert Kit with Push In Rubber Ring Seal": underOverTileInsert,
+  "Tile Insert Kit with Rubber Seal": underOverTileInsert,
   "Under Over Puddle Flange Kit with Push In Rubber Seal": underOverPuddleFlange,
   "Adjustable Solvent Welded Sleeve Adapter": solventWeldedAdapter
 };

@@ -16,7 +16,7 @@ const FullRange = () => {
 
   const products = [
     {
-      name: "Tile Insert Kit with Push In Rubber Ring Seal",
+      name: "Tile Insert Kit with Rubber Seal",
       image: underOverTileInsert,
       description: "Our premium tile insert kit designed for superior waste water solutions with a push-in rubber ring seal system.",
       features: [
