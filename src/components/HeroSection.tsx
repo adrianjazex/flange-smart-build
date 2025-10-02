@@ -3,7 +3,7 @@ import { ArrowDown, Shield, Wrench } from "lucide-react";
 import { useEffect, useState } from "react";
 import puddleFlangeComponents from "@/assets/puddle-flange-components.jpg";
 import puddleFlangeAssembled from "@/assets/puddle-flange-assembled.jpg";
-import { removeBackground, loadImage } from "@/lib/backgroundRemoval";
+import { removeWhiteBackground, loadImage } from "@/lib/backgroundRemoval";
 const HeroSection = () => {
   const [processed, setProcessed] = useState<{ components?: string; assembled?: string }>({});
 
@@ -15,7 +15,7 @@ const HeroSection = () => {
       const res = await fetch(src);
       const blob = await res.blob();
       const imgEl = await loadImage(blob);
-      const outBlob = await removeBackground(imgEl);
+      const outBlob = await removeWhiteBackground(imgEl);
       const url = URL.createObjectURL(outBlob);
       objectUrls.push(url);
       return url;

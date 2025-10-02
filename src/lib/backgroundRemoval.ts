@@ -120,3 +120,55 @@ export const loadImage = (file: Blob): Promise<HTMLImageElement> => {
     img.src = URL.createObjectURL(file);
   });
 };
+
+// Lightweight near-white background removal (no ML). Works best for white/near-white backgrounds.
+export const removeWhiteBackground = async (
+  imageElement: HTMLImageElement,
+  options?: { threshold?: number; softness?: number }
+): Promise<Blob> => {
+  const threshold = options?.threshold ?? 245; // 0-255; higher removes more whites
+  const softness = options?.softness ?? 12;    // feathering range below threshold
+
+  // Draw to canvas (and resize if needed)
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('Could not get canvas context');
+
+  resizeImageIfNeeded(canvas, ctx, imageElement);
+
+  const { width, height } = canvas;
+  const imageData = ctx.getImageData(0, 0, width, height);
+  const data = imageData.data;
+
+  // Modify alpha channel for near-white pixels
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i];
+    const g = data[i + 1];
+    const b = data[i + 2];
+    const a = data[i + 3];
+
+    if (r >= threshold && g >= threshold && b >= threshold) {
+      // Completely transparent
+      data[i + 3] = 0;
+    } else if (
+      r >= threshold - softness &&
+      g >= threshold - softness &&
+      b >= threshold - softness
+    ) {
+      // Feather transparency for slightly darker whites
+      const maxRGB = Math.max(r, g, b);
+      const factor = (maxRGB - (threshold - softness)) / Math.max(1, softness); // 0..1
+      const newAlpha = Math.max(0, Math.min(255, a * (1 - factor)));
+      data[i + 3] = newAlpha;
+    }
+  }
+
+  ctx.putImageData(imageData, 0, 0);
+
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (blob) resolve(blob);
+      else reject(new Error('Failed to create PNG blob'));
+    }, 'image/png');
+  });
+};
