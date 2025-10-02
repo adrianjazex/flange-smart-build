@@ -40,12 +40,12 @@ const HeroSection = () => {
                 <img 
                   src={puddleFlangeComponents}
                   alt="Under Over puddle flange components - primary and secondary flanges"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain mix-blend-multiply"
                 />
                 <img 
                   src={puddleFlangeAssembled}
                   alt="Under Over puddle flange fully assembled system with tile insert"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-contain mix-blend-multiply"
                 />
               </div>
             </div>
