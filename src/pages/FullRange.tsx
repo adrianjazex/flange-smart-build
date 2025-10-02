@@ -9,7 +9,7 @@ import installationGuide from "@/assets/installation-guide.jpg";
 import spigotAdjustmentDemo from "@/assets/spigot-adjustment-demo.mov";
 import underOverTileInsert from "@/assets/under-over-tile-insert-kit.jpg";
 import solventWeldedAdapter from "@/assets/solvent-welded-adapter.jpg";
-import underOverPuddleFlange from "@/assets/under-over-puddle-flange.jpg";
+import underOverPuddleFlange from "@/assets/puddle-flange-rubber-seal-kit.jpg";
 
 const FullRange = () => {
   const navigate = useNavigate();

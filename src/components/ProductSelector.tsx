@@ -9,7 +9,7 @@ import productRange from "@/assets/product-range.jpg";
 import installationGuide from "@/assets/installation-guide.jpg";
 import underOverTileInsert from "@/assets/under-over-tile-insert-assembled.jpg";
 import solventWeldedAdapter from "@/assets/solvent-welded-adapter.jpg";
-import underOverPuddleFlange from "@/assets/puddle-flange-rubber-seal-kit.jpg";
+import underOverPuddleFlange from "@/assets/under-over-puddle-flange.jpg";
 
 interface ProductSelection {
   type: string;
