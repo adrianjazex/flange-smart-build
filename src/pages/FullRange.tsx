@@ -75,11 +75,11 @@ const FullRange = () => {
             {products.map((product, index) => (
               <Card key={index} className="shadow-construction overflow-hidden">
                 <div className="md:flex">
-                  <div className="md:w-1/3">
+                <div className="md:w-1/3 flex items-center justify-center p-4">
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-64 md:h-full object-contain bg-muted/20"
+                      className="w-full object-contain"
                     />
                   </div>
                   <div className="md:w-2/3">
