@@ -37,16 +37,28 @@ const HeroSection = () => {
             {/* Hero Product Images */}
             <div className="relative max-w-4xl mx-auto mb-3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <img 
-                  src={puddleFlangeComponents}
-                  alt="Under Over puddle flange components - primary and secondary flanges"
-                  className="w-full h-auto object-contain mix-blend-multiply"
-                />
-                <img 
-                  src={puddleFlangeAssembled}
-                  alt="Under Over puddle flange fully assembled system with tile insert"
-                  className="w-full h-auto object-contain mix-blend-multiply"
-                />
+                <div className="rounded-lg overflow-hidden" style={{ background: 'transparent' }}>
+                  <img 
+                    src={puddleFlangeComponents}
+                    alt="Under Over puddle flange components - primary and secondary flanges"
+                    className="w-full h-auto object-contain"
+                    style={{ 
+                      filter: 'brightness(0.95) contrast(1.05)',
+                      mixBlendMode: 'screen'
+                    }}
+                  />
+                </div>
+                <div className="rounded-lg overflow-hidden" style={{ background: 'transparent' }}>
+                  <img 
+                    src={puddleFlangeAssembled}
+                    alt="Under Over puddle flange fully assembled system with tile insert"
+                    className="w-full h-auto object-contain"
+                    style={{ 
+                      filter: 'brightness(0.95) contrast(1.05)',
+                      mixBlendMode: 'screen'
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>
