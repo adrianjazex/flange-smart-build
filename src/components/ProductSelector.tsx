@@ -322,13 +322,13 @@ const ProductSelector = () => {
                      </span>
                   </div>
                    {(() => {
-                    const futureStainless = (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Flange Kit with Rubber Ring Seal") ? stainlessTotal + selection.quantity : stainlessTotal;
+                    const futureStainless = (selection.type !== "Adjustable Solvent Welded Sleeve Adapter" && selection.type !== "Under Over Puddle Flange Kit with Push In Rubber Seal") ? stainlessTotal + selection.quantity : stainlessTotal;
                     const futureTotal = cartTotal + selection.quantity;
                     let hasBoxPricing = false;
                     
                     if (selection.type === "Adjustable Solvent Welded Sleeve Adapter") {
                       hasBoxPricing = futureTotal >= 18 || stainlessTotal >= 18;
-                    } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
+                    } else if (selection.type === "Under Over Puddle Flange Kit with Push In Rubber Seal") {
                       hasBoxPricing = futureTotal >= 18;
                     } else {
                       hasBoxPricing = futureStainless >= 18;
@@ -339,7 +339,7 @@ const ProductSelector = () => {
                         Box pricing applied! {(() => {
                           if (selection.type === "Adjustable Solvent Welded Sleeve Adapter") {
                             return "(18+ total units or 18+ stainless parts)";
-                          } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
+                          } else if (selection.type === "Under Over Puddle Flange Kit with Push In Rubber Seal") {
                             return "(18+ total units)";
                           } else {
                             return "(18+ stainless parts - mixed colours allowed)";
@@ -351,7 +351,7 @@ const ProductSelector = () => {
                         {(() => {
                           if (selection.type === "Adjustable Solvent Welded Sleeve Adapter") {
                             return "Box pricing available with 18+ total units or 18+ stainless parts<br/>ABS Sleeve Adapter: $AUD 5.80/unit with box pricing";
-                          } else if (selection.type === "Under Over Flange Kit with Rubber Ring Seal") {
+                          } else if (selection.type === "Under Over Puddle Flange Kit with Push In Rubber Seal") {
                             return "Box pricing available at 18+ total units<br/>ABS Puddle Flange Kit: Polished SS $AUD 90.00/unit | Others $AUD 117.00/unit";
                           } else {
                             return "Box pricing available at 18+ stainless parts (mixed colours allowed)<br/>Stainless: $AUD 80/unit | Other finishes: $AUD 100/unit";
