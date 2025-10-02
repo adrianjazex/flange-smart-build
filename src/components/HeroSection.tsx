@@ -1,15 +1,47 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Shield, Wrench } from "lucide-react";
+import { useEffect, useState } from "react";
 import puddleFlangeComponents from "@/assets/puddle-flange-components.jpg";
 import puddleFlangeAssembled from "@/assets/puddle-flange-assembled.jpg";
-
+import { removeBackground, loadImage } from "@/lib/backgroundRemoval";
 const HeroSection = () => {
+  const [processed, setProcessed] = useState<{ components?: string; assembled?: string }>({});
+
+  useEffect(() => {
+    let cancelled = false;
+    const objectUrls: string[] = [];
+
+    const processImage = async (src: string) => {
+      const res = await fetch(src);
+      const blob = await res.blob();
+      const imgEl = await loadImage(blob);
+      const outBlob = await removeBackground(imgEl);
+      const url = URL.createObjectURL(outBlob);
+      objectUrls.push(url);
+      return url;
+    };
+
+    (async () => {
+      try {
+        const [componentsUrl, assembledUrl] = await Promise.all([
+          processImage(puddleFlangeComponents),
+          processImage(puddleFlangeAssembled)
+        ]);
+        if (!cancelled) setProcessed({ components: componentsUrl, assembled: assembledUrl });
+      } catch (err) {
+        console.warn('Background removal failed, using original images.', err);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      objectUrls.forEach((u) => URL.revokeObjectURL(u));
+    };
+  }, []);
 
   const scrollToProducts = () => {
     document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' });
   };
-
-
   return (
     <section className="relative min-h-[85vh] bg-gradient-hero flex items-end justify-center pt-24 pb-4">
       <div className="absolute inset-0 bg-primary/20"></div>
@@ -37,28 +69,18 @@ const HeroSection = () => {
             {/* Hero Product Images */}
             <div className="relative max-w-4xl mx-auto mb-3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="rounded-lg overflow-hidden" style={{ background: 'transparent' }}>
-                  <img 
-                    src={puddleFlangeComponents}
-                    alt="Under Over puddle flange components - primary and secondary flanges"
-                    className="w-full h-auto object-contain"
-                    style={{ 
-                      filter: 'brightness(0.95) contrast(1.05)',
-                      mixBlendMode: 'screen'
-                    }}
-                  />
-                </div>
-                <div className="rounded-lg overflow-hidden" style={{ background: 'transparent' }}>
-                  <img 
-                    src={puddleFlangeAssembled}
-                    alt="Under Over puddle flange fully assembled system with tile insert"
-                    className="w-full h-auto object-contain"
-                    style={{ 
-                      filter: 'brightness(0.95) contrast(1.05)',
-                      mixBlendMode: 'screen'
-                    }}
-                  />
-                </div>
+                <img 
+                  src={processed.components || puddleFlangeComponents}
+                  alt="Under Over puddle flange components - primary and secondary flanges"
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
+                <img 
+                  src={processed.assembled || puddleFlangeAssembled}
+                  alt="Under Over puddle flange fully assembled system with tile insert"
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
