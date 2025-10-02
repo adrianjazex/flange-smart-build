@@ -20,7 +20,7 @@ const HeroSection = () => {
           <div>
             <div className="mb-6">
                <h1 className="text-4xl lg:text-6xl font-orbitron font-black mb-4 leading-tight">
-                <span className="text-accent">UNDER OVER</span><sup className="text-accent text-2xl lg:text-3xl font-bold ml-1 animate-pulse">™</sup><br />
+                <span className="text-accent">UNDER OVER</span><br />
                 <span className="text-white">PUDDLE FLANGE</span>
               </h1>
             </div>

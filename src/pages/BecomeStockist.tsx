@@ -126,7 +126,7 @@ const BecomeStockist = () => {
               </h1>
               
               <p className="text-xl text-primary-foreground/90 mb-8 max-w-3xl mx-auto">
-                Join our growing network of trusted suppliers and bring revolutionary Under Over™ 
+                Join our growing network of trusted suppliers and bring revolutionary Under Over 
                 tile insert kit systems with push in rubber ring seal to your customers.
               </p>
             </div>

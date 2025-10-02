@@ -26,7 +26,7 @@ const FAQ = () => {
             {/* Question 2 */}
             <div>
               <h2 className="text-xl font-semibold mb-3">
-                Q. Is the Under Over™ puddle flange compatible with other waste tops?
+                Q. Is the Under Over puddle flange compatible with other waste tops?
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 A. Yes. The system is compatible with other waste tops, provided the spigot of the waste top extends at least 15 mm into the bottom puddle flange.
@@ -51,7 +51,7 @@ const FAQ = () => {
                 Q. Doesn't under and over waterproofing trap water?
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                A. No. The Under Over™ puddle flange system is designed to allow water to drain through the screed layer in the event of an over-screed membrane failure, ensuring proper moisture management.
+                A. No. The Under Over puddle flange system is designed to allow water to drain through the screed layer in the event of an over-screed membrane failure, ensuring proper moisture management.
               </p>
             </div>
           </div>
