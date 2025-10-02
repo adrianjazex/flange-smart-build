@@ -165,7 +165,7 @@ const ProductSelector = () => {
                           <img 
                             src={PRODUCT_IMAGES[type as keyof typeof PRODUCT_IMAGES]} 
                             alt={type}
-                            className="w-24 h-24 object-cover rounded flex-shrink-0"
+                            className="w-24 h-24 object-contain rounded flex-shrink-0"
                           />
                           <span className="text-sm leading-tight flex-1">{type}</span>
                         </div>
