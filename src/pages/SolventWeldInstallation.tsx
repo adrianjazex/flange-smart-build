@@ -139,7 +139,7 @@ const SolventWeldInstallation = () => {
                                 className="w-full max-w-md rounded-lg shadow-sm"
                               />
                               <p className="text-xs text-muted-foreground mt-2">
-                                Applying screed over the secondary puddle flange, fully encasing the bedding tabs
+                                Linear grate screed - Applying screed over the secondary puddle flange, fully encasing the bedding tabs
                               </p>
                             </div>
                             <div>
