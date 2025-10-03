@@ -18,14 +18,7 @@ const FullRange = () => {
     {
       name: "Under Over Tile Insert Kit with Push In Rubber Seal",
       image: underOverTileInsert,
-      description: "Designed for single or dual layered waterproofing membrane systems, complemented with 316 stainless steel marine grade tile insert waste top.",
-      features: [
-        "Push-in rubber ring seal technology",
-        "Available in multiple stainless steel finishes",
-        "Sizes: 50mm, 80mm, 100mm",
-        "Professional waste water solution"
-      ],
-      pricing: "From $80 AUD (Box pricing available)"
+      description: "Designed for single or dual layered waterproofing membrane systems, complemented with 316 stainless steel marine grade tile insert waste top."
     },
     {
       name: "Under Over Puddle Flange Kit with Push In Rubber Seal",
