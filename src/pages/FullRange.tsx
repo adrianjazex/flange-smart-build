@@ -43,13 +43,6 @@ const FullRange = () => {
       name: "Adjustable Solvent Welded Sleeve",
       image: solventWeldedAdapter,
       description: "Designed to simplify installations where waste pipes are not perfectly vertical. By removing the rubber ring seal from the puddle flange spigot, the sleeve can be twisted into position and solvent welded, allowing for up to 5° of adjustment out of plumb. This ensures a precise and watertight connection, even when pipes come through the slab on an angle.",
-      features: [
-        "Adjustable design for versatile installation",
-        "Solvent welding compatibility",
-        "Durable ABS construction",
-        "Professional contractor choice"
-      ],
-      pricing: "From $5.00 AUD (Box pricing available)",
       video: spigotAdjustmentDemo
     }
   ];
@@ -92,14 +85,16 @@ const FullRange = () => {
                       <p className="text-muted-foreground mb-4">
                         {product.description}
                       </p>
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-foreground mb-2">Key Features:</h4>
-                        <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                          {product.features.map((feature, featureIndex) => (
-                            <li key={featureIndex}>{feature}</li>
-                          ))}
-                        </ul>
-                      </div>
+                      {product.features && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-foreground mb-2">Key Features:</h4>
+                          <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                            {product.features.map((feature, featureIndex) => (
+                              <li key={featureIndex}>{feature}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                       {product.video && (
                         <div className="mb-4">
                           <h4 className="font-semibold text-foreground mb-2">Spigot Adjustment Demo:</h4>
