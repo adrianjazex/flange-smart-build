@@ -55,9 +55,9 @@ const FullRange = () => {
           {/* Products Grid */}
           <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto mb-12">
             {products.map((product, index) => (
-              <Card key={index} className="shadow-construction overflow-hidden bg-primary border-primary">
+              <Card key={index} className="shadow-construction overflow-hidden">
                 <div className="md:flex">
-                <div className="md:w-1/3 flex items-center justify-center p-4 bg-white">
+                <div className="md:w-1/3 flex items-center justify-center p-4">
                     <img 
                       src={product.image} 
                       alt={product.name}
@@ -66,18 +66,18 @@ const FullRange = () => {
                   </div>
                   <div className="md:w-2/3">
                     <CardHeader>
-                      <CardTitle className="text-xl text-white">
+                      <CardTitle className="text-xl text-primary">
                         {product.name}
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-white/90 mb-4">
+                      <p className="text-muted-foreground mb-4">
                         {product.description}
                       </p>
                       {product.features && (
                         <div className="mb-4">
-                          <h4 className="font-semibold text-white mb-2">Key Features:</h4>
-                          <ul className="list-disc list-inside text-sm text-white/80 space-y-1">
+                          <h4 className="font-semibold text-foreground mb-2">Key Features:</h4>
+                          <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
                             {product.features.map((feature, featureIndex) => (
                               <li key={featureIndex}>{feature}</li>
                             ))}
@@ -86,7 +86,7 @@ const FullRange = () => {
                       )}
                       {product.video && (
                         <div className="mb-4">
-                          <h4 className="font-semibold text-white mb-2">Spigot Adjustment Demo:</h4>
+                          <h4 className="font-semibold text-foreground mb-2">Spigot Adjustment Demo:</h4>
                           <video 
                             controls 
                             className="w-full max-w-md rounded-lg shadow-sm"
@@ -96,7 +96,7 @@ const FullRange = () => {
                             <source src={product.video} type="video/mp4" />
                             Your browser does not support the video tag.
                           </video>
-                          <p className="text-xs text-white/70 mt-2">
+                          <p className="text-xs text-muted-foreground mt-2">
                             Demonstration of different spigot adjustment angles
                           </p>
                         </div>
