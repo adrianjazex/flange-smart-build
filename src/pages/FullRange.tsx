@@ -117,11 +117,6 @@ const FullRange = () => {
                           </p>
                         </div>
                       )}
-                      <div className="flex justify-between items-center">
-                        <span className="text-lg font-bold text-accent">
-                          {product.pricing}
-                        </span>
-                      </div>
                     </CardContent>
                   </div>
                 </div>
