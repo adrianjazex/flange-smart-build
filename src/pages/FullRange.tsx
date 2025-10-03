@@ -50,10 +50,6 @@ const FullRange = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Full Range of Products
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover our complete collection of professional waste water solutions, 
-              Significantly minimize the risk of leaks.
-            </p>
           </div>
 
           {/* Products Grid */}
