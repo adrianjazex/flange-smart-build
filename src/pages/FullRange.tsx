@@ -18,7 +18,7 @@ const FullRange = () => {
     {
       name: "Under Over Tile Insert Kit with Push In Rubber Seal",
       image: underOverTileInsert,
-      description: "Our premium tile insert kit designed for superior waste water solutions with a push-in rubber ring seal system.",
+      description: "The key features: under over puddle flange for dual layered waterproofing membrane systems, coupled with 316 stainless steel marine grade tile insert waste top.",
       features: [
         "Push-in rubber ring seal technology",
         "Available in multiple stainless steel finishes",
