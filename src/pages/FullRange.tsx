@@ -16,12 +16,12 @@ const FullRange = () => {
 
   const products = [
     {
-      name: "Under Over Tile Insert Kit with Push In Rubber Seal",
+      name: "Under Over Puddle Flange Tile Insert Kit with Push In Rubber Ring Seal",
       image: underOverTileInsert,
       description: "Designed for single or dual layered waterproofing membrane systems, complemented with 316 stainless steel marine grade tile insert waste top."
     },
     {
-      name: "Under Over Puddle Flange Kit with Push In Rubber Seal",
+      name: "Under Over Puddle Flange Kit with Push In Rubber Ring Seal",
       image: underOverPuddleFlange,
       description: "Comprehensive puddle flange kit solution for under and over tile applications with integrated rubber ring seal.",
       features: [
