@@ -3,6 +3,12 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import installationDemo from "@/assets/installation-demo.jpg";
+import rubberRingInspection from "@/assets/rubber-ring-inspection-with-arrow.jpg";
+import secondaryFlange1 from "@/assets/secondary-flange-1.jpg";
+import secondaryFlange2 from "@/assets/secondary-flange-2.jpg";
+import screedApplication1 from "@/assets/screed-application-1.jpg";
+import screedApplication2 from "@/assets/screed-application-2.jpg";
 
 const InstallationSelection = () => {
   const puddleFlangeSteps = [
@@ -124,9 +130,89 @@ const InstallationSelection = () => {
                         <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <h4 className="font-semibold text-foreground mb-2">{step.title}</h4>
                           <p className="text-muted-foreground leading-relaxed">{step.details}</p>
+                          
+                          {/* Add demonstration photo for step 2 */}
+                          {step.step === 2 && (
+                            <div className="mt-4">
+                              <img 
+                                src={installationDemo} 
+                                alt="Puddle flange installation demonstration showing proper rebated floor placement"
+                                className="w-full max-w-md rounded-lg shadow-sm"
+                              />
+                              <p className="text-xs text-muted-foreground mt-2">
+                                Demonstration: Puddle flange properly rebated and installed in concrete floor
+                              </p>
+                            </div>
+                          )}
+                          
+                          {/* Add rubber ring seal inspection photo for step 4 */}
+                          {step.step === 4 && (
+                            <div className="mt-1">
+                              <img 
+                                src={rubberRingInspection} 
+                                alt="Visual inspection view of rubber ring seal properly positioned inside puddle flange spigot"
+                                className="w-full max-w-md rounded-lg shadow-sm"
+                              />
+                              <p className="text-xs text-muted-foreground mt-2">
+                                Visual inspection: Rubber ring seal correctly positioned and visible at the bottom of the spigot
+                              </p>
+                            </div>
+                          )}
+                          
+                          {/* Add secondary puddle flange installation photos for step 6 */}
+                          {step.step === 6 && (
+                            <div className="mt-1 space-y-4">
+                              <div>
+                                <img 
+                                  src={secondaryFlange1} 
+                                  alt="Secondary puddle flange being positioned for installation"
+                                  className="w-full max-w-md rounded-lg shadow-sm"
+                                />
+                                <p className="text-xs text-muted-foreground mt-2">
+                                  Step one applying adhesive to locating lugs
+                                </p>
+                              </div>
+                              <div>
+                                <img 
+                                  src={secondaryFlange2} 
+                                  alt="Secondary puddle flange fully installed and seated"
+                                  className="w-full max-w-md rounded-lg shadow-sm"
+                                />
+                                <p className="text-xs text-muted-foreground mt-2">
+                                  Step 2: Secondary puddle flange properly aligned and securely seated
+                                </p>
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Add screed application photos for step 7 */}
+                          {step.step === 7 && (
+                            <div className="mt-4 space-y-4">
+                              <div>
+                                <img 
+                                  src={screedApplication1} 
+                                  alt="Applying tiler's screed over the secondary puddle flange"
+                                  className="w-full max-w-md rounded-lg shadow-sm"
+                                />
+                                <p className="text-xs text-muted-foreground mt-2">
+                                  Linear grate screed - Applying screed over the secondary puddle flange, fully encasing the bedding tabs
+                                </p>
+                              </div>
+                              <div>
+                                <img 
+                                  src={screedApplication2} 
+                                  alt="Completed screed application with proper perimeter termination"
+                                  className="w-full max-w-md rounded-lg shadow-sm"
+                                />
+                                <p className="text-xs text-muted-foreground mt-2">
+                                  Completed screed application with proper perimeter termination and clean flange surface
+                                </p>
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                       {index < puddleFlangeSteps.length - 1 && <Separator className="my-4" />}
@@ -152,9 +238,75 @@ const InstallationSelection = () => {
                         <div className="flex-shrink-0 w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-sm">
                           {step.step}
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <h4 className="font-semibold text-foreground mb-2">{step.title}</h4>
                           <p className="text-muted-foreground leading-relaxed">{step.details}</p>
+                          
+                          {/* Add demonstration photo for step 2 */}
+                          {step.step === 2 && (
+                            <div className="mt-4">
+                              <img 
+                                src={installationDemo} 
+                                alt="Puddle flange installation demonstration showing proper rebated floor placement"
+                                className="w-full max-w-md rounded-lg shadow-sm"
+                              />
+                              <p className="text-xs text-muted-foreground mt-2">
+                                Demonstration: Puddle flange properly rebated and installed in concrete floor
+                              </p>
+                            </div>
+                          )}
+                          
+                          {/* Add secondary puddle flange installation photos for step 6 */}
+                          {step.step === 6 && (
+                            <div className="mt-1 space-y-4">
+                              <div>
+                                <img 
+                                  src={secondaryFlange1} 
+                                  alt="Secondary puddle flange being positioned for installation"
+                                  className="w-full max-w-md rounded-lg shadow-sm"
+                                />
+                                <p className="text-xs text-muted-foreground mt-2">
+                                  Step one applying adhesive to locating lugs
+                                </p>
+                              </div>
+                              <div>
+                                <img 
+                                  src={secondaryFlange2} 
+                                  alt="Secondary puddle flange fully installed and seated"
+                                  className="w-full max-w-md rounded-lg shadow-sm"
+                                />
+                                <p className="text-xs text-muted-foreground mt-2">
+                                  Step 2: Secondary puddle flange properly aligned and securely seated
+                                </p>
+                              </div>
+                            </div>
+                          )}
+                          
+                          {/* Add screed application photos for step 7 */}
+                          {step.step === 7 && (
+                            <div className="mt-4 space-y-4">
+                              <div>
+                                <img 
+                                  src={screedApplication1} 
+                                  alt="Applying tiler's screed over the secondary puddle flange"
+                                  className="w-full max-w-md rounded-lg shadow-sm"
+                                />
+                                <p className="text-xs text-muted-foreground mt-2">
+                                  Linear grate screed - Applying screed over the secondary puddle flange, fully encasing the bedding tabs
+                                </p>
+                              </div>
+                              <div>
+                                <img 
+                                  src={screedApplication2} 
+                                  alt="Completed screed application with proper perimeter termination"
+                                  className="w-full max-w-md rounded-lg shadow-sm"
+                                />
+                                <p className="text-xs text-muted-foreground mt-2">
+                                  Completed screed application with proper perimeter termination and clean flange surface
+                                </p>
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                       {index < solventWeldedSteps.length - 1 && <Separator className="my-4" />}
