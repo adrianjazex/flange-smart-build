@@ -23,11 +23,11 @@ const FullRange = () => {
     {
       name: "Under Over Puddle Flange Kit with Rubber Ring Seal",
       image: underOverPuddleFlange,
-      description: "This puddle flange kit is engineered for dual independent waterproofing membrane systems, delivering superior protection and longevity by eliminating water entrapment within screeds.",
+      description: "This puddle flange kit is designed for dual independent waterproofing membrane systems, delivering superior protection and longevity by eliminating water entrapment within screeds.",
       features: [
-        "Textured surface for optimal waterproofing membrane adhesion",
+        "Textured surface for better waterproofing membrane adhesion",
         "Embedding tabs to ensure secure anchoring within the screed",
-        "Versatile installation – the same product can also be adapted for solvent weld applications with the addition of the Under Over adjustable solvent welded sleeve, allowing up to 5° out-of-plumb drainage waste pipes correction for angled waste pipes"
+        "Versatile installation - the same product can also be adapted for solvent weld applications with the addition of the Under Over adjustable solvent welded sleeve. (sold separately)"
       ],
       pricing: "From $20 AUD (Box pricing available)"
     },
