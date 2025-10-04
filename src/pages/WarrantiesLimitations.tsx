@@ -17,9 +17,8 @@ const WarrantiesLimitations = () => {
 
   const coveredDefects = [
     "Manufacturing defects in materials",
-    "Premature seal failure under normal use",
-    "Structural integrity issues",
-    "Corrosion resistance failure (316 stainless steel products)",
+    "Premature product failure",
+    "Product structural integrity issues",
     "Dimensional inaccuracies affecting function"
   ];
 
