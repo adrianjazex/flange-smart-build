@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useState } from "react";
 import installationDemo from "@/assets/installation-demo.jpg";
 import rubberRingInspection from "@/assets/rubber-ring-inspection-with-arrow.jpg";
 import secondaryFlange1 from "@/assets/secondary-flange-1.jpg";
@@ -11,6 +12,13 @@ import screedApplication1 from "@/assets/screed-application-1.jpg";
 import screedApplication2 from "@/assets/screed-application-2.jpg";
 
 const InstallationSelection = () => {
+  const [selectedValue, setSelectedValue] = useState<string | undefined>(undefined);
+
+  const handleAccordionChange = (value: string) => {
+    setSelectedValue(value);
+    // Scroll to top when accordion changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   const puddleFlangeSteps = [
     {
       step: 1,
@@ -113,7 +121,7 @@ const InstallationSelection = () => {
           </div>
 
           {/* Accordion Installation Options */}
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-4" value={selectedValue} onValueChange={handleAccordionChange}>
             {/* Rubber Ring Seal Installation */}
             <AccordionItem value="rubber-ring" className="border rounded-lg bg-teal-500/10">
               <AccordionTrigger className="px-6 hover:no-underline bg-teal-500 text-white hover:bg-teal-600 rounded-t-lg data-[state=open]:rounded-b-none">
