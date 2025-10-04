@@ -121,7 +121,7 @@ const Header = () => {
                 }}
                 className="text-left text-foreground hover:text-primary font-medium transition-colors"
               >
-                Product range
+                Products
               </button>
               <button 
                 onClick={() => {

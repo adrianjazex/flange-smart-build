@@ -20,7 +20,7 @@ const Footer = () => {
             <ul className="space-y-2 text-primary-foreground/80">
               <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
               <li><Link to="/#order" className="hover:text-accent transition-colors">Order products</Link></li>
-              <li><Link to="/full-range" className="hover:text-accent transition-colors">Product range</Link></li>
+              <li><Link to="/full-range" className="hover:text-accent transition-colors">Products</Link></li>
               <li><Link to="/waterproof-screed" className="hover:text-accent transition-colors">Can I waterproof under and over screed?</Link></li>
               <li><Link to="/rubber-ring-installation" className="hover:text-accent transition-colors">Rubber ring seal installation</Link></li>
               <li><Link to="/solvent-weld-installation" className="hover:text-accent transition-colors">Adjustable solvent weld sleeve</Link></li>
