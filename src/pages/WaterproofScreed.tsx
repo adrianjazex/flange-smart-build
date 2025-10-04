@@ -191,7 +191,6 @@ const WaterproofScreed = () => {
               <p className="text-muted-foreground mb-6">
                 Contact your local stockist to find a suitable installer.
               </p>
-              <p className="text-sm text-muted-foreground">sales@jazex.com.au</p>
             </div>
           </div>
         </div>
