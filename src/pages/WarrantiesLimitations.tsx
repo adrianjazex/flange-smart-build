@@ -206,7 +206,7 @@ const WarrantiesLimitations = () => {
                   Our goods come with guarantees that cannot be excluded under Australian Consumer Law.
                 </p>
                 <p>
-                  <strong>Liability Limitation:</strong> To the extent permitted by law, JAZEX's liability is limited to the repair, 
+                  <strong>Liability Limitation:</strong> To the extent permitted by law, JAZEX's liability is limited to the 
                   replacement, or refund of the purchase price of defective products.
                 </p>
                 <p>
