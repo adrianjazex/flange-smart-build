@@ -61,7 +61,7 @@ const WaterproofScreed = () => {
                   <div>
                     <h3 className="font-semibold mb-2">Installation Benefits</h3>
                     <ul className="list-disc list-inside text-muted-foreground space-y-1">
-                      <li>Redundant protection - if one membrane fails, the other maintains waterproofing</li>
+                      <li>If the over screed membrane fails, the below screed membrane maintains protection</li>
                       <li>Drainage pathway between membranes prevents water accumulation</li>
                       <li>Enhanced long-term reliability and peace of mind</li>
                       <li>Suitable for high-risk areas like bathrooms and balconies</li>
