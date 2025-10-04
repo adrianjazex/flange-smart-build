@@ -18,7 +18,7 @@ const FullRange = () => {
     {
       name: "Under Over Puddle Flange Kit with Rubber Ring Seal and Tile Insert Waste",
       image: underOverTileInsert,
-      description: "Designed for single or dual laid waterproofing membrane systems, complemented with 316 stainless steel marine grade tile insert waste top with removable strainer for easy maintenance and long lasting performance."
+      description: "Designed for single or dual layered waterproofing membrane systems, complemented with 316 stainless steel marine grade tile insert waste top with removable strainer for easy maintenance and long lasting performance."
     },
     {
       name: "Under Over Puddle Flange Kit with Push In Rubber Ring Seal",
