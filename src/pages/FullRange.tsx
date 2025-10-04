@@ -21,14 +21,13 @@ const FullRange = () => {
       description: "Designed for single or dual layered waterproofing membrane systems, complemented with 316 stainless steel marine grade tile insert waste top with removable strainer for easy maintenance and long lasting performance."
     },
     {
-      name: "Under Over Puddle Flange Kit with Push In Rubber Ring Seal",
+      name: "Under Over Puddle Flange Kit with Rubber Seal",
       image: underOverPuddleFlange,
-      description: "Comprehensive puddle flange kit solution for under and over tile applications with integrated rubber ring seal.",
+      description: "This puddle flange kit is engineered for dual independent waterproofing membrane systems, delivering superior protection and longevity by eliminating water entrapment within screeds.",
       features: [
-        "Dual under/over installation capability",
-        "Integrated rubber ring seal",
-        "ABS construction",
-        "Complete installation kit included"
+        "Textured surface for optimal waterproofing membrane adhesion",
+        "Embedding tabs to ensure secure anchoring within the screed",
+        "Versatile installation – the same product can also be adapted for solvent weld applications with the addition of the Under Over adjustable solvent welded sleeve, allowing up to 5° out-of-plumb drainage waste pipes correction for angled waste pipes"
       ],
       pricing: "From $20 AUD (Box pricing available)"
     },
