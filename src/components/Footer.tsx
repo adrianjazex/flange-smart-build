@@ -22,8 +22,7 @@ const Footer = () => {
               <li><Link to="/#order" className="hover:text-accent transition-colors">Order products</Link></li>
               <li><Link to="/full-range" className="hover:text-accent transition-colors">Products</Link></li>
               <li><Link to="/waterproof-screed" className="hover:text-accent transition-colors">Can I waterproof under and over screed?</Link></li>
-              <li><Link to="/rubber-ring-installation" className="hover:text-accent transition-colors">Rubber ring seal installation</Link></li>
-              <li><Link to="/solvent-weld-installation" className="hover:text-accent transition-colors">Adjustable solvent weld sleeve</Link></li>
+              <li><Link to="/installation-instructions" className="hover:text-accent transition-colors">Installation Instructions</Link></li>
               <li><Link to="/warranties-limitations" className="hover:text-accent transition-colors">Warranties & Limitations</Link></li>
               <li><Link to="/faq" className="hover:text-accent transition-colors">Frequently Asked Questions (FAQ)</Link></li>
               <li><Link to="/stockists" className="hover:text-accent transition-colors">Stockists</Link></li>
