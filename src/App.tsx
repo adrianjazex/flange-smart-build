@@ -11,7 +11,7 @@ import BecomeStockist from "./pages/BecomeStockist";
 import ContactUs from "./pages/ContactUs";
 import Stockists from "./pages/Stockists";
 import FullRange from "./pages/FullRange";
-import InstallationInstructions from "./pages/InstallationInstructions";
+import InstallationSelection from "./pages/InstallationSelection";
 import RubberRingSealInstallation from "./pages/RubberRingSealInstallation";
 import SolventWeldInstallation from "./pages/SolventWeldInstallation";
 import WarrantiesLimitations from "./pages/WarrantiesLimitations";
@@ -34,7 +34,7 @@ const App = () => (
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/stockists" element={<Stockists />} />
             <Route path="/full-range" element={<FullRange />} />
-            <Route path="/installation-instructions" element={<InstallationInstructions />} />
+            <Route path="/installation-instructions" element={<InstallationSelection />} />
             <Route path="/rubber-ring-installation" element={<RubberRingSealInstallation />} />
             <Route path="/solvent-weld-installation" element={<SolventWeldInstallation />} />
             <Route path="/warranties-limitations" element={<WarrantiesLimitations />} />

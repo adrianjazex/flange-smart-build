@@ -132,39 +132,15 @@ const Header = () => {
               >
                 Can I waterproof under and over screed?
               </button>
-              <div className="flex flex-col">
-                <button 
-                  onClick={() => setIsInstallationDropdownOpen(!isInstallationDropdownOpen)}
-                  className="flex items-center justify-between text-left text-foreground hover:text-primary font-medium transition-colors"
-                >
-                  Installation Instructions
-                  <ChevronDown className={`h-4 w-4 transition-transform ${isInstallationDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {isInstallationDropdownOpen && (
-                  <div className="ml-4 mt-2 flex flex-col space-y-2">
-                    <button 
-                      onClick={() => {
-                        navigate('/rubber-ring-installation');
-                        setIsMenuOpen(false);
-                        setIsInstallationDropdownOpen(false);
-                      }}
-                      className="text-left text-foreground hover:text-primary font-medium transition-colors py-1 text-sm"
-                    >
-                      Rubber ring seal installation
-                    </button>
-                    <button 
-                      onClick={() => {
-                        navigate('/solvent-weld-installation');
-                        setIsMenuOpen(false);
-                        setIsInstallationDropdownOpen(false);
-                      }}
-                      className="text-left text-foreground hover:text-primary font-medium transition-colors py-1 text-sm"
-                    >
-                      Adjustable solvent weld sleeve
-                    </button>
-                  </div>
-                )}
-              </div>
+              <button 
+                onClick={() => {
+                  navigate('/installation-instructions');
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-foreground hover:text-primary font-medium transition-colors"
+              >
+                Installation Instructions
+              </button>
               <button 
                 onClick={() => {
                   navigate('/warranties-limitations');
