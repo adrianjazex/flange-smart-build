@@ -55,7 +55,7 @@ const WarrantiesLimitations = () => {
     {
       step: 4,
       title: "Resolution",
-      detail: "Approved claims will be resolved through repair, replacement, or credit"
+      detail: "Approved claims will be resolved through replacement, refund, or credit"
     }
   ];
 
