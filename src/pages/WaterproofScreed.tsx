@@ -189,7 +189,7 @@ const WaterproofScreed = () => {
             <div className="text-center bg-card/30 rounded-xl p-8 border border-border">
               <h2 className="text-2xl font-semibold mb-4">Need Professional Advice?</h2>
               <p className="text-muted-foreground mb-6">
-                Contact our technical team for specific guidance on your waterproofing project.
+                Contact your local stockist to find a suitable installer.
               </p>
               <p className="text-sm text-muted-foreground">sales@jazex.com.au</p>
             </div>
