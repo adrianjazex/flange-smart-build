@@ -35,7 +35,7 @@ const FullRange = () => {
     {
       name: "Adjustable Solvent Welded Sleeve",
       image: solventWeldedAdapter,
-      description: "Designed to simplify installations where waste pipes are not perfectly vertical. By removing the rubber ring seal from the puddle flange spigot, the sleeve can be twisted into position and solvent welded, allowing for up to 5° of adjustment out of plumb. This ensures a precise and watertight connection, even when pipes come through the slab on an angle.",
+      description: "Designed to simplify installations where drainage waste pipes are not perfectly vertical. By removing the rubber ring seal from the puddle flange spigot, the adjustable sleeve can be twisted into position and solvent welded, allowing for up to 5° of adjustment for out of plumb drainage pipes. This ensures a precise and watertight connection, even when pipes come through the slab on an angle.",
       video: spigotAdjustmentDemo
     }
   ];
