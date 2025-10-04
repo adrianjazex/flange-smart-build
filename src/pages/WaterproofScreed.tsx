@@ -51,7 +51,7 @@ const WaterproofScreed = () => {
                     <h3 className="font-semibold mb-2">Advanced Drainage System</h3>
                     <p className="text-muted-foreground">
                       The under/over screed system allows drainage between the membranes if water penetrates into the screed. 
-                      This prevents water entrapment and provides continuous protection even if the primary membrane is compromised.
+                      This prevents water entrapment and provides continuous protection even if the over screed membrane is compromised.
                     </p>
                   </div>
                 </div>
