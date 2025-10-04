@@ -187,9 +187,9 @@ const WaterproofScreed = () => {
 
             {/* Contact Section */}
             <div className="text-center bg-card/30 rounded-xl p-8 border border-border">
-              <h2 className="text-2xl font-semibold mb-4">Contact Your Local Stockist to Find a Licensed Installer</h2>
+              <h2 className="text-2xl font-semibold mb-4">Need Professional Advice?</h2>
               <p className="text-muted-foreground mb-6">
-                Contact your local stockist to find a suitable installer.
+                Contact your local stockist to find a licensed installer.
               </p>
             </div>
           </div>
