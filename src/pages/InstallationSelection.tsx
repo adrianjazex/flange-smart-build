@@ -115,11 +115,11 @@ const InstallationSelection = () => {
           {/* Accordion Installation Options */}
           <Accordion type="single" collapsible className="space-y-4">
             {/* Rubber Ring Seal Installation */}
-            <AccordionItem value="rubber-ring" className="border rounded-lg">
-              <AccordionTrigger className="px-6 hover:no-underline">
+            <AccordionItem value="rubber-ring" className="border rounded-lg bg-teal-500/10">
+              <AccordionTrigger className="px-6 hover:no-underline bg-teal-500 text-white hover:bg-teal-600 rounded-t-lg data-[state=open]:rounded-b-none">
                 <div className="text-left">
-                  <h2 className="text-2xl font-bold text-primary">Rubber Ring Seal Installation</h2>
-                  <p className="text-sm text-muted-foreground mt-1">Step-by-step guide for puddle flanges with rubber ring seals</p>
+                  <h2 className="text-2xl font-bold">Rubber Ring Seal Installation</h2>
+                  <p className="text-sm text-white/90 mt-1">Step-by-step guide for puddle flanges with rubber ring seals</p>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
@@ -223,11 +223,11 @@ const InstallationSelection = () => {
             </AccordionItem>
 
             {/* Adjustable Solvent Weld Sleeve Installation */}
-            <AccordionItem value="solvent-weld" className="border rounded-lg">
-              <AccordionTrigger className="px-6 hover:no-underline">
+            <AccordionItem value="solvent-weld" className="border rounded-lg bg-teal-500/10">
+              <AccordionTrigger className="px-6 hover:no-underline bg-teal-500 text-white hover:bg-teal-600 rounded-t-lg data-[state=open]:rounded-b-none">
                 <div className="text-left">
-                  <h2 className="text-2xl font-bold text-primary">Adjustable Solvent Weld Sleeve</h2>
-                  <p className="text-sm text-muted-foreground mt-1">Step-by-step guide for solvent weld installation with adjustable sleeve</p>
+                  <h2 className="text-2xl font-bold">Adjustable Solvent Weld Sleeve</h2>
+                  <p className="text-sm text-white/90 mt-1">Step-by-step guide for solvent weld installation with adjustable sleeve</p>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="px-6 pb-6">
