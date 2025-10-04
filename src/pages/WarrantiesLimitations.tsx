@@ -86,7 +86,7 @@ const WarrantiesLimitations = () => {
             </CardHeader>
             <CardContent>
               <p className="text-green-700 dark:text-green-300 mb-4">
-                JAZEX stands behind the quality of our waste water solution products with comprehensive warranty coverage 
+                JAZEX stands behind the quality of our Products with comprehensive warranty coverage 
                 when products are installed and maintained according to our specifications.
               </p>
               <div className="text-center bg-background rounded-lg p-6 border border-border">
